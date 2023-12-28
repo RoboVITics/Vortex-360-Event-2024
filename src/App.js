@@ -7,6 +7,7 @@ import Sponsors from "./Sponsors";
 import Prizes from "./Prizes";
 import FAQs from "./FAQs";
 import Contact from "./Contact";
+
 function App() {
   return (
     <div className="App">
