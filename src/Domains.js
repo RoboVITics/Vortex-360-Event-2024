@@ -1,5 +1,6 @@
 import React from "react";
 import { domains } from "./Constants";
+import { Link } from "react-router-dom";
 const Domains = () => {
   return (
     <div id="domains">
@@ -9,14 +10,15 @@ const Domains = () => {
           {domains.map((domain) => (
             <div key={domain.id} class="feature col">
               <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                <img src={domain.icon} alt="" height="30" />
+                <img src={domain.icon} alt="" height="30px" />
               </div>
               <h3 class="fs-2 text-body-emphasis">{domain.dom}</h3>
               <p>{domain.desp}</p>
-              <a href="#" class="icon-link fw-bold">
+
+              <Link to={`/domain/${domain.id}`} style={{ fontWeight: "bold" }}>
                 Call to action
                 <img src="./right-thin-chevron.svg" alt="" height="15px" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

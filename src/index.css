@@ -140,3 +140,78 @@ h2 {
   flex-wrap: wrap;
   gap: 3rem;
 }
+
+.domain-info {
+  height: 100vh;
+}
+
+.domain-info header {
+  text-align: center;
+  padding: 20px;
+}
+.domain-info header h1 {
+  color: black;
+}
+.domain-info header p {
+  width: 50%;
+  margin-left: 25%;
+  color: white;
+}
+.domain-info section {
+  padding: 20px;
+  background-color: #212529;
+  border: 2px solid white;
+  border-radius: 20px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0);
+}
+.domain-sections {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.domain-info h2 {
+  color: white;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.domain-info p {
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .domain-info {
+    height: 100vh;
+  }
+}
+@media (max-width: 830px) {
+  .domain-info section {
+    padding: 10px;
+    width: 70%;
+  }
+  .domain-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+  .domain-info {
+    height: 100%;
+  }
+}
+@media (max-width: 759px) {
+  .head {
+    flex-direction: column;
+  }
+}
+.head {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  width: 30%;
+  margin-left: 35%;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}

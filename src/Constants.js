@@ -1,3 +1,4 @@
+import img1 from "./tools.svg";
 export const events = [
   {
     id: 1,
@@ -44,19 +45,61 @@ export const domains = [
     id: 1,
     dom: "Domain 1",
     desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
+    icon: img1,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
   },
   {
     id: 2,
     dom: "Domain 2",
     desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
+    icon: img1,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
   },
   {
     id: 3,
     dom: "Domain 3",
     desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
+    icon: img1,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
   },
 ];
 
