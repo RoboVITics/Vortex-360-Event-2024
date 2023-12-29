@@ -7,6 +7,9 @@ import Sponsors from "./Sponsors";
 import Prizes from "./Prizes";
 import FAQs from "./FAQs";
 import Contact from "./Contact";
+import Timer from "./Timer";
+
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +21,7 @@ function App() {
       <Prizes />
       <FAQs />
       <Contact />
+      <Timer/>
     </div>
   );
 }
