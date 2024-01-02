@@ -1,26 +1,94 @@
 import React from "react";
-import { domains } from "./Constants";
+import { domains, buttons } from "./Constants";
 import { Link } from "react-router-dom";
 const Domains = () => {
   return (
     <div id="domains">
-      <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">Domains</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-          {domains.map((domain) => (
-            <div key={domain.id} class="feature col">
-              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                <img src={domain.icon} alt="" height="30px" />
+      <div class="container px-4 py-5">
+        <h2 class="border-bottom">Domains</h2>
+      </div>
+      <div className="agu">
+        <div
+          id="myCarousel"
+          class="carousel slide mb-6"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            {buttons.map((btn) => (
+              <button
+                key={btn.id}
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to={btn.slide}
+                class={btn.class}
+                aria-current={btn.current}
+                aria-label={btn.label}
+              ></button>
+            ))}
+          </div>
+          <div class="carousel-inner">
+            {domains.map((domain) => (
+              <div key={domain.id} class={domain.upper}>
+                <div
+                  class="container"
+                  style={{
+                    height: "27rem",
+                    width: "100%",
+                    color: "white",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${domain.bg}) center/cover no-repeat`,
+                  }}
+                >
+                  <img src={domain.image} alt="" height="45px" />
+                  <h2
+                    style={{
+                      color: "black",
+                    }}
+                  >
+                    {domain.name}
+                  </h2>
+                  <p>{domain.desp}</p>
+                  <Link
+                    to={`/domain/${domain.id}`}
+                    style={{
+                      fontWeight: "bold",
+                      color: "black",
+                      fontSize: "20px",
+                    }}
+                  >
+                    Call to action
+                    <img
+                      src="./right-thin-chevron-svgrepo-com.svg"
+                      alt=""
+                      height="20px"
+                    />
+                  </Link>
+                </div>
               </div>
-              <h3 class="fs-2 text-body-emphasis">{domain.dom}</h3>
-              <p>{domain.desp}</p>
-
-              <Link to={`/domain/${domain.id}`} style={{ fontWeight: "bold" }}>
-                Call to action
-                <img src="./right-thin-chevron.svg" alt="" height="15px" />
-              </Link>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>

@@ -11,10 +11,10 @@ const DomainInfo = () => {
 
   useEffect(() => {
     const newd = domains.find((d) => parseInt(domainId) === d.id);
-    setTitle(newd.dom);
+    setTitle(newd.name);
     setDesp(newd.desp);
     setContent(newd.content);
-    setImg(newd.icon);
+    setImg(newd.image);
   }, [domainId]);
   return (
     <div class="domain-info">

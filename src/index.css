@@ -56,8 +56,8 @@ h2 {
 }
 
 .carousel {
-  height: 30rem;
-  width: 80%;
+  height: 27rem;
+  width: 75%;
 }
 .carousel-inner {
   height: 100%;
@@ -66,6 +66,7 @@ h2 {
 .agu {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .container h2 {
   color: #212529;
@@ -143,6 +144,7 @@ h2 {
 
 .domain-info {
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .domain-info header {
@@ -160,7 +162,6 @@ h2 {
 .domain-info section {
   padding: 20px;
   background-color: #212529;
-  border: 2px solid white;
   border-radius: 20px;
   box-shadow: -10px 10px 10px rgba(0, 0, 0);
 }
