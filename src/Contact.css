@@ -1,0 +1,30 @@
+#main {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-left: 11rem;
+}
+
+#leftContact,
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.container {
+    display: flex;
+}
+
+.text-center {
+    text-align: center !important;
+    margin-top: 2rem;
+}
+
+#leftContact {
+    width: 30%;
+}
+
+#contact {
+    width: 60%;
+}
