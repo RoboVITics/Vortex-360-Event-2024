@@ -12,7 +12,7 @@ body {
   gap: 1rem;
 }
 .links img {
-  height: 1.5rem;
+  height: 5rem;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -75,12 +75,20 @@ h2 {
   color: white;
   font-weight: bold;
 }
-.sponsor img {
-  border-radius: 50%;
+.marketing-1{
+  margin-left:130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.2rem;
 }
-@media (max-width: 500px) {
+.sponsor img {
+  width: 280px;
+  height: 202px;
+}
+@media (max-width:500px) {
   .sponsor {
-    width: 50%;
+
+    width: 30%;
     margin-left: 25%;
   }
 }
