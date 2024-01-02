@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 const Navbar = () => {
   return (
-    <BrowserRouter>
+    <div id="home">
       <nav
         class="navbar navbar-expand-xl navbar-dark fixed-top bg-dark"
         id="home"
@@ -64,7 +63,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </BrowserRouter>
+    </div>
   );
 };
 
