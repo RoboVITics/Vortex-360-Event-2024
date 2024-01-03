@@ -63,6 +63,12 @@ h2 {
   height: 100%;
   width: 100%;
 }
+.carousel-inner p {
+  margin-top: 1.5rem;
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 1.5rem;
+}
 .agu {
   display: flex;
   justify-content: center;
