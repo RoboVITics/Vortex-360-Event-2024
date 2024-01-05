@@ -176,6 +176,10 @@ export const domains = [
 ];
 
 export const sponsors = [
-  { id: 1, icon: "https://picsum.photos/200" },
-  { id: 2, icon: "https://picsum.photos/200" },
+  {
+    id: 1, icon: "./png-clipart-autodesk-inventor-autocad-computer-software-3d-computer-graphics-design-angle-3d-computer-graphics-thumbnail__2_-removebg-preview.png" },
+  { id: 2, icon: "./Screenshot_2023-12-27_140353-removebg-preview.png" },
+  { id: 2, icon: "./larsen-toubro-vector-logo-400x400-removebg-preview.png" },
+  { id: 2, icon: "./png-transparent-siemens-malaysia-sdn-bhd-logo-simatic-siemens-energy-sector-mechanical-logo-blue-angle-text-thumbnail-removebg-preview.png" },
+
 ];
