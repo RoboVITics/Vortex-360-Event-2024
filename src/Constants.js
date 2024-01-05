@@ -1,5 +1,4 @@
-import img1 from "./tools.svg";
-import imgd1 from "./istockphoto-1498928262-640x640.jpg";
+import imgd1 from "./robotsurgery.jpg";
 import imgd2 from "./internet-of-things-iot-istock-1201992144.jpg";
 import imgd3 from "./abstract-technology-background-blue-glowing_41981-259.avif";
 import imgd4 from "./electronic-engineering-1.jpg";
@@ -73,7 +72,6 @@ export const domains = [
     name: "Domain 1",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
     upper: "carousel-item active carousel-item-start",
-    image: img1,
     bg: imgd1,
     content: [
       [
@@ -96,7 +94,6 @@ export const domains = [
     name: "Domain 2",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
     upper: "carousel-item carousel-item-next carousel-item-start",
-    image: img1,
     bg: imgd2,
     content: [
       [
@@ -118,7 +115,6 @@ export const domains = [
     name: "Domain 3",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
     upper: "carousel-item",
-    image: img1,
     bg: imgd3,
     content: [
       [
@@ -140,7 +136,6 @@ export const domains = [
     name: "Domain 4",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
     upper: "carousel-item",
-    image: img1,
     bg: imgd4,
     content: [
       [
@@ -162,7 +157,6 @@ export const domains = [
     name: "Domain 5",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
     upper: "carousel-item",
-    image: img1,
     bg: imgd5,
     content: [
       [

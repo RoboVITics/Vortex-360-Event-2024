@@ -7,21 +7,19 @@ const DomainInfo = () => {
   const [title, setTitle] = useState("default");
   const [desp, setDesp] = useState("default");
   const [content, setContent] = useState([]);
-  const [img, setImg] = useState("default");
 
   useEffect(() => {
     const newd = domains.find((d) => parseInt(domainId) === d.id);
     setTitle(newd.name);
     setDesp(newd.desp);
     setContent(newd.content);
-    setImg(newd.image);
   }, [domainId]);
   return (
     <div class="domain-info">
       <header class="mb-5">
         <div className="head">
-          <img src={img} alt="" width="40px" />
           <h1 class=" fw-bold">{title}</h1>
+          <hr />
         </div>
         <p>{desp}</p>
       </header>
