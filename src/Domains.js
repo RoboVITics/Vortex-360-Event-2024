@@ -40,13 +40,12 @@ const Domains = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${domain.bg}) center/cover no-repeat`,
+                    background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${domain.bg}) center/cover no-repeat`,
                   }}
                 >
-                  <img src={domain.image} alt="" height="45px" />
                   <h2
                     style={{
-                      color: "black",
+                      color: "white",
                     }}
                   >
                     {domain.name}
@@ -56,15 +55,15 @@ const Domains = () => {
                     to={`/domain/${domain.id}`}
                     style={{
                       fontWeight: "bold",
-                      color: "black",
-                      fontSize: "20px",
+                      color: "white",
+                      fontSize: "18px",
                     }}
                   >
-                    Call to action
+                    More info
                     <img
-                      src="./right-thin-chevron-svgrepo-com.svg"
+                      src="./icons8-chevron-right-50.png"
                       alt=""
-                      height="20px"
+                      height="15px"
                     />
                   </Link>
                 </div>
