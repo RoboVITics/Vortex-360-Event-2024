@@ -7,6 +7,7 @@ import Prizes from "./Prizes";
 import FAQs from "./FAQs";
 import Contact from "./Contact";
 import React from "react";
+import Timer from "./Timer";
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
       <Sponsors />
       <Prizes />
       <FAQs />
+      <Timer/>
       <Contact />
     </div>
   );
