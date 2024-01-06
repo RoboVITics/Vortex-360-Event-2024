@@ -45,15 +45,12 @@
 .border-bottom {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     display: inline-block;
-    /* Ensures the border only spans the width of the text */
     padding-bottom: 5px;
-    /* Adjust the padding if needed */
 }
 
 #contact .section-title h2 .border-bottom {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
     padding-bottom: 5px;
-    /* Adjust the padding as needed */
 }
 
 #social-media .links a {
