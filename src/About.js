@@ -14,10 +14,8 @@ const About = () => {
         <h1 class="display-5 fw-bold text-body-emphasis">About US</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, modi
-            laborum quae sint soluta illo inventore ut ad et nesciunt
-            consequuntur delectus quia earum illum molestias, deserunt ipsa
-            nihil laudantium?
+            Vortex360 is a 72-hour designathon for enthusiastic CAD modellers and aspiring engineers who would like to excel in the field of robotics. 
+            Be it a student whos new to hackathons or an experienced designer, this is for you! Explore the various tracks and domains for the designathon, and the amazing prizes and knowledge you can gain!
           </p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button
