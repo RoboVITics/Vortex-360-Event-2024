@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./Timer.css"
-
-
-
+import "./Timer.css";
 
 const Timer = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    const eventDateTime = new Date("2023-12-29T12:00:00"); // year-month-date T time as HH:MM:SS formate
+    const eventDateTime = new Date("2023-12-29T12:00:00"); // year-month-date T time as HH:MM:SS format
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -28,45 +25,49 @@ const Timer = () => {
 
     const { days, hours, minutes, seconds } = getTimeDifference(eventDateTime, currentDateTime);
 
+    const closeTimer = () => {
+        let timer=document.getElementById("timer_bg");
+        timer.style.opacity=0;
+        timer.style.zIndex=-10;
+    };
 
 
     return (
         <>
-            {/* <h2>Current Time: {currentDateTime.toLocaleTimeString()}</h2>
-            <p>Event Date and Time: {eventDateTime.toLocaleString()}</p>
-            <p>Time Until Event:</p>
-            <p>{days} days, {hours} hours, {minutes} minutes, {seconds} seconds</p> */}
             <div id="timer_bg">
+                {/* Cancel Icon */}
+                <i className="cancel-icon" onClick={closeTimer}>
+                    X
+                </i>
+
                 <div id="title">Time till Vortex</div>
                 <div id="contain">
-
-                    <div class="timer_container">
-                        <div class="timer_label">Days</div>
-                        <div class="timer_time">
-                            <p class="timer_display">{days}</p>
+                    <div className="timer_container">
+                        <div className="timer_label">Days</div>
+                        <div className="timer_time">
+                            <p className="timer_display">{days}</p>
                         </div>
                     </div>
-                    <div class="timer_container">
-                        <div class="timer_label">Hours</div>
-                        <div class="timer_time">
-                            <p class="timer_display">{hours}</p>
+                    <div className="timer_container">
+                        <div className="timer_label">Hours</div>
+                        <div className="timer_time">
+                            <p className="timer_display">{hours}</p>
                         </div>
                     </div>
-                    <div class="timer_container">
-                        <div class="timer_label">Minutes</div>
-                        <div class="timer_time">
-                            <p class="timer_display">{minutes}</p>
+                    <div className="timer_container">
+                        <div className="timer_label">Minutes</div>
+                        <div className="timer_time">
+                            <p className="timer_display">{minutes}</p>
                         </div>
                     </div>
-                    <div class="timer_container">
-                        <div class="timer_label">Seconds</div>
-                        <div class="timer_time">
-                            <p class="timer_display">{seconds}</p>
+                    <div className="timer_container">
+                        <div className="timer_label">Seconds</div>
+                        <div className="timer_time">
+                            <p className="timer_display">{seconds}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </>
     );
 };
