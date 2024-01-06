@@ -40,7 +40,9 @@ const Contact = () => {
         <section id="contact" className="contact">
           <div className="container" data-aos="fade-up">
             <div className="section-title">
-              <h2>Contact Us</h2>
+              <h2>
+                <span class="border-bottom">Contact Us</span>
+              </h2>
             </div>
           </div>
           <div className="container" data-aos="fade-up">
