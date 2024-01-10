@@ -80,10 +80,6 @@ h2 {
   margin-top: 10%;
 }
 
-.sponsor img {
-  border-radius: 50%;
-}
-
 h5,
 h4 {
   color: #212529;
@@ -233,20 +229,30 @@ h2 {
   opacity: 0.8;
 }
 
-.sponsor img {
-  width: 250px;
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (max-width: 700px) {
-  .sponsor {
-    width: 50%;
+.sponsor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor img{
+  width: 80%
+}
+
+@media (max-width: 600px) {
+  /* .sponsor {
+    width: 60%;
     margin-left: 25%;
     overflow-x: hidden;
-  }
-
-  .sponsor img {
-    width: 180px;
-  }
+  } */
 
   .head hr {
     width: 40%;

@@ -1,7 +1,7 @@
-import simg1 from "./sponsor-img/autodesk.png";
-import simg2 from "./sponsor-img/schneider.png";
-import simg3 from "./sponsor-img/texas-instruments.png";
-import simg4 from "./sponsor-img/siemens.png";
+import simg1 from "./autodesk_new.png";
+// import simg2 from "./sponsor-img/schneider.png";
+// import simg3 from "./sponsor-img/texas-instruments.png";
+// import simg4 from "./sponsor-img/siemens.png";
 
 
 
@@ -91,9 +91,9 @@ export const prizes = [
 export const sponsors = [
   {
     id: 1, icon: simg1
-  },
-  { id: 2, icon: simg2 },
-  { id: 2, icon: simg3 },
-  { id: 2, icon: simg4 },
+  }
+  // { id: 2, icon: simg2 },
+  // { id: 2, icon: simg3 },
+  // { id: 2, icon: simg4 },
 
 ];

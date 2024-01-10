@@ -9,7 +9,7 @@ const Sponsors = () => {
       <div class="container marketing">
         <div class="row">
           {sponsors.map((s) => (
-            <div key={s.id} class="col-6 mt-sm-3 mt-4 mx-0 sponsor">
+            <div key={s.id} class="col-6 mt-sm-3 mt-4 mb-3 mx-0 sponsor">
               <img src={s.icon} alt="" />
             </div>
           ))}
