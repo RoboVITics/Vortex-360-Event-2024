@@ -1,15 +1,12 @@
 #main {
     display: flex;
-    width: 100%;
     justify-content: space-evenly;
     padding-left: 11rem;
 }
 
 #leftContact,
 #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    flex-grow: 1;
 }
 
 .container {
@@ -26,5 +23,143 @@
 }
 
 #contact {
-    width: 60%;
+    margin-top: 20px;
+}
+
+#contact .section-title,
+#contact .col-lg-8 {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contact-person {
+    margin-bottom: 2rem;
+}
+
+.border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#contact .section-title h2 .border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    padding-bottom: 5px;
+}
+
+#social-media .links a {
+    margin-right: 0.1rem;
+    display: inline-block;
+}
+
+.php-email-form {
+    margin-top: 100px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.php-email-form button {
+    background-color: #800080;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.php-email-form button:hover {
+    background-color: #5a005a;
+}
+
+#social-media {
+    margin-bottom: 2rem;
+}
+
+#social-media .links a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+}
+
+@media (max-width: 768px) {
+    #main {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    #leftContact {
+        width: 100%;
+    }
+
+    .php-email-form {
+        max-width: none;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1246px) {
+    #social-media .links {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    #social-media .links a {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    .col-lg-8 {
+        order: 2;
+    }
+}
+
+@media (max-width: 1171px) and (min-width: 987px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #social-media .links {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+
+    .contact-person {
+        margin-bottom: 2rem;
+    }
+
+    .col-lg-8 {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar .nav-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 375px) and (max-height: 812px),
+(max-width: 360px) and (max-height: 800px) {
+    #social-media .links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #social-media .links a {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
