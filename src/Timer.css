@@ -9,6 +9,7 @@
 #timer_bg {
   position: fixed;
   bottom: 2rem;
+  left: 1rem;
   /* right: 2rem; */
   display: flex;
   flex-direction: column;
@@ -101,5 +102,11 @@
 
   .timer_display {
     font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1192px){
+  #timer_bg{
+    width: 33%;
   }
 }

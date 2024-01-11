@@ -3,7 +3,7 @@ import "./Timer.css";
 
 const Timer = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    const eventDateTime = new Date("2023-12-29T12:00:00"); // year-month-date T time as HH:MM:SS format
+    const eventDateTime = new Date("2024-01-10T23:00:00"); // year-month-date T time as HH:MM:SS format
 
     useEffect(() => {
         const intervalId = setInterval(() => {
