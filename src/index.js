@@ -7,9 +7,7 @@ import { BrowserRouter } from "react-router-dom/dist";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <div class="gradient-background">
-      <App />
-    </div>
+    <App />
   </BrowserRouter>
 );
 

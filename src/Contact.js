@@ -1,5 +1,4 @@
 import React from "react";
-
 const Contact = () => {
   return (
     <div id="contact">
@@ -9,8 +8,7 @@ const Contact = () => {
       <div class="container">
         <footer class="py-5">
           <div class="row">
-            <div class="col-md-6">
-              <h4 class="fw-bold">Social Media</h4>
+            <div className="col-3">
               <div className="links">
                 <a href="#">
                   <img src="./youtube.svg" alt="" />
@@ -27,34 +25,11 @@ const Contact = () => {
                 <a href="#">
                   <img src="./twitter-x.svg" alt="" />
                 </a>
+
+                <a href="#">
+                  <img src="./twitter-x.svg" alt="" />
+                </a>
               </div>
-            </div>
-            <div class="col-md-6 mt-md-0 mt-5">
-              <form>
-                <h4 class="fw-bold">Subscribe to our newsletter</h4>
-                <p>Monthly digest of what's new and exciting from us.</p>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                  <label for="newsletter1" class="visually-hidden">
-                    Email address
-                  </label>
-                  <input
-                    id="newsletter1"
-                    type="text"
-                    class="form-control"
-                    placeholder="Email address"
-                  />
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    style={{
-                      backgroundColor: "#212529",
-                      border: "none",
-                    }}
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
 
