@@ -1,7 +1,6 @@
 #main {
     display: flex;
     justify-content: space-evenly;
-    padding-left: 11rem;
 }
 
 #leftContact,
@@ -80,6 +79,15 @@
     background-color: #5a005a;
 }
 
+.form {
+    position: absolute;
+    z-index: 999;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -100%);
+}
+
 #social-media {
     margin-bottom: 2rem;
 }
@@ -89,6 +97,7 @@
     height: 30px;
     margin: 0 8px;
 }
+
 
 @media (max-width: 768px) {
     #main {
@@ -124,6 +133,8 @@
         order: 2;
     }
 }
+
+
 
 @media (max-width: 1171px) and (min-width: 987px) {
     .contact-details {
@@ -161,5 +172,161 @@
     #social-media .links a {
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
+    }
+}
+
+.card {
+        min-width: 360px;
+        height: fit-content;
+        background-color: rgb(238, 238, 238);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 25px;
+        gap: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+        flex-direction: row;
+        width: 30%;
+        justify-content: space-around;
+        margin-bottom: 1.5rem;
+        overflow-x: hidden;
+}
+
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+/* instagram*/
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+}
+
+/* twitter*/
+.containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+}
+
+/* linkdin*/
+.containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+}
+
+/* Whatsapp*/
+.containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.contact_newimg {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.contact-newimg:hover {
+    transform: scale(1.1);
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+.newform{
+    width: 16rem;
+    font-size: 1rem;
+    margin-bottom: 1.0rem;
+}
+
+.contact-person {
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.contact-newimg {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.contact-newimg:hover {
+    transform: scale(1.1);
+}
+
+#social-media {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#social-media .links {
+    display: flex;
+    justify-content: center;
+}
+
+#social-media .links a {
+    margin: 0 10px;
+}
+
+#social-media .links a img {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    #social-media .links {
+        flex-wrap: wrap;
+    }
+
+    #social-media .links a {
+        margin: 5px;
     }
 }
