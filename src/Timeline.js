@@ -10,7 +10,7 @@ const Timeline = () => {
     
     timelineGif,
     gff,
-    "image3.jpg",
+    
     // Add more image addresses as needed
   ];
 
@@ -42,7 +42,7 @@ const Timeline = () => {
       <div className="container px-4 py-5">
         <h2 className="border-bottom">Timeline</h2>
       </div>
-      img src={imageAddresses[currentIndex]} alt={imageAddresses[currentIndex]}
+      <img src={imageAddresses[currentIndex]} alt={imageAddresses[currentIndex]}/>
     </div>
   );
 };
