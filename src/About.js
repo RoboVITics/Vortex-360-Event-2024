@@ -6,7 +6,7 @@ const About = () => {
       <div class="px-4 py-5 my-2 text-center">
         <img
           class="d-block mx-auto mb-4"
-          src="./309248737_420314180163942_8494420366976207538_n-removebg-preview.png"
+          src="./Screenshot_2023-12-27_150445-removebg-preview.png"
           alt=""
           width="300"
           height="250"

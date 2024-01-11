@@ -13,7 +13,7 @@ body {
   gap: 1rem;
 }
 .links img {
-  height: 1.5rem;
+  height: 5rem;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -56,9 +56,13 @@ h2 {
 .carousel-item .container {
   margin-top: 10%;
 }
-.sponsor img {
-  border-radius: 50%;
+.marketing-1 {
+  margin-left: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
+
 h5,
 h4 {
   color: #212529;
@@ -231,10 +235,243 @@ h2 {
     height: 100%;
   }
 }
+@media (max-width: 759px) {
+  .head {
+    flex-direction: column;
+  }
+}
+.head {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  width: 30%;
+  margin-left: 35%;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links img {
+  height: 1.5rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.gradient-background {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #8594e4, #6643b5, #430f58);
+  background-size: 180% 180%;
+  animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav li {
+  padding-left: 3.5rem;
+}
+
+h2 {
+  color: #212529;
+}
+
+.feature-icon {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+}
+
+.feature a {
+  color: #212529;
+  text-decoration-color: #212529;
+}
+
+.carousel {
+  height: 27rem;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 27rem;
+}
+
+.carousel-item .container {
+  margin-top: 10%;
+}
+
+h5,
+h4 {
+  color: #212529;
+  font-weight: bold;
+}
+
+.nav li a {
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+h2 {
+  padding-top: 1rem;
+}
+
+.cardcontainer {
+  height: 300px;
+  width: 300px;
+  perspective: 600px;
+}
+
+.cardcontainer:hover > .flip {
+  transform: rotateY(180deg);
+}
+
+.flip {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
+}
+
+.front,
+.back {
+  background-color: #212529;
+  color: white;
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.faqs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.domain-info {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.domain-info header {
+  text-align: center;
+  padding: 20px;
+}
+
+.domain-info header h1 {
+  color: black;
+}
+
+.domain-info header p {
+  width: 50%;
+  margin-left: 25%;
+  color: white;
+}
+
+.domain-info section {
+  padding: 20px;
+  background-color: #212529;
+  border-radius: 20px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0);
+}
+
+.domain-sections {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.domain-info h2 {
+  color: white;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.domain-info p {
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .domain-info {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 830px) {
+  .domain-info section {
+    padding: 10px;
+    width: 70%;
+  }
+
+  .domain-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .domain-info {
+    height: 100%;
+  }
+}
+
 .head {
   padding-top: 2rem;
   margin-bottom: 2rem;
 }
+
 .head hr {
   position: relative;
   border: none;
@@ -244,18 +481,31 @@ h2 {
   background: #000;
   opacity: 0.8;
 }
-.sponsor img {
-  width: 250px;
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-@media (max-width: 700px) {
-  .sponsor {
-    width: 50%;
+
+.sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor img {
+  width: 80%;
+}
+
+@media (max-width: 600px) {
+  /* .sponsor {
+    width: 60%;
     margin-left: 25%;
     overflow-x: hidden;
-  }
-  .sponsor img {
-    width: 180px;
-  }
+  } */
+
   .head hr {
     width: 40%;
     margin-left: 30%;

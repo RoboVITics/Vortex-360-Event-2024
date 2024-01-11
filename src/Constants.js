@@ -3,10 +3,12 @@ import imgd2 from "./internet-of-things-iot-istock-1201992144.jpg";
 import imgd3 from "./abstract-technology-background-blue-glowing_41981-259.avif";
 import imgd4 from "./electronic-engineering-1.jpg";
 import imgd5 from "./gff.jpg";
-import simg1 from "./larsen.png";
-import simg2 from "./siemens.png";
-import simg3 from "./shneider.png";
-import simg4 from "./autodesk.png";
+import simg1 from "./autodesk_new.png";
+// import simg2 from "./sponsor-img/schneider.png";
+// import simg3 from "./sponsor-img/texas-instruments.png";
+// import simg4 from "./sponsor-img/siemens.png";
+
+
 
 export const events = [
   {
@@ -17,7 +19,6 @@ export const events = [
     upper: "carousel-item active carousel-item-start",
     image: "https://picsum.photos/2000/480",
   },
-
   {
     id: 2,
     name: "Event 2",
@@ -49,8 +50,9 @@ export const buttons = [
   { id: 2, slide: "1", class: "active", label: "Slide 2", current: "true" },
   { id: 3, slide: "2", class: "", label: "Slide 3", current: "" },
   { id: 4, slide: "3", class: "", label: "Slide 4", current: "" },
-  { id: 5, slide: "4", class: "", label: "Slide 5", current: "" },
 ];
+
+
 export const prizes = [
   {
     id: 1,
@@ -180,9 +182,15 @@ export const domains = [
   },
 ];
 
+
+
 export const sponsors = [
-  { id: 1, icon: simg1 },
-  { id: 2, icon: simg2 },
-  { id: 3, icon: simg3 },
-  { id: 4, icon: simg4 },
+  {
+    id: 1, icon: simg1
+  }
+  // { id: 2, icon: simg2 },
+  // { id: 2, icon: simg3 },
+  // { id: 2, icon: simg4 },
+
 ];
+

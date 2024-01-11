@@ -25,10 +25,6 @@ const Contact = () => {
                 <a href="#">
                   <img src="./twitter-x.svg" alt="" />
                 </a>
-
-                <a href="#">
-                  <img src="./twitter-x.svg" alt="" />
-                </a>
               </div>
             </div>
           </div>
