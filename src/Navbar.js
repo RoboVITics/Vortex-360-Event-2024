@@ -4,13 +4,10 @@ const Navbar = () => {
   return (
     <div id="home">
       <nav
-        class="navbar navbar-expand-xl navbar-dark fixed-top bg-dark"
+        class="navbar navbar-expand-lg navbar-dark fixed-top bg-none"
         id="home"
       >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./Robovitics logo 1.png" alt="" height="30px" />
-          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -39,6 +36,14 @@ const Navbar = () => {
                   Domains
                 </Link>
               </li>
+
+              <div className="mainIcon">
+                <div className="mainLogo">
+                  <a class="navbar-brand" href="#">
+                    <img src="./Robovitics logo 1.png" alt="" height="30px" />
+                  </a>
+                </div>
+              </div>
               <li class="nav-item">
                 <Link to="#timeline" class="link">
                   Timeline
@@ -50,11 +55,6 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link to="#faqs" class="link">
-                  FAQs
-                </Link>
-              </li>
-              <li class="nav-item">
                 <Link to="#contact" class="link">
                   Contact US
                 </Link>
@@ -63,6 +63,15 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <div className="pls">
+        <div className="mainIcon2">
+          <div className="mainLogo2">
+            <a class="navbar-brand" href="#">
+              <img src="./Robovitics logo 1.png" alt="" height="30px" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

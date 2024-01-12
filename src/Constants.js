@@ -1,3 +1,8 @@
+import imgd1 from "./robotsurgery.jpg";
+import imgd2 from "./internet-of-things-iot-istock-1201992144.jpg";
+import imgd3 from "./abstract-technology-background-blue-glowing_41981-259.avif";
+import imgd4 from "./electronic-engineering-1.jpg";
+import imgd5 from "./gff.jpg";
 import simg1 from "./autodesk_new.png";
 // import simg2 from "./sponsor-img/schneider.png";
 // import simg3 from "./sponsor-img/texas-instruments.png";
@@ -46,26 +51,7 @@ export const buttons = [
   { id: 3, slide: "2", class: "", label: "Slide 3", current: "" },
   { id: 4, slide: "3", class: "", label: "Slide 4", current: "" },
 ];
-export const domains = [
-  {
-    id: 1,
-    dom: "Domain 1",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
-  },
-  {
-    id: 2,
-    dom: "Domain 2",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
-  },
-  {
-    id: 3,
-    dom: "Domain 3",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    icon: "./tools.svg",
-  },
-];
+
 
 export const prizes = [
   {
@@ -87,6 +73,116 @@ export const prizes = [
     icon: "./award_2058521.png",
   },
 ];
+export const domains = [
+  {
+    id: 1,
+    name: "Domain 1",
+    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    upper: "carousel-item active carousel-item-start",
+    bg: imgd1,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
+  },
+
+  {
+    id: 2,
+    name: "Domain 2",
+    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    upper: "carousel-item carousel-item-next carousel-item-start",
+    bg: imgd2,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
+  },
+  {
+    id: 3,
+    name: "Domain 3",
+    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    upper: "carousel-item",
+    bg: imgd3,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
+  },
+  {
+    id: 4,
+    name: "Domain 4",
+    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    upper: "carousel-item",
+    bg: imgd4,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
+  },
+  {
+    id: 5,
+    name: "Domain 5",
+    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    upper: "carousel-item",
+    bg: imgd5,
+    content: [
+      [
+        "Subhead1",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead2",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+      [
+        "Subhead3",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, inventore.",
+      ],
+    ],
+  },
+];
+
+
 
 export const sponsors = [
   {
@@ -97,3 +193,4 @@ export const sponsors = [
   // { id: 2, icon: simg4 },
 
 ];
+
