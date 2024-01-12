@@ -8,7 +8,7 @@ const Timeline = () => {
 
   const imageAddresses = [
     
-    timelineGif,
+    gff,
     gff,
     
     // Add more image addresses as needed
