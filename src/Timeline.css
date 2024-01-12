@@ -1,0 +1,10 @@
+#timeline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#timeline img{
+    width: 50%;
+}
