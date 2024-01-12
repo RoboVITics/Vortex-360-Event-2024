@@ -7,11 +7,13 @@ import Prizes from "./Prizes";
 import FAQs from "./FAQs";
 import Contact from "./Contact";
 import React from "react";
+import LandingPage from "./LandingPage";
 
 const Main = () => {
   return (
     <div>
       <Navbar />
+      <LandingPage />
       <About />
       <Domains />
       <Timeline />
