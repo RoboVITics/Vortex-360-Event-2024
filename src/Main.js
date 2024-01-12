@@ -8,6 +8,7 @@ import FAQs from "./FAQs";
 import Contact from "./Contact";
 import React from "react";
 import LandingPage from "./LandingPage";
+import Timer from "./Timer";
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
       <Sponsors />
       <Prizes />
       <FAQs />
+      <Timer />
       <Contact />
     </div>
   );
