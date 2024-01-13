@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"; // Import GLTFLoader
 
 const LandingPage = () => {
+  const threeContainerRef = useRef(null);
   useEffect(() => {
     // Set up scene
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color("#0c062d");
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
@@ -19,13 +21,14 @@ const LandingPage = () => {
     // Load glTF model
     const loader = new GLTFLoader();
     loader.load(
-      "/bmw_m3_e46/scene.gltf",
+      "/skull_salazar_downloadable/scene.gltf",
       (gltf) => {
         const model = gltf.scene;
+        model.scale.set(2, 2, 2);
         scene.add(model);
 
         // Set camera position
-        camera.position.set(0, 2, 5);
+        camera.position.set(0, 2 * 2, 5 * 2);
 
         // Add ambient light
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -45,7 +48,10 @@ const LandingPage = () => {
 
           renderer.render(scene, camera);
         };
-
+        renderer.setSize(
+          threeContainerRef.current.clientWidth,
+          threeContainerRef.current.clientHeight
+        );
         // Handle window resize
         const handleResize = () => {
           const newWidth = window.innerWidth;
@@ -77,7 +83,8 @@ const LandingPage = () => {
   return (
     <div
       id="three-container"
-      style={{ backgroundColor: "#0c062d", width: "200px" }}
+      ref={threeContainerRef} // Attach ref to the container
+      style={{ backgroundColor: "#0c062d", width: "100%" }} // Set width to 100% of viewport
     ></div>
   );
 };
