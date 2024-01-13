@@ -39,9 +39,7 @@ const Timeline = () => {
 
   return (
     <div id="timeline">
-      <div className="container px-4 py-5">
-        <h2 className="border-bottom">Timeline</h2>
-      </div>
+        <h2>Timeline</h2>
       <img src={imageAddresses[currentIndex]} alt={imageAddresses[currentIndex]}/>
     </div>
   );

@@ -26,11 +26,6 @@ code {
   width: 100%;
   gap: 2.5rem;
 }
-h2 {
-  color: wheat;
-  text-align: center;
-  margin-bottom: 2rem;
-}
 .nav-item {
   position: relative;
 }
@@ -56,11 +51,15 @@ h2 {
 .carousel-item .container {
   margin-top: 10%;
 }
-.marketing-1 {
-  margin-left: 130px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
+
+h2 {
+  text-align: center;
+  color: #F8F4F9;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width:100%;
 }
 
 h5,
@@ -132,9 +131,7 @@ h4 {
   margin-right: 30px;
   margin-bottom: 12px;
 }
-h2 {
-  padding-top: 1rem;
-}
+
 .cardcontainer {
   height: 300px;
   width: 300px;
@@ -301,10 +298,6 @@ nav li {
   padding-left: 3.5rem;
 }
 
-h2 {
-  color: #212529;
-}
-
 .feature-icon {
   background-color: white;
   width: 4rem;
@@ -346,10 +339,6 @@ h4 {
 .link {
   text-decoration: none;
   color: white;
-}
-
-h2 {
-  padding-top: 1rem;
 }
 
 .cardcontainer {
@@ -485,8 +474,11 @@ h2 {
 .row {
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   width: 100%;
+  padding-left:48px;
+  padding-right:48px;
 }
 
 .sponsor {
