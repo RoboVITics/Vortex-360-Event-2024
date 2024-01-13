@@ -10,6 +10,9 @@
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .text-center {
@@ -45,6 +48,7 @@
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     display: inline-block;
     padding-bottom: 5px;
+    text-decoration: none!important;
 }
 
 #contact .section-title h2 .border-bottom {

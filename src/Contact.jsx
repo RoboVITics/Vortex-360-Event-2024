@@ -55,13 +55,9 @@ const Contact = () => {
   <main id="main">
     <div id="leftContact">
       <section id="contact" className="contact">
-        <div className="container" data-aos="fade-up">
           <div className="section-title">
-            <h2>
-              <span className="border-bottom">Contact Us</span>
-            </h2>
+            <h2>Contact Us</h2>
           </div>
-        </div>
         <div className="container" data-aos="fade-up">
           <div className="contact-details">
             <div className="col-lg-6 mt-3 newform">
