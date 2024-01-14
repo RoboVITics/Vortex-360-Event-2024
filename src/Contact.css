@@ -10,6 +10,9 @@
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .text-center {
@@ -45,6 +48,7 @@
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     display: inline-block;
     padding-bottom: 5px;
+    text-decoration: none!important;
 }
 
 #contact .section-title h2 .border-bottom {
@@ -178,7 +182,7 @@
 .card {
         min-width: 360px;
         height: fit-content;
-        background-color: rgb(238, 238, 238);
+        background-color: transparent;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -224,6 +228,11 @@
 /* Whatsapp*/
 .containerFour:hover {
     background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.containerFive:hover {
+    background-color: #ff0000b4;
     transition-duration: .3s;
 }
 

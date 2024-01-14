@@ -11,7 +11,7 @@ const About = () => {
           width="300"
           height="250"
         />
-        <h1 class="display-5 fw-bold text-body-emphasis">About US</h1>
+        <h2>About US</h2>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, modi

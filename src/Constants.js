@@ -8,8 +8,6 @@ import simg1 from "./autodesk_new.png";
 // import simg3 from "./sponsor-img/texas-instruments.png";
 // import simg4 from "./sponsor-img/siemens.png";
 
-
-
 export const events = [
   {
     id: 1,
@@ -50,8 +48,8 @@ export const buttons = [
   { id: 2, slide: "1", class: "active", label: "Slide 2", current: "true" },
   { id: 3, slide: "2", class: "", label: "Slide 3", current: "" },
   { id: 4, slide: "3", class: "", label: "Slide 4", current: "" },
+  { id: 5, slide: "4", class: "", label: "Slide 5", current: "" },
 ];
-
 
 export const prizes = [
   {
@@ -182,15 +180,12 @@ export const domains = [
   },
 ];
 
-
-
 export const sponsors = [
   {
-    id: 1, icon: simg1
-  }
+    id: 1,
+    icon: simg1,
+  },
   // { id: 2, icon: simg2 },
   // { id: 2, icon: simg3 },
   // { id: 2, icon: simg4 },
-
 ];
-
