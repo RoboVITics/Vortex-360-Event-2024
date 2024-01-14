@@ -8,6 +8,7 @@ import FAQs from "./FAQs";
 import Contact from "./Contact";
 import React from "react";
 import Timer from "./Timer";
+import Mouse from "./Mouse";
 
 const Main = () => {
   return (
@@ -21,6 +22,7 @@ const Main = () => {
       <FAQs />
       <Timer/>
       <Contact />
+      <Mouse/>
     </div>
   );
 };
