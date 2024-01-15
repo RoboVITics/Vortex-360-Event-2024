@@ -1,118 +1,287 @@
-import React, { useState, useEffect } from "react";
-import "./Timer.css";
-import clockImg from "./clock-solid.svg";
+import React, { useEffect, useState } from 'react';
+import './Timer.css'; // Make sure to create a CSS file for styling
 
 const Timer = () => {
-    const [currentDateTime, setCurrentDateTime] = useState(new Date());
-    const eventDateTime = new Date("2024-01-10T23:00:00"); // year-month-date T time as HH:MM:SS format
+    const [targetDate, setTargetDate] = useState(() => {
+        const now = new Date();
+        now.setHours(now.getHours() + 5); // Set the target date to 5 hours from now
+        now.setMinutes(now.getMinutes() + 32); // Add 32 minutes
+        now.setSeconds(now.getSeconds() + 12); // Add 12 seconds
+        now.setDate(now.getDate() + 10); // Add 4 days
+        return now;
+    });
+    const [isComplete, setIsComplete] = useState(false);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentDateTime(new Date());
+        const countdownTimer = setInterval(() => {
+            const updatedComplete = updateAllSegments();
+            setIsComplete(updatedComplete);
+
+            if (updatedComplete) {
+                clearInterval(countdownTimer);
+            }
         }, 1000);
 
-        return () => clearInterval(intervalId);
-    }, []);
+        return () => {
+            clearInterval(countdownTimer);
+        };
+    }, []); // Run only once on component mount
 
-    const getTimeDifference = (eventDateTime, currentDateTime) => {
-        const timeDiff = eventDateTime - currentDateTime;
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    function getTimeSegmentElements(segmentElement) {
+        const segmentDisplay = segmentElement.querySelector(
+            '.segment-display'
+        );
+        const segmentDisplayTop = segmentDisplay.querySelector(
+            '.segment-display__top'
+        );
+        const segmentDisplayBottom = segmentDisplay.querySelector(
+            '.segment-display__bottom'
+        );
 
-        return { days, hours, minutes, seconds };
+        const segmentOverlay = segmentDisplay.querySelector(
+            '.segment-overlay'
+        );
+        const segmentOverlayTop = segmentOverlay.querySelector(
+            '.segment-overlay__top'
+        );
+        const segmentOverlayBottom = segmentOverlay.querySelector(
+            '.segment-overlay__bottom'
+        );
+
+        return {
+            segmentDisplayTop,
+            segmentDisplayBottom,
+            segmentOverlay,
+            segmentOverlayTop,
+            segmentOverlayBottom,
+        };
+    }
+
+    function updateSegmentValues(
+        displayElement,
+        overlayElement,
+        value
+    ) {
+        displayElement.textContent = value;
+        overlayElement.textContent = value;
+    }
+
+    function updateTimeSegment(segmentElement, timeValue) {
+        const segmentElements =
+            getTimeSegmentElements(segmentElement);
+
+        if (
+            parseInt(
+                segmentElements.segmentDisplayTop.textContent,
+                10
+            ) === timeValue
+        ) {
+            return;
+        }
+
+        segmentElements.segmentOverlay.classList.add('flip');
+
+        updateSegmentValues(
+            segmentElements.segmentDisplayTop,
+            segmentElements.segmentOverlayBottom,
+            timeValue
+        );
+
+        function finishAnimation() {
+            segmentElements.segmentOverlay.classList.remove('flip');
+            updateSegmentValues(
+                segmentElements.segmentDisplayBottom,
+                segmentElements.segmentOverlayTop,
+                timeValue
+            );
+
+            segmentElements.segmentOverlay.removeEventListener(
+                'animationend',
+                finishAnimation
+            );
+        }
+
+        segmentElements.segmentOverlay.addEventListener(
+            'animationend',
+            finishAnimation
+        );
+    }
+
+    function updateTimeSection(sectionID, timeValue) {
+        const firstNumber = Math.floor(timeValue / 10) || 0;
+        const secondNumber = timeValue % 10 || 0;
+        const sectionElement = document.getElementById(sectionID);
+        const timeSegments =
+            sectionElement.querySelectorAll('.time-segment');
+
+        updateTimeSegment(timeSegments[0], firstNumber);
+        updateTimeSegment(timeSegments[1], secondNumber);
+    }
+
+    function getTimeRemaining(targetDateTime) {
+        const nowTime = Date.now();
+        const timeDifference = targetDateTime - nowTime;
+    
+        if (timeDifference <= 0) {
+            // Countdown is complete
+            return {
+                complete: true,
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            };
+        } else {
+            // Countdown is still in progress
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeDifference / 1000) % 60);
+    
+            return {
+                complete: false,
+                days,
+                hours,
+                minutes,
+                seconds,
+            };
+        }
+    }
+    
+    
+
+    const updateAllSegments = () => {
+        const timeRemainingBits = getTimeRemaining(
+            new Date(targetDate).getTime()
+        );
+    
+        updateTimeSection('days', timeRemainingBits.days);
+        updateTimeSection('hours', timeRemainingBits.hours);
+        updateTimeSection('minutes', timeRemainingBits.minutes);
+        updateTimeSection('seconds', timeRemainingBits.seconds);
+    
+        return timeRemainingBits.complete;
     };
 
-    const { days, hours, minutes, seconds } = getTimeDifference(eventDateTime, currentDateTime);
+    const [showTimer, setShowTimer] = useState(false);
 
-    let timer_btn = document.getElementById("timer_btn");
-    let timer_bg = document.getElementById("timer_bg");
-    let cancel_btn = document.getElementById("timer_btn");
-
-    const closeTimer = () => {
-        
-
-        timer_btn.classList.add("show_animation");
-        timer_bg.style.opacity = 0;
-        console.log("it works");
-
-        timer_btn.addEventListener("animationend", () => {
-            // Remove the show_animation class
-            timer_btn.classList.remove("show_animation");
-
-            // Set the final state (opacity: 1)
-            timer_btn.style.opacity = 1;
-        }, { once: true }); // The { once: true } option ensures that the event listener is only executed once
-
-
-        
+    const handleButtonClick = () => {
+        setShowTimer((prevShowTimer) => !prevShowTimer);
     };
-
-    // swap between button and timer below
-
-
-
-    const timer_show = () => {
-        // Add the show_animation class
-        timer_bg.classList.add("show_animation");
-
-        // Listen for the animationend event
-        timer_bg.addEventListener("animationend", () => {
-            // Remove the show_animation class
-            timer_bg.classList.remove("show_animation");
-
-            // Set the final state (opacity: 1)
-            timer_bg.style.opacity = 1;
-        }, { once: true }); // The { once: true } option ensures that the event listener is only executed once
-
-        timer_btn.style.opacity = 0;
-    };
-
- 
+    // button feature
 
     return (
         <>
-            <div id="timer_main">
-                <button id="timer_btn" onClick={timer_show}></button>
-                <div id="timer_bg">
-                    {/* Cancel Icon */}
-                    <i className="cancel-icon" onClick={closeTimer}>
-                        X
-                    </i>
-
-                    <div id="title">Time till Vortex</div>
-                    <div id="contain">
-                        <div className="timer_container">
-                            <div className="timer_label">Days</div>
-                            <div className="timer_time">
-                                <p className="timer_display">{days}</p>
-                            </div>
-                        </div>
-                        <div className="timer_container">
-                            <div className="timer_label">Hours</div>
-                            <div className="timer_time">
-                                <p className="timer_display">{hours}</p>
-                            </div>
-                        </div>
-                        <div className="timer_container">
-                            <div className="timer_label">Minutes</div>
-                            <div className="timer_time">
-                                <p className="timer_display">{minutes}</p>
-                            </div>
-                        </div>
-                        <div className="timer_container">
-                            <div className="timer_label">Seconds</div>
-                            <div className="timer_time">
-                                <p className="timer_display">{seconds}</p>
-                            </div>
+        <p onClick={handleButtonClick} id="timer_text">10days left for vortex</p>
+        <div  onClick={handleButtonClick} className={`countdown ${showTimer ? 'countdown_visible' : 'countdown_hidden'}`}>
+        
+        <div className="time-section" id="days">
+            <div className="time-group">
+                <div className="time-segment">
+                    <div className="segment-display">
+                        <div className="segment-display__top"></div>
+                        <div className="segment-display__bottom"></div>
+                        <div className="segment-overlay">
+                            <div className="segment-overlay__top"></div>
+                            <div className="segment-overlay__bottom"></div>
                         </div>
                     </div>
                 </div>
-
+                <div className="time-segment">
+                    <div className="segment-display">
+                        <div className="segment-display__top"></div>
+                        <div className="segment-display__bottom"></div>
+                        <div className="segment-overlay">
+                            <div className="segment-overlay__top"></div>
+                            <div className="segment-overlay__bottom"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </>
-    );
+            <p>Days</p>
+        </div>
+
+        <div className="time-section" id="hours">
+          <div className="time-group">
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom">       </div>
+                </div>
+              </div>
+            </div>
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Hours</p>
+        </div>
+    
+        <div className="time-section" id="minutes">
+          <div className="time-group">
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom"></div>
+                </div>
+              </div>
+            </div>
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Minutes</p>
+        </div>
+    
+        <div className="time-section" id="seconds">
+          <div className="time-group">
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom"></div>
+                </div>
+              </div>
+            </div>
+            <div className="time-segment">
+              <div className="segment-display">
+                <div className="segment-display__top"></div>
+                <div className="segment-display__bottom"></div>
+                <div className="segment-overlay">
+                  <div className="segment-overlay__top"></div>
+                  <div className="segment-overlay__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Seconds</p>
+        </div>
+      </div></>
+      );
 };
 
 export default Timer;
+
+

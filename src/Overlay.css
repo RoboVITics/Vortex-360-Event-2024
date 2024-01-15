@@ -2,10 +2,12 @@
     position: fixed;
     z-index: 9;
     opacity: 0.2;
-    height: 20vh;
+    height: 40vh;
     width: 100vw;
     bottom: 0;
     
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(239, 239, 239, 0.50) 48.11%, #D9D9D9 98.38%);
-filter: blur(2px);
+    border-radius: 100px 100px 0px 0px;
+    background: linear-gradient(180deg, rgba(119, 13, 168, 0.00) 0%, rgba(173, 0, 255, 0.39) 48.11%, #AD00FF 98.38%);
+    
+    filter: blur(2px);
 }
