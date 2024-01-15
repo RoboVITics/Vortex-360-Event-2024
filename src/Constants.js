@@ -8,47 +8,12 @@ import simg1 from "./autodesk_new.png";
 // import simg3 from "./sponsor-img/texas-instruments.png";
 // import simg4 from "./sponsor-img/siemens.png";
 
-export const events = [
-  {
-    id: 1,
-    name: "Event 1",
-    date: "14-01-2024",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    upper: "carousel-item active carousel-item-start",
-    image: "https://picsum.photos/2000/480",
-  },
-  {
-    id: 2,
-    name: "Event 2",
-    date: "15-01-2024",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    upper: "carousel-item carousel-item-next carousel-item-start",
-    image: "https://picsum.photos/2000/480",
-  },
-  {
-    id: 3,
-    name: "Event 3",
-    date: "16-01-2024",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    upper: "carousel-item",
-    image: "https://picsum.photos/2000/480",
-  },
-  {
-    id: 4,
-    name: "Event 4",
-    date: "17-01-2024",
-    desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
-    upper: "carousel-item",
-    image: "https://picsum.photos/2000/480",
-  },
-];
-
 export const buttons = [
-  { id: 1, slide: "0", class: "", label: "Slide 1", current: "" },
-  { id: 2, slide: "1", class: "active", label: "Slide 2", current: "true" },
-  { id: 3, slide: "2", class: "", label: "Slide 3", current: "" },
-  { id: 4, slide: "3", class: "", label: "Slide 4", current: "" },
-  { id: 5, slide: "4", class: "", label: "Slide 5", current: "" },
+  { id: 1, slide: "0", class: "active" },
+  { id: 2, slide: "1", class: "" },
+  { id: 3, slide: "2", class: "" },
+  { id: 4, slide: "3", class: "" },
+  { id: 5, slide: "4", class: "" },
 ];
 
 export const prizes = [
@@ -76,7 +41,7 @@ export const domains = [
     id: 1,
     name: "Domain 1",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
-    upper: "carousel-item active carousel-item-start",
+    upper: "carousel-item active",
     bg: imgd1,
     content: [
       [
@@ -98,7 +63,7 @@ export const domains = [
     id: 2,
     name: "Domain 2",
     desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
-    upper: "carousel-item carousel-item-next carousel-item-start",
+    upper: "carousel-item",
     bg: imgd2,
     content: [
       [

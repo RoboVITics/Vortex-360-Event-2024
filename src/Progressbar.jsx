@@ -1,13 +1,17 @@
+import { motion, animate, useInView, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { motion, animate, useInView, useAnimation } from "framer-motion";
-const LandingPage = () => {
+function Progressbar({ value }) {
   const threeContainerRef = useRef(null);
-  const inView = useInView(threeContainerRef, { once: true });
+  const progressRef = useRef(null);
   const controls = useAnimation();
-  if (inView) {
-    controls.start("visible");
+  let shouldRotate = true;
+  let animationId;
+  if (value === 100) {
+    setTimeout(() => {
+      controls.start("fading");
+    }, 500);
   }
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -35,13 +39,18 @@ const LandingPage = () => {
         directionalLight.position.set(0, 1, 0);
         scene.add(directionalLight);
         const animate = function () {
-          requestAnimationFrame(animate);
-          model.rotation.y += 0.01;
+          if (shouldRotate) {
+            animationId = requestAnimationFrame(animate);
 
-          renderer.render(scene, camera);
+            // Rotate the model
+            model.rotation.y += 0.02;
+
+            renderer.render(scene, camera);
+          }
         };
+
         renderer.setSize(
-          threeContainerRef.current.clientWidth - 20,
+          threeContainerRef.current.clientWidth,
           threeContainerRef.current.clientHeight
         );
         const handleResize = () => {
@@ -51,11 +60,15 @@ const LandingPage = () => {
           camera.aspect = newWidth / newHeight;
           camera.updateProjectionMatrix();
 
-          renderer.setSize(newWidth - 20, newHeight);
+          renderer.setSize(newWidth, newHeight);
         };
 
         window.addEventListener("resize", handleResize);
         animate();
+        setTimeout(() => {
+          shouldRotate = false;
+          cancelAnimationFrame(animationId);
+        }, 3500);
         return () => {
           window.removeEventListener("resize", handleResize);
           document
@@ -66,30 +79,50 @@ const LandingPage = () => {
       undefined
     );
   }, []);
-
   return (
     <motion.div
-      id="three-container"
-      ref={threeContainerRef}
-      style={{
-        backgroundColor: "#000",
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "-230px",
-        paddingRight: "0px",
-      }}
+      className="progressbar-container"
+      ref={progressRef}
       variants={{
-        hidden: { scale: 0.6 },
-        visible: { scale: 1 },
+        fading: { opacity: 0 },
       }}
-      initial="hidden"
+      initial={{
+        opacity: 1,
+      }}
       animate={controls}
-      transition={{ duration: 2 }}
-    ></motion.div>
+      transition={{ duration: 1 }}
+    >
+      <div
+        id="three-container"
+        ref={threeContainerRef}
+        style={{
+          backgroundColor: "#000",
+          width: "100%",
+          marginTop: "-390px",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="progressbar">
+          <motion.div
+            className="bar"
+            animate={{
+              width: `${value}%`,
+            }}
+            transition={{
+              ease: "linear",
+            }}
+          />
+        </div>
+        <div className="percent">{value}%</div>
+      </div>
+    </motion.div>
   );
-};
+}
 
-export default LandingPage;
+export default Progressbar;
