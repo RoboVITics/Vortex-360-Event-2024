@@ -6,20 +6,44 @@
   margin: 0;
 }
 
-#timer_bg {
+#timer_btn{
+  position: absolute;
+  right: 5rem;
+  top: 5rem;
+  min-height: 4rem;
+  min-width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./clock-solid.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+} 
+
+#timer_main{
   position: fixed;
-  bottom: 2rem;
-  left: 1rem;
+  top: 6rem;
+  right: 1rem;
+
+}
+#timer_bg {
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  top: 8rem;
+  right: 9rem;
   /* right: 2rem; */
   display: flex;
   flex-direction: column;
-  color: #000000;
+  color: #ffffff;
   width: 25%;
   height: fit-content;
   padding: 1.5% 0.5%;
   flex-shrink: 0;
   border-radius: 59px;
-  background: #D9D9D9;
+  background: #d9d9d978;
 }
 
 #contain {
@@ -54,7 +78,7 @@
 }
 
 .timer_label {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
@@ -78,6 +102,37 @@
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 0px 5px;
+}
+
+@keyframes ShowAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+   
+  }
+}
+
+@keyframes hideAnimation{
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+   
+  }
+}
+
+
+.show_animation{
+  animation: ShowAnimation 2s;
+}
+
+.hide_animation{
+  animation: hideAnimation 2s;
 }
 
 @media only screen and (max-width: 768px) {

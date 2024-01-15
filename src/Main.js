@@ -10,6 +10,7 @@ import React from "react";
 import LandingPage from "./LandingPage";
 import Timer from "./Timer";
 import Mouse from "./Mouse";
+import Overlay from "./Overlay";
 
 const Main = () => {
   return (
@@ -25,6 +26,7 @@ const Main = () => {
       <Timer />
       <Contact />
       <Mouse/>
+      <Overlay/>
     </div>
   );
 };
