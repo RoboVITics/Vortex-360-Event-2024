@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
-  background-color: #0c062d;
+  background-color: #000000;
 }
 .links {
   display: flex;

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 3px 3px 4px rgb(207, 159, 255);
+    margin-bottom: 10px;
+    margin-top: 50%;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #dddddd;
+    margin-top: 40px;
+}
+
+.left-section {
+    position: absolute;
+    width: 30%;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.left-section .text-section {
+    text-align: left;
+    padding-left: 4rem;
+}
+
+.heading {
+    text-shadow: 3px 3px 4px rgb(207, 159, 255);
+    margin-bottom: 10px;
+}
+
+.right-section {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    width: 2rem;
+    top: 30%;
+    left: 75%;
+    padding-right: 3rem;
+}
+
+.custom-btn {
+    font-size: 2.5rem;
+    border: none;
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    border-radius: 12px;
+}
+
+.custom-btn::before {
+    content: "Register";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0;
+    background-color: rgb(207, 159, 255);
+    transition: opacity 1s ease;
+}
+
+.custom-btn:hover {
+    transition: transform 0.5s ease, opacity 1s ease;
+}
+
+.custom-btn:hover::before {
+    opacity: 1;
+    background-color: rgb(207, 159, 255);
+}
+
+.text-section {
+    animation: popUp 3s ease;
+}
+
+@keyframes popUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(50%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
