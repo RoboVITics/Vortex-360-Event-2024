@@ -4,6 +4,9 @@ import imgd3 from "./abstract-technology-background-blue-glowing_41981-259.avif"
 import imgd4 from "./electronic-engineering-1.jpg";
 import imgd5 from "./gff.jpg";
 import simg1 from "./autodesk_new.png";
+import vect1 from "./Robot_arm.png";
+
+import vect2 from "./robot_vector.png";
 // import simg2 from "./sponsor-img/schneider.png";
 // import simg3 from "./sponsor-img/texas-instruments.png";
 // import simg4 from "./sponsor-img/siemens.png";
@@ -75,9 +78,10 @@ export const domains = [
   {
     id: 1,
     name: "Domain 1",
-    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    desp: "Domains would be released soon.",
     upper: "carousel-item active carousel-item-start",
-    bg: imgd1,
+    bg: vect1,
+    bg2:vect2,
     content: [
       [
         "Subhead1",
@@ -97,9 +101,11 @@ export const domains = [
   {
     id: 2,
     name: "Domain 2",
-    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    desp: "Domains would be released soon.",
     upper: "carousel-item carousel-item-next carousel-item-start",
-    bg: imgd2,
+    bg: vect1,
+    bg2:vect2,
+    
     content: [
       [
         "Subhead1",
@@ -118,9 +124,10 @@ export const domains = [
   {
     id: 3,
     name: "Domain 3",
-    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    desp: "Domains would be released soon.",
     upper: "carousel-item",
-    bg: imgd3,
+    bg: vect1,
+    bg2:vect2,
     content: [
       [
         "Subhead1",
@@ -139,9 +146,10 @@ export const domains = [
   {
     id: 4,
     name: "Domain 4",
-    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    desp: "Domains would be released soon.",
     upper: "carousel-item",
-    bg: imgd4,
+    bg: vect1,
+    bg2:vect2,
     content: [
       [
         "Subhead1",
@@ -160,9 +168,10 @@ export const domains = [
   {
     id: 5,
     name: "Domain 5",
-    desp: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error sed omnis soluta deserunt ipsum! Doloribus labore est dolores praesentium iste.",
+    desp: "Domains would be released soon.",
     upper: "carousel-item",
-    bg: imgd5,
+    bg: vect1,
+    bg2:vect2,
     content: [
       [
         "Subhead1",
