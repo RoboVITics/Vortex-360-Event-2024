@@ -7,7 +7,7 @@ const LandingPage = () => {
   useEffect(() => {
     // Set up scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color("#0c062d");
+    scene.background = new THREE.Color("#000000");
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
