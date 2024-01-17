@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import "../src/Timeline.css";
 import timelineGif from "./timeline_gif.gif"; // Import the images here
 import gff from "./gff.jpg";
@@ -42,10 +43,18 @@ const Timeline = () => {
   }, [currentIndex, imageAddresses.length, targetTimes]);
 
   return (
-    <div id="timeline">
+    <motion.div id="timeline"
+    ref={ref}
+        variants={{
+          hidden: { scale: 0.6 },
+          visible: { scale: 1 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.8 }}>
         <h2>Timeline</h2>
       <img src={imageAddresses[currentIndex]} alt={imageAddresses[currentIndex]}/>
-    </div>
+    </motion.div>
   );
 };
 
