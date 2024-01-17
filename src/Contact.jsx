@@ -70,7 +70,9 @@ const Contact = () => {
           <div className="container" data-aos="fade-up">
             <div className="section-title">
               <h2>
-                <span className="border-bottom">Contact Us</span>
+                <span className="border-bottom" ref={ref}>
+                  Contact Us
+                </span>
               </h2>
             </div>
           </div>
@@ -113,7 +115,6 @@ const Contact = () => {
         <center>
           <motion.div
             className="card"
-            ref={ref}
             variants={{
               hidden: { scale: 0.6 },
               visible: { scale: 1 },

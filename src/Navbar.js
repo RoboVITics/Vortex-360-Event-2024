@@ -1,9 +1,8 @@
 import { motion, useAnimation, useInView } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
-  const [value, setValue] = useState(0);
   const ref = useRef(null);
   const controls = useAnimation();
   useEffect(() => {
@@ -40,43 +39,19 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2">
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(0);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#home" class="link">
-                    Home
-                  </Link>
-                </button>
+                <Link to="#home" class="link">
+                  Home
+                </Link>
               </li>
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(20);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#about" class="link">
-                    About US
-                  </Link>
-                </button>
+                <Link to="#about" class="link">
+                  About US
+                </Link>
               </li>
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(34);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#domains" class="link">
-                    Domains
-                  </Link>
-                </button>
+                <Link to="#domains" class="link">
+                  Domains
+                </Link>
               </li>
 
               <div className="mainIcon">
@@ -87,43 +62,19 @@ const Navbar = () => {
                 </div>
               </div>
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(71);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#timeline" class="link">
-                    Timeline
-                  </Link>
-                </button>
+                <Link to="#timeline" class="link">
+                  Timeline
+                </Link>
               </li>
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(83);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#prizes" class="link">
-                    Prizes
-                  </Link>
-                </button>
+                <Link to="#prizes" class="link">
+                  Prizes
+                </Link>
               </li>
               <li class="nav-item">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setValue(100);
-                    console.log(value);
-                  }}
-                >
-                  <Link to="#contact" class="link">
-                    Contact US
-                  </Link>
-                </button>
+                <Link to="#contact" class="link">
+                  Contact US
+                </Link>
               </li>
             </ul>
           </div>
@@ -146,19 +97,6 @@ const Navbar = () => {
             </a>
           </div>
         </motion.div>
-      </div>
-      <br />
-      <br />
-      <div className="navbarProgress">
-        <motion.div
-          className="navbarProgressBar"
-          animate={{
-            width: `${value}%`,
-          }}
-          transition={{
-            ease: "linear",
-          }}
-        />
       </div>
     </div>
   );
