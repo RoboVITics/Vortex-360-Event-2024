@@ -9,9 +9,6 @@ const FAQs = () => {
   }
   return (
     <div id="faqs">
-      <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">FAQs</h2>
-      </div>
       <motion.div
         className="faqs"
         ref={ref}
@@ -102,6 +99,7 @@ const FAQs = () => {
               cumque aliquid omnis deleniti.
             </div>
           </div>
+        </div>
         </div>
       </motion.div>
     </div>
