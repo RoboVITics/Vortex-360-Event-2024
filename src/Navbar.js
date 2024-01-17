@@ -1,11 +1,28 @@
-import React from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+
 const Navbar = () => {
+  const ref = useRef(null);
+  const controls = useAnimation();
+  useEffect(() => {
+    setTimeout(() => {
+      controls.start("visible");
+    }, 2000);
+  });
   return (
     <div id="home">
-      <nav
+      <motion.nav
         class="navbar navbar-expand-lg navbar-dark fixed-top bg-none"
         id="home"
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0, y: -30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 1 }}
       >
         <div class="container-fluid">
           <button
@@ -40,7 +57,7 @@ const Navbar = () => {
               <div className="mainIcon">
                 <div className="mainLogo">
                   <a class="navbar-brand" href="#">
-                    <img src="./Robovitics logo 1.png" alt="" height="30px" />
+                    <img src="./Robovitics logo 1.png" alt="" height="40px" />
                   </a>
                 </div>
               </div>
@@ -62,15 +79,24 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </motion.nav>
       <div className="pls">
-        <div className="mainIcon2">
+        <motion.div
+          className="mainIcon2"
+          variants={{
+            hidden: { opacity: 0, y: -30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 1 }}
+        >
           <div className="mainLogo2">
             <a class="navbar-brand" href="#">
-              <img src="./Robovitics logo 1.png" alt="" height="30px" />
+              <img src="./Robovitics logo 1.png" alt="" height="40px" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

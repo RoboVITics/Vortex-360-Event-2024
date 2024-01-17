@@ -4,13 +4,17 @@ import timelineGif from "./timeline_gif.gif"; // Import the images here
 import gff from "./gff.jpg";
 
 const Timeline = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const controls = useAnimation();
+  if (inView) {
+    controls.start("visible");
+  }
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const imageAddresses = [
-    
     gff,
-    gff,
-    
+
     // Add more image addresses as needed
   ];
 

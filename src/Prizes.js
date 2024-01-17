@@ -1,3 +1,6 @@
+import React, { useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 // import React from "react";
 // import { prizes } from "./Constants";
 // const Prizes = () => {
@@ -18,11 +21,15 @@
 // };
 
 // export default Prizes;
-
-import React from "react";
 import "./Prizes.css";
 
 const Prizes = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const controls = useAnimation();
+  if (inView) {
+    controls.start("visible");
+  }
   const prizes = [
     {
       id: 1,
@@ -33,7 +40,17 @@ const Prizes = () => {
   return (
     <div id="prizes" className="prizes-container">
       <h2>Prizes</h2>
-      <div className="prizes-row">
+      <motion.div
+        className="prizes-row"
+        ref={ref}
+        variants={{
+          hidden: { scale: 0.6 },
+          visible: { scale: 1 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.8 }}
+      >
         <div className="prize-feature">
           <div className="prize-container">
             <img
@@ -42,15 +59,11 @@ const Prizes = () => {
               className="prize-image"
             />
             <div className="prize-details">
-              <p
-                className="prize-description"
-              >
-                Prize Pool of Rs 1,10,000
-              </p>
+              <p className="prize-description">Prize Pool of Rs 1,10,000</p>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
