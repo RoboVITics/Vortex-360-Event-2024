@@ -30,6 +30,7 @@ const Sponsors = () => {
             </div>
           ))}
         </div>
+        </div>
       </motion.div>
     </div>
   );
