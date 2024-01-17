@@ -46,7 +46,9 @@ const Domains = () => {
               key={domain.id}
               class={domain.upper}
               style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${domain.bg}) center/cover no-repeat`,
+                background: `url(${domain.bg}) center/cover no-repeat,url(${domain.bg2}) center/cover no-repeat`,
+                backgroundSize: 'auto 75%,auto 75%', // 80% height and width auto
+                backgroundPosition: '90% 120%,10% 120%', // Adjust these values based on your preference
               }}
             >
               <div

@@ -23,6 +23,8 @@ const FAQs = () => {
         animate={controls}
         transition={{ duration: 0.8 }}
       >
+        <h2>FAQs</h2>
+      <div className="faqs">
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">
