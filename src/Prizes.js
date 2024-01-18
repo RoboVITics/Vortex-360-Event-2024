@@ -65,7 +65,7 @@ const Prizes = () => {
             />
             <p
               style={{
-                marginLeft: "43.5%",
+                marginLeft: "2%",
               }}
               className="prize-description"
             >

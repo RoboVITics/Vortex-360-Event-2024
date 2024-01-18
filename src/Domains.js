@@ -14,10 +14,11 @@ const Domains = () => {
     controls.start("visible");
   }
   return (
-    <div id="domains" ref={ref}>
-      <h2>Domains</h2>
+    <div id="domains">
+      <h2 style={{ marginBottom: "-100px" }}>Domains</h2>
       <motion.div
         id="carouselDemo"
+        ref={ref}
         class="carousel slide"
         data-bs-ride="carousel"
         data-bs-touch="true"
@@ -47,8 +48,8 @@ const Domains = () => {
               class={domain.upper}
               style={{
                 background: `url(${domain.bg}) center/cover no-repeat,url(${domain.bg2}) center/cover no-repeat`,
-                backgroundSize: 'auto 75%,auto 75%', // 80% height and width auto
-                backgroundPosition: '90% 120%,10% 120%', // Adjust these values based on your preference
+                backgroundSize: "auto 75%,auto 75%", // 80% height and width auto
+                backgroundPosition: "90% 120%,10% 120%", // Adjust these values based on your preference
               }}
             >
               <div

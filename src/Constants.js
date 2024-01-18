@@ -45,9 +45,9 @@ export const domains = [
     name: "Domain 1",
     upper: "carousel-item active",
     desp: "Domains would be released soon.",
-    //upper: "carousel-item active carousel-item-start", 
+    //upper: "carousel-item active carousel-item-start",
     bg: vect1,
-    bg2:vect2,
+    bg2: vect2,
     content: [
       [
         "Subhead1",
@@ -71,7 +71,7 @@ export const domains = [
     upper: "carousel-item",
     //upper: "carousel-item carousel-item-next carousel-item-start",
     bg: vect1,
-    bg2:vect2,
+    bg2: vect2,
     content: [
       [
         "Subhead1",
@@ -93,7 +93,7 @@ export const domains = [
     desp: "Domains would be released soon.",
     upper: "carousel-item",
     bg: vect1,
-    bg2:vect2,
+    bg2: vect2,
     content: [
       [
         "Subhead1",
@@ -115,7 +115,7 @@ export const domains = [
     desp: "Domains would be released soon.",
     upper: "carousel-item",
     bg: vect1,
-    bg2:vect2,
+    bg2: vect2,
     content: [
       [
         "Subhead1",
@@ -137,7 +137,7 @@ export const domains = [
     desp: "Domains would be released soon.",
     upper: "carousel-item",
     bg: vect1,
-    bg2:vect2,
+    bg2: vect2,
     content: [
       [
         "Subhead1",

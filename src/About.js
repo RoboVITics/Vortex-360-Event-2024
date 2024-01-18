@@ -2,7 +2,7 @@ import React from "react";
 const About = () => {
   return (
     <div id="about">
-      <div class="px-4 py-5 my-2 text-center">
+      <div class="px-4 py-5 my-5 text-center">
         <img
           class="d-block mx-auto mb-4"
           src="./Screenshot_2023-12-27_150445-removebg-preview.png"

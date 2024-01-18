@@ -1,33 +1,30 @@
 * {
   box-sizing: border-box;
   z-index: 0;
-  
 }
 
-
 body {
-  background-color: #222;
+  background-color: #000;
   overflow-x: hidden;
 }
 
-#timer_text{
+#timer_text {
   position: fixed;
-  top:14rem;
+  top: 14rem;
   right: 4rem;
   z-index: 10000;
   font-weight: bold;
 }
-.countdown_visible{
+.countdown_visible {
   opacity: 1;
   z-index: 10;
 }
 
-.countdown_hidden{
+.countdown_hidden {
   opacity: 0;
   z-index: -10;
 }
 .countdown {
-  
   background: #ffffff3d;
   justify-content: center;
   margin: 100px auto;
@@ -42,7 +39,6 @@ body {
 }
 
 .time-section {
- 
   text-align: center;
   font-size: 30px;
   color: #fff;
