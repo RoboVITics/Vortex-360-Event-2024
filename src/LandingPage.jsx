@@ -101,7 +101,7 @@ const LandingPage = () => {
           animate={textAnimationControls}
         >
           <div className="text-section">
-            <h1 className="name">VORTEX 360</h1>
+            <h2 className="name">VORTEX 360</h2>
             <p className="description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
               modi laborum quae sint soluta illo inventore ut ad et nesciunt
@@ -140,7 +140,7 @@ const LandingPage = () => {
           initial={{ y: 50, opacity: 0 }}
           animate={textAnimationControls}
         >
-          <div className="text-section">
+          <div className="text-section-right">
             <h1 className="heading">Registration</h1>
             <button class="btn-53">
               <div class="original">Register</div>

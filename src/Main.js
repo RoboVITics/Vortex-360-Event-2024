@@ -17,7 +17,6 @@ const Main = () => {
     <div>
       <Navbar />
       <LandingPage />
-      <About />
       <Domains />
       <Timeline />
       <Sponsors />
@@ -25,7 +24,6 @@ const Main = () => {
       <FAQs />
       <Timer />
       <Contact />
-      <Mouse />
       <Overlay />
     </div>
   );

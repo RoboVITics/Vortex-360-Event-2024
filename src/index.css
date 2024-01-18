@@ -2,7 +2,6 @@ body {
   margin: 0;
   color: white;
   background-color: #000;
-  cursor: none;
 }
 
 #home {
@@ -17,7 +16,7 @@ code {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 /*.nav-item {
@@ -93,11 +92,8 @@ h4 {
   padding-right: 40px;
   clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
 }
-@media (max-width: 667px) {
-  .container {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
+#domains {
+  margin-top: 150px;
 }
 @media (max-width: 1000px) {
   .mainIcon {
@@ -106,7 +102,20 @@ h4 {
   .mainIcon2 {
     display: flex;
   }
+  #domains {
+    margin-top: 400px;
+  }
 }
+@media (max-width: 750px) {
+  .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  #domains {
+    margin-top: 500px;
+  }
+}
+
 .mainLogo a img {
   margin: -12px 10px 3px 10px;
 }
@@ -261,10 +270,6 @@ h4 {
     background-position: 0% 50%;
   }
 }*/
-
-nav li {
-  padding-left: 3.5rem;
-}
 
 .feature-icon {
   background-color: white;

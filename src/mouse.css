@@ -1,22 +1,17 @@
 .circle {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    background-color: black;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999; /* so that it stays on top of all other elements */
-  }
-  
-  *{
-    cursor: none;
-  }
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
 
-
-  @media only screen and (max-width: 1192px){
-    .circle{
-      display: none;
-    }
+@media only screen and (max-width: 1192px) {
+  .circle {
+    display: none;
   }
+}
