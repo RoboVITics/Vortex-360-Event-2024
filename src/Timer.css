@@ -8,25 +8,37 @@ body {
   overflow-x: hidden;
 }
 
-#timer_text{
+#timer_text {
   position: fixed;
-  top:14rem;
+  top: 14rem;
   right: 4rem;
   z-index: 10000;
   font-weight: bold;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  border: white 1px solid;
 }
-.countdown_visible{
+
+#timer_text p {
+  margin: 0;
+}
+
+.countdown_visible {
   opacity: 1;
   z-index: 10;
 }
 
-.countdown_hidden{
+.countdown_hidden {
   opacity: 0;
   z-index: -10;
 }
+
 .countdown {
-  
-  background: #ffffff3d;
+
+  background: #000000;
   justify-content: center;
   margin: 100px auto;
   width: 100%;
@@ -45,7 +57,7 @@ body {
 }
 
 .time-section {
- 
+
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -182,6 +194,7 @@ body {
   0% {
     transform: rotateX(0deg);
   }
+
   50%,
   100% {
     transform: rotateX(-90deg);
@@ -189,10 +202,12 @@ body {
 }
 
 @keyframes flip-bottom {
+
   0%,
   50% {
     transform: rotateX(90deg);
   }
+
   100% {
     transform: rotateX(0deg);
   }

@@ -45,16 +45,14 @@
 }
 
 .border-bottom {
-  border-bottom: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color) !important;
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
   display: inline-block;
   padding-bottom: 5px;
   text-decoration: none !important;
 }
 
 #contact .section-title h2 .border-bottom {
-  border-bottom: var(--bs-border-width) var(--bs-border-style)
-    var(--bs-border-color);
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   padding-bottom: 5px;
 }
 
@@ -104,6 +102,16 @@
   margin: 0 8px;
 }
 
+#leftContact {
+  position: relative;
+  z-index: 10;
+}
+
+.socialContainer:hover {
+  height: 60px;
+  width: 60px;
+}
+
 @media (max-width: 768px) {
   #main {
     flex-direction: column;
@@ -139,6 +147,8 @@
   }
 }
 
+
+
 @media (max-width: 1171px) and (min-width: 987px) {
   .contact-details {
     flex-direction: column;
@@ -166,7 +176,7 @@
 }
 
 @media (max-width: 375px) and (max-height: 812px),
-  (max-width: 360px) and (max-height: 800px) {
+(max-width: 360px) and (max-height: 800px) {
   #social-media .links {
     flex-wrap: wrap;
     justify-content: center;
@@ -187,7 +197,7 @@
   justify-content: center;
   padding: 25px 25px;
   gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
   flex-direction: row;
   width: 30%;
   justify-content: space-around;
@@ -202,42 +212,42 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
 }
 
 .containerOne:hover {
   background-color: #d62976;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
 }
 
 .containerTwo:hover {
   background-color: #00acee;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
 }
 
 .containerThree:hover {
   background-color: #0072b1;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
 }
 
 .containerFour:hover {
-  background-color: #316ff6;
-  transition-duration: 0.3s;
+  background-color: #316FF6;
+  transition-duration: .3s;
 }
 
 .containerFive:hover {
-  background-color: #d44368;
-  transition-duration: 0.3s;
+  background-color: #D44368;
+  transition-duration: .3s;
 }
 
 .containerSix:hover {
-  background-color: #cd201f;
-  transition-duration: 0.3s;
+  background-color: #CD201F;
+  transition-duration: .3s;
 }
 
 .socialContainer:active {
   transform: scale(0.9);
-  transition-duration: 0.3s;
+  transition-duration: .3s;
 }
 
 .socialSvg {
@@ -251,6 +261,7 @@
 .socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
+
 
 @keyframes slide-in-top {
   0% {
@@ -287,7 +298,7 @@
 .newform {
   width: 16rem;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.0rem;
 }
 
 .contact-person {
@@ -297,6 +308,7 @@
   width: 100%;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+
 }
 
 .contact-newimg {
