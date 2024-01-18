@@ -74,14 +74,8 @@ body {
 .segment-display {
   position: relative;
   height: 100%;
-.segment-display {
-  position: relative;
-  height: 100%;
 }
 
-.segment-display__top,
-.segment-display__bottom {
-  overflow: hidden;
 .segment-display__top,
 .segment-display__bottom {
   overflow: hidden;
