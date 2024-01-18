@@ -137,7 +137,6 @@
   box-sizing: border-box;
   display: block;
   font-weight: 900;
-  overflow: hidden;
   padding: 1.2rem 3rem;
   position: relative;
 }
