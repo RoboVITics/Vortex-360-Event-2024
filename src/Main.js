@@ -24,6 +24,7 @@ const Main = () => {
       <FAQs />
       <Timer />
       <Contact />
+      <Mouse />
       <Overlay />
     </div>
   );
