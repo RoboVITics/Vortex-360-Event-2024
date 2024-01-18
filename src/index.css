@@ -1,20 +1,12 @@
  body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: white;
-  background-color: #000000;
+  background-color: #000;
   cursor: none;
 }
-.links {
-  display: flex;
-  gap: 1rem;
-}
-.links img {
-  height: 5rem;
+
+#home {
+  padding-top: 0;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -25,20 +17,17 @@ code {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 2.5rem;
+  gap: 4rem;
 }
-.nav-item {
+
+/*.nav-item {
   position: relative;
-}
+}*/
 .feature-icon {
   background-color: white;
   width: 4rem;
   height: 4rem;
   border-radius: 0.75rem;
-}
-.feature a {
-  color: #212529;
-  text-decoration-color: #212529;
 }
 .carousel {
   height: 30rem;
@@ -55,12 +44,12 @@ code {
 
 h2 {
   text-align: center;
-  color: #F8F4F9;
+  color: #f8f4f9;
   margin-bottom: 2rem;
   margin-top: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width:100%;
+  width: 100%;
 }
 
 h5,
@@ -74,18 +63,14 @@ h4 {
 .link {
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .mainIcon {
-  margin-top: -10px;
-  background-color: #fff;
-  padding-bottom: 2px;
-  clip-path: polygon(0 0, 92% 0, 83% 100%, 9% 100%);
+  margin-right: -2rem;
 }
 .mainLogo {
-  margin-top: -10px;
+  margin-top: -29px;
   padding-top: 20px;
-  background-image: linear-gradient(#000, #000);
   clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
 }
 .pls {
@@ -94,26 +79,21 @@ h4 {
 }
 
 .mainIcon2 {
+  z-index: 2;
   display: none;
   min-width: 440px;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
   padding-bottom: 3px;
-  clip-path: polygon(25.5% 0, 70.5% 0, 66% 96%, 30% 96%);
 }
 .mainLogo2 {
   margin-top: -10px;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 40px;
-  background-image: linear-gradient(#000, #000);
   clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
 }
 @media (max-width: 667px) {
-  body {
-    overflow-x: hidden !important;
-  }
   .container {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -128,9 +108,10 @@ h4 {
   }
 }
 .mainLogo a img {
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 12px;
+  margin: -12px 10px 3px 10px;
+}
+.mainLogo2 a img {
+  margin: -12px 10px 3px 10px;
 }
 
 .cardcontainer {
@@ -249,32 +230,17 @@ h4 {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background-color: #000;
-}
 
-.links {
+/*.links {
   display: flex;
   gap: 1rem;
 }
 
 .links img {
   height: 1.5rem;
-}
+}*/
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.gradient-background {
+/*.gradient-background {
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, #8594e4, #6643b5, #430f58);
@@ -294,7 +260,7 @@ code {
   100% {
     background-position: 0% 50%;
   }
-}
+}*/
 
 nav li {
   padding-left: 3.5rem;
@@ -305,11 +271,6 @@ nav li {
   width: 4rem;
   height: 4rem;
   border-radius: 0.75rem;
-}
-
-.feature a {
-  color: #212529;
-  text-decoration-color: #212529;
 }
 
 .carousel {
@@ -332,10 +293,6 @@ h5,
 h4 {
   color: #212529;
   font-weight: bold;
-}
-
-.nav li a {
-  color: white;
 }
 
 .link {
@@ -384,12 +341,19 @@ h4 {
 }
 
 .faqs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 80%;
+  margin-left: 10%;
 }
-
+@media (max-width: 860px) {
+  .faqs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-left: 11%;
+  }
+}
 .domain-info {
   height: 100vh;
   overflow-y: hidden;
@@ -479,8 +443,8 @@ h4 {
   text-align: center;
   align-items: center;
   width: 100%;
-  padding-left:48px;
-  padding-right:48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .sponsor {
@@ -504,4 +468,74 @@ h4 {
     width: 40%;
     margin-left: 30%;
   }
+}
+.nav-item {
+  margin-top: 0.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 10px;
+}
+.navbar-nav li:hover {
+  background-color: #3c3678;
+}
+.navbarProgress {
+  position: fixed;
+  margin-left: 1%;
+  width: 97vw;
+  top: 60px;
+  height: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 60px;
+  box-shadow: 0px 0px 20px #000;
+  overflow: hidden;
+}
+.navbarProgressBar {
+  position: relative;
+  width: 0%;
+  background: rgb(102, 67, 181);
+  background: linear-gradient(
+    180deg,
+    rgba(102, 67, 181, 1) 0%,
+    rgba(102, 66, 178, 1) 32%,
+    rgba(012, 25, 101, 1) 100%
+  );
+}
+
+.progressbar {
+  width: 300px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 60px;
+  box-shadow: 0px 0px 20px #000;
+  overflow: hidden;
+}
+.bar {
+  width: 0%;
+  background: rgb(102, 67, 181);
+  background: linear-gradient(
+    180deg,
+    rgba(102, 67, 181, 1) 0%,
+    rgba(102, 66, 178, 1) 32%,
+    rgba(012, 25, 101, 1) 100%
+  );
+}
+.progressbar-container {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.progressbar-container h3 {
+  text-align: center;
+}
+.percent {
+  position: absolute;
+  margin-left: 0;
 }

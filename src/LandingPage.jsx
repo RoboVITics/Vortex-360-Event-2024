@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { MotionConfig, motion, useAnimation } from "framer-motion";
+
 import styled from 'styled-components';
+import { MotionConfig, motion, useAnimation } from "framer-motion";
 import "./LandingPage.css";
+import { animate, useInView } from "framer-motion";
 
 const StyledButton = styled(motion.button)`
   font-size: 2.5rem;
@@ -39,8 +41,12 @@ const StyledButton = styled(motion.button)`
 `;
 const LandingPage = () => {
   const threeContainerRef = useRef(null);
+  const inView = useInView(threeContainerRef, { once: true });
+  const controls = useAnimation();
+  if (inView) {
+    controls.start("visible");
+  }
   const textAnimationControls = useAnimation();
-
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth;
@@ -63,11 +69,10 @@ const LandingPage = () => {
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("three-container").appendChild(renderer.domElement);
-
     const loader = new GLTFLoader();
-    loader.load("skull_salazar_downloadable/scene.gltf", (gltf) => {
+    loader.load("Asset 1.gltf", (gltf) => {
       const model = gltf.scene;
-      model.scale.set(2, 2, 2);
+      model.scale.set(0.3, 0.3, 0.3);
       scene.add(model);
 
       camera.position.set(0, 2 * 2, 5 * 2);
@@ -95,6 +100,30 @@ const LandingPage = () => {
         y: 0,
         opacity: 1,
         transition: { duration: 1, ease: "easeOut", delay: 0.5 },
+      });
+    });
+
+      renderer.setSize(
+        threeContainerRef.current.clientWidth - 20,
+        threeContainerRef.current.clientHeight
+      );
+      const handleResize = () => {
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(newWidth - 20, newHeight);
+      };
+      window.addEventListener("resize", handleResize);
+
+      animate();
+
+      textAnimationControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut", delay: 2 },
       });
     });
 
@@ -136,23 +165,50 @@ const LandingPage = () => {
 
         {/* Right Section */}
         <motion.div
-          className="right-section "
+          className="right-section"
+          id="three-container"
+          ref={threeContainerRef}
+          style={{
+            backgroundColor: "#000",
+            width: "100%",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "-230px",
+            paddingRight: "0px",
+          }}
+          variants={{
+            hidden: { scale: 0.6 },
+            visible: { scale: 1 },
+          }}
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 2 }}
+        ></motion.div>
+
+        {/* Right Section */}
+        <motion.div
+          className="right-section"
           initial={{ y: 50, opacity: 0 }}
           animate={textAnimationControls}
         >
           <div className="text-section">
-          <h1 className="heading">Registration</h1>
-          <StyledButton
-            whileHover={{ scale: 0.8, translate: "0.6rem -0.6rem" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            whileTap={{ scale: 0.6 }}
-            style={{ fontSize: "2.5rem", border: "none", marginTop: "20px" }}
-            className="custom-btn"
-          >
-            Register
-          </StyledButton>
-        </div>
-
+            <h1 className="heading">Registration</h1>
+            <button class="btn-53">
+              <div class="original">Register</div>
+              <div class="letters">
+                <span>R</span>
+                <span>e</span>
+                <span>g</span>
+                <span>i</span>
+                <span>s</span>
+                <span>t</span>
+                <span>e</span>
+                <span>r</span>
+              </div>
+            </button>
+          </div>
         </motion.div>
       </div>
     </MotionConfig>
