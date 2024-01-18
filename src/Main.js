@@ -25,8 +25,8 @@ const Main = () => {
       <FAQs />
       <Timer />
       <Contact />
-      <Mouse/>
-      <Overlay/>
+      <Mouse />
+      <Overlay />
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from "react";
-
 const About = () => {
   return (
     <div id="about">
-      <div class="px-4 py-5 my-2 text-center">
+      <div class="px-4 py-5 my-5 text-center">
         <img
           class="d-block mx-auto mb-4"
           src="./Screenshot_2023-12-27_150445-removebg-preview.png"
@@ -14,10 +13,9 @@ const About = () => {
         <h2>About US</h2>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, modi
-            laborum quae sint soluta illo inventore ut ad et nesciunt
-            consequuntur delectus quia earum illum molestias, deserunt ipsa
-            nihil laudantium?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nihil
+            consequatur expedita, similique soluta eaque saepe possimus debitis
+            labore architecto!
           </p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button
