@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import "../src/Timeline.css";
 import timelineGif from "./timeline_gif.gif"; // Import the images here
 import gff from "./gff.jpg";
@@ -7,7 +8,7 @@ const Timeline = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const imageAddresses = [
-    gff,
+    timelineGif,
     gff,
 
     // Add more image addresses as needed
@@ -38,11 +39,21 @@ const Timeline = () => {
 
   return (
     <div id="timeline">
-      <h2>Timeline</h2>
-      <img
-        src={imageAddresses[currentIndex]}
-        alt={imageAddresses[currentIndex]}
-      />
+      <div className="container px-4 py-5">
+        <h2 className="border-bottom">Timeline</h2>
+      </div>
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { scale: 0.6 },
+          visible: { scale: 1 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.8 }}
+      >
+        <img src="https://picsum.photos/1000" />
+      </motion.div>
     </div>
   );
 };

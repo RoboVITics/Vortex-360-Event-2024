@@ -21,6 +21,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 // };
 
 // export default Prizes;
+import "./Prizes.css";
 
 const Prizes = () => {
   const ref = useRef(null);

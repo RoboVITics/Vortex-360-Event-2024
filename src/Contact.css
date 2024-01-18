@@ -10,6 +10,9 @@
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .text-center {
@@ -45,6 +48,7 @@
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     display: inline-block;
     padding-bottom: 5px;
+    text-decoration: none!important;
 }
 
 #contact .section-title h2 .border-bottom {
@@ -178,7 +182,7 @@
 .card {
         min-width: 360px;
         height: fit-content;
-        background-color: rgb(238, 238, 238);
+        background-color: transparent;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -195,7 +199,6 @@
 .socialContainer {
     width: 52px;
     height: 52px;
-    background-color: rgb(44, 44, 44);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,27 +206,33 @@
     transition-duration: .3s;
 }
 
-/* instagram*/
 .containerOne:hover {
     background-color: #d62976;
     transition-duration: .3s;
 }
 
-/* twitter*/
 .containerTwo:hover {
     background-color: #00acee;
     transition-duration: .3s;
 }
 
-/* linkdin*/
 .containerThree:hover {
     background-color: #0072b1;
     transition-duration: .3s;
 }
 
-/* Whatsapp*/
 .containerFour:hover {
-    background-color: #128C7E;
+    background-color: #316FF6;
+    transition-duration: .3s;
+}
+
+.containerFive:hover {
+    background-color: #D44368;
+    transition-duration: .3s;
+}
+
+.containerSix:hover {
+    background-color: #CD201F;
     transition-duration: .3s;
 }
 
