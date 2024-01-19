@@ -212,3 +212,56 @@ body {
     transform: rotateX(0deg);
   }
 }
+
+
+@media only screen and (max-width: 768px){
+  .time-segment{
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .segment-overlay{
+    width: 50px;
+  }
+
+  .countdown{
+    gap: 35px;
+  }
+
+  .countdown p{
+    font-size: 8px;
+  }
+  .segment-overlay__top,.segment-overlay__bottom{
+    width: 50px;
+  }
+ 
+  .segment-display__top,.segment-display__bottom{
+    width: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1192px){
+  .time-segment{
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .segment-overlay{
+    width: 50px;
+  }
+
+  .countdown{
+    gap: 35px;
+  }
+
+  .countdown p{
+    font-size: 16px;
+  }
+  .segment-overlay__top,.segment-overlay__bottom{
+    width: 50px;
+  }
+ 
+  .segment-display__top,.segment-display__bottom{
+    width: 50px;
+  }
+}
