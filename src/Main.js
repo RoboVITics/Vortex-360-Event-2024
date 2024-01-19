@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
-import About from "./About";
 import Domains from "./Domains";
 import Timeline from "./Timeline";
 import Sponsors from "./Sponsors";

@@ -15,7 +15,7 @@ const Domains = () => {
   }
   return (
     <div id="domains">
-      <h2 style={{ marginBottom: "-100px" }}>Domains</h2>
+      <h2 style={{ marginBottom: "-100px" }}>Tracks</h2>
       <motion.div
         id="carouselDemo"
         ref={ref}

@@ -58,27 +58,46 @@ const Contact = () => {
             <h2>Contact Us</h2>
           </div>
         <div className="container" data-aos="fade-up">
-          <div className="contact-details">
-            <div className="col-lg-6 mt-3 newform">
-              <div className="contact-person">
-                <h3>Chairperson</h3>
-                <p>Aditya Subramanian</p>
-                <p>
-                  <strong>Phone:</strong> <a href="tel:+9833548555">9833-548-555</a>
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-6 mt-3 newform">
-              <div className="contact-person">
-                <h3>Vice Chairperson</h3>
-                <p>Achyut Duggal</p>
-                <p>
-                  <strong>Phone:</strong> <a href="tel:+8491092405">8491-092-405</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div className="row">
+    <div className="col-lg-6 mt-3 newform">
+      <div className="contact-person">
+        <h3>Chairperson</h3>
+        <p>Aditya Subramanian</p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+9833548555">+919833548555</a>
+        </p>
+      </div>
+    </div>
+    <div className="col-lg-6 mt-3 newform">
+      <div className="contact-person">
+        <h3>Vice Chairperson</h3>
+        <p>Achyut Duggal</p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+8491092405">+918491092405</a>
+        </p>
+      </div>
+    </div>
+    <div className="col-lg-6 mt-3 newform">
+      <div className="contact-person">
+        <h3>Event</h3>
+        <p>Aditya Subramanian</p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+9833548555">+919833548555</a>
+        </p>
+      </div>
+    </div>
+    <div className="col-lg-6 mt-3 newform">
+      <div className="contact-person">
+        <h3>Event</h3>
+        <p>Aditya Subramanian</p>
+        <p>
+          <strong>Phone:</strong> <a href="tel:+9833548555">+919833548555</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
       </section>
       <center>
         <div className="card">
@@ -112,74 +131,6 @@ const Contact = () => {
     <path stroke="#FFFFFF" stroke-width="2" d="M22 4H2C1.44772 4 1 4.44772 1 5V18C1 18.5523 1.44772 19 2 19H22C22.5523 19 23 18.5523 23 18V5C23 4.44772 22.5523 4 22 4ZM22 18H2V6L12 13L22 6V18ZM12 11L2 5H22L12 11Z" fill="#FFD600"/>
   </svg>
 </a>
-
-        {/* <Modal show={showModal} onHide={handleModalClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Contact Form</Modal.Title>
-              <p>Enter Your Querry</p>
-            </Modal.Header>
-            <Modal.Body>
-              <form action="#" method="post" role="form" className="php-email-form" onSubmit={sendEmail}>
-                <div className="row">
-                  <div className="col-md-6 form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      className="form-control"
-                      id="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="col-md-6 form-group mt-3 mt-md-0">
-                    <input
-                      type="email"
-                      className="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-group mt-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="subject"
-                    id="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group mt-3">
-                  <textarea
-                    className="form-control"
-                    name="message"
-                    rows="8"
-                    placeholder="Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  ></textarea>
-                </div>
-                <div className="text-center">
-                  <button type="submit">Send Message</button>
-                </div>
-              </form>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleModalClose}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal> */}
         </div>
         </center> 
       </div>

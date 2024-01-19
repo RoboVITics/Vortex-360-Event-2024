@@ -44,16 +44,15 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link to="#about" class="link">
-                  About US
+                <Link to="#domains" class="link">
+                  Tracks
                 </Link>
               </li>
               <li class="nav-item">
-                <Link to="#domains" class="link">
-                  Domains
+                <Link to="#timeline" class="link">
+                  Timeline
                 </Link>
               </li>
-
               <div className="mainIcon">
                 <div className="mainLogo">
                   <a class="navbar-brand" href="#">
@@ -62,18 +61,18 @@ const Navbar = () => {
                 </div>
               </div>
               <li class="nav-item">
-                <Link to="#timeline" class="link">
-                  Timeline
-                </Link>
-              </li>
-              <li class="nav-item">
                 <Link to="#prizes" class="link">
                   Prizes
                 </Link>
               </li>
               <li class="nav-item">
+                <Link to="#faqs" class="link">
+                  FAQs
+                </Link>
+              </li>
+              <li class="nav-item">
                 <Link to="#contact" class="link">
-                  Contact US
+                  Contact Us
                 </Link>
               </li>
             </ul>
