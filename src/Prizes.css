@@ -1,34 +1,19 @@
-.prizes-container {
-    text-align: center; 
-    padding: 20px;
+/*.prizes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
-
-.prizes-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
 .prize-feature {
-    width: 100%;
-    max-width: 300px;
-}
-
-.prize-container {
-    align-items: center;
-}
-
-.prize-image {
-    width: 25rem;
-    height: 20rem;
-    margin-right: 20px;
-}
+  width: 100%;
+  max-width: 300px;
+}*/
 
 .prize-description {
+    text-align: center;
     font-size: 25px;
     color: #ffffff;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgb(207, 159, 255);
     margin-top: 10px;
-}
+  }
