@@ -73,7 +73,7 @@ const Domains = () => {
                   {domain.name}
                 </h2>
                 <p>{domain.desp}</p>
-                <Link
+                {/* <Link
                   to={`/domain/${domain.id}`}
                   style={{
                     fontWeight: "bold",
@@ -87,7 +87,7 @@ const Domains = () => {
                     alt=""
                     height="15px"
                   />
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}

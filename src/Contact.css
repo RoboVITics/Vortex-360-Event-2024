@@ -349,3 +349,9 @@
     margin: 5px;
   }
 }
+
+@media (max-width: 1400px) and (min-width: 980px) {
+  #contact .container {
+    max-width: 886px !important;
+  }
+}

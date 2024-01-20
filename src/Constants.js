@@ -42,10 +42,9 @@ export const prizes = [
 export const domains = [
   {
     id: 1,
-    name: "Domain 1",
+    name: "Track 1",
     upper: "carousel-item active",
-    desp: "Domains would be released soon.",
-    //upper: "carousel-item active carousel-item-start",
+    desp: "Tracks would be released soon.",
     bg: vect1,
     bg2: vect2,
     content: [
@@ -66,8 +65,8 @@ export const domains = [
 
   {
     id: 2,
-    name: "Domain 2",
-    desp: "Domains would be released soon.",
+    name: "Track 2",
+    desp: "Tracks would be released soon.",
     upper: "carousel-item",
     //upper: "carousel-item carousel-item-next carousel-item-start",
     bg: vect1,
@@ -89,8 +88,8 @@ export const domains = [
   },
   {
     id: 3,
-    name: "Domain 3",
-    desp: "Domains would be released soon.",
+    name: "Track 3",
+    desp: "Tracks would be released soon.",
     upper: "carousel-item",
     bg: vect1,
     bg2: vect2,
@@ -111,8 +110,8 @@ export const domains = [
   },
   {
     id: 4,
-    name: "Domain 4",
-    desp: "Domains would be released soon.",
+    name: "Track 4",
+    desp: "Tracks would be released soon.",
     upper: "carousel-item",
     bg: vect1,
     bg2: vect2,
@@ -133,8 +132,8 @@ export const domains = [
   },
   {
     id: 5,
-    name: "Domain 5",
-    desp: "Domains would be released soon.",
+    name: "Track 5",
+    desp: "Tracks would be released soon.",
     upper: "carousel-item",
     bg: vect1,
     bg2: vect2,
