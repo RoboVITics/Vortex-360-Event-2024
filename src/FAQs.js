@@ -10,6 +10,7 @@ const FAQs = () => {
   }
   return (
     <div id="faqs">
+      <hr style={{ marginBottom: "0.5rem", visibility: "hidden" }} />
       <h2>FAQs</h2>
       <motion.div
         ref={ref}
@@ -22,6 +23,45 @@ const FAQs = () => {
         animate={controls}
         transition={{ duration: 0.8 }}
       >
+        <div className="cardcontainer">
+          <div className="flip">
+            <div className="front">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+              voluptate?
+            </div>
+            <div className="back">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
+              cumque aliquid omnis deleniti.
+            </div>
+          </div>
+        </div>
+        <div className="cardcontainer">
+          <div className="flip">
+            <div className="front">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+              voluptate?
+            </div>
+            <div className="back">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
+              cumque aliquid omnis deleniti.
+            </div>
+          </div>
+        </div>
+        <div className="cardcontainer">
+          <div className="flip">
+            <div className="front">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+              voluptate?
+            </div>
+            <div className="back">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
+              cumque aliquid omnis deleniti.
+            </div>
+          </div>
+        </div>
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">

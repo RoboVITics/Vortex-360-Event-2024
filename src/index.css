@@ -1,4 +1,4 @@
-body {
+ body {
   margin: 0;
   color: white;
   background-color: #000;
@@ -163,12 +163,6 @@ h4 {
 .back {
   transform: rotateY(180deg);
 }
-.faqs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
 
 .domain-info {
   height: 100vh;
@@ -293,6 +287,14 @@ h4 {
 
 .carousel-item {
   height: 27rem;
+  background: none;
+  background: url("../src/robot_vector.png") center/cover no-repeat,url("../src/Robot_arm.png") center/cover no-repeat;
+}
+
+@media only screen and (max-width: 910px){
+  .carousel-item{
+    background: none;
+  }
 }
 
 .carousel-item .container {
@@ -308,6 +310,12 @@ h4 {
 .link {
   text-decoration: none;
   color: white;
+}
+
+.cardcontainer {
+  height: 300px;
+  width: 300px;
+  perspective: 600px;
 }
 
 .cardcontainer:hover > .flip {
@@ -344,20 +352,7 @@ h4 {
   transform: rotateY(180deg);
 }
 
-.faqs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 80%;
-  margin-left: 10%;
-}
-@media (max-width: 860px) {
-  .faqs {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    margin-left: 11%;
-  }
-}
+
 .domain-info {
   height: 100vh;
   overflow-y: hidden;
@@ -543,8 +538,40 @@ h4 {
   position: absolute;
   margin-left: 0;
 }
+
 @media (max-width: 400px) {
   #domains > h2 {
     margin-bottom: -100px;
   }
 }
+
+
+.faqs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 3rem;
+  margin: 10px auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.cardcontainer {
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .faqs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 668px) {
+  .faqs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

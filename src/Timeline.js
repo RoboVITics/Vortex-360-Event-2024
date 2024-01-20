@@ -13,8 +13,8 @@ const Timeline = () => {
   }
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const imageAddresses = [
-    timelineGif,
+  const imageAddresses = [  
+//    timelineGif,
     gff,
 
     // Add more image addresses as needed
