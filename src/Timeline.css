@@ -1,366 +1,42 @@
-.introduction {
-    margin: 0;
-}
-
-.introduction-to-the-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.speaker-session-by-autodesk {
-    position: absolute;
-    top: 532px;
-    left: 1174px;
-    width: 350px;
-    height: 122px;
-}
-
-.am,
-.am1 {
-    position: absolute;
-    top: 477px;
-    left: 1174px;
-}
-
-.am1 {
-    top: 0;
-    left: 733px;
-}
-
-.participants-registration {
-    position: absolute;
-    top: 61px;
-    left: 671px;
-}
-
-.frame-child,
-.frame-inner,
-.frame-item {
-    position: absolute;
-    top: 0;
-    left: 1057px;
-    border-radius: 50%;
-    background-color: #030104;
-    border: 18px solid #ad00ad;
-    box-sizing: border-box;
-    width: 61px;
-    height: 61px;
-}
-
-.frame-inner,
-.frame-item {
-    top: 477px;
-}
-
-.frame-inner {
-    top: 954px;
-    border: 18px solid #ac00ad;
-}
-
-.ellipse-div,
-.frame-child1,
-.frame-child2,
-.frame-child3,
-.frame-child4,
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    position: absolute;
-    top: 1431px;
-    left: 1057px;
-    border-radius: 50%;
-    background-color: #030104;
-    border: 18px solid #a901ae;
-    box-sizing: border-box;
-    width: 61px;
-    height: 61px;
-}
-
-.frame-child1,
-.frame-child2,
-.frame-child3,
-.frame-child4,
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 1908px;
-    border: 18px solid #9709b7;
-}
-
-.frame-child2,
-.frame-child3,
-.frame-child4,
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 2385px;
-    border: 18px solid #8e0dbc;
-}
-
-.frame-child3,
-.frame-child4,
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 2862px;
-    border: 18px solid #8511c0;
-}
-
-.frame-child4,
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 3339px;
-    border: 18px solid #7c15c5;
-}
-
-.frame-child5,
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 3816px;
-    border: 18px solid #681ecf;
-}
-
-.frame-child6,
-.frame-child7,
-.frame-child8 {
-    top: 4293px;
-    border: 18px solid #5e23d4;
-}
-
-.frame-child7,
-.frame-child8 {
-    top: 4770px;
-    border: 18px solid #5328d9;
-}
-
-.frame-child8 {
-    top: 5247px;
-    border: 18px solid #482ddf;
-}
-
-.pm {
-    position: absolute;
-    top: 4770px;
-    left: 769px;
-}
-
-.final-pitches,
-.pm1,
-.results {
-    position: absolute;
-    top: 4831px;
-    left: 769px;
-}
-
-.pm1,
-.results {
-    top: 5247px;
-    left: 1168px;
-}
-
-.results {
-    top: 5308px;
-}
-
-.am2,
-.pm2,
-.pm3,
-.review-three {
-    position: absolute;
-    top: 4293px;
-    left: 1171px;
-}
-
-.am2,
-.pm3,
-.review-three {
-    top: 4354px;
-}
-
-.am2,
-.pm3 {
-    top: 3816px;
-    left: 765px;
-}
-
-.pm3 {
-    top: 3339px;
-    left: 1172px;
-}
-
-.am3,
-.project-showcase,
-.review-one {
-    position: absolute;
-    top: 3400px;
-    left: 1172px;
-}
-
-.am3,
-.review-one {
-    top: 2923px;
-    left: 793px;
-}
-
-.am3 {
-    top: 2862px;
-    left: 757px;
-}
-
-.am4,
-.crisis-challenge,
-.pm4 {
-    position: absolute;
-    top: 2385px;
-    left: 1175px;
-}
-
-.am4,
-.crisis-challenge {
-    top: 2446px;
-}
-
-.am4 {
-    top: 1908px;
-    left: 752px;
-}
-
-.first-ideation-check-container {
-    position: absolute;
-    top: 1969px;
-    left: 625px;
-    text-align: right;
-}
-
-.vector-icon {
-    position: absolute;
-    top: 17px;
-    left: 1087.99px;
-    max-width: 100%;
-    overflow: hidden;
-    height: 5275px;
-}
-
-.am5 {
-    position: absolute;
-    top: 954px;
-    left: 779px;
-}
-
-.introdution-to-machine-container {
-    position: absolute;
-    top: 1015px;
-    left: 588px;
-    text-align: right;
-}
-
-.ideation-continues,
-.pm5 {
-    position: absolute;
-    top: 1431px;
-    left: 1171px;
-}
-
-.ideation-continues {
-    top: 1492px;
-    text-align: justify;
-}
-
-.d-a-y-container,
-.review-two {
-    position: absolute;
-    top: 3877px;
-    left: 797px;
-}
-
-.d-a-y-container {
-    top: 187px;
-    left: 99px;
-    font-size: 200px;
-    text-align: center;
-    display: inline-block;
-    width: 251px;
-    height: 774px;
-}
-
-.d-a-y-container1,
-.d-a-y-container2,
-.div,
-.div1,
-.div2 {
-    position: absolute;
-    top: 1932px;
-    left: 1683px;
-    font-size: 200px;
-    text-align: center;
-}
-
-.d-a-y-container2,
-.div,
-.div1,
-.div2 {
-    top: 2840px;
-}
-
-.d-a-y-container2,
-.div1,
-.div2 {
-    top: 3840px;
-    left: 312px;
-}
-
-.div1,
-.div2 {
-    top: 4750px;
-    left: 324px;
-}
-
-.div2 {
-    top: 1103px;
-    left: 189px;
-}
-
-.frame-child10,
-.frame-child9,
-.rectangle-div {
-    position: absolute;
-    top: 1849px;
-    left: 1534px;
-    border-radius: 250px;
-    border: 17px solid #a304b1;
-    box-sizing: border-box;
-    width: 450px;
-    height: 1347px;
-}
-
-.frame-child10,
-.frame-child9 {
-    top: 3780px;
-    left: 171px;
-    border: 17px solid #ac00ad;
-    height: 1330px;
-}
-
-.frame-child10 {
-    top: 108px;
-    left: 0;
-    height: 1354px;
-}
-
-.speaker-session-by-autodesk-parent {
-    position: relative;
+.day-timeline {
     width: 100%;
-    height: 5369px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0 20% 5% 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+h3{
+    width:100%;
     text-align: center;
-    font-size: 48px;
-    color: #fff;
-    font-family: Audiowide;
+}
+
+@media (max-width: 500px) {
+    .day-timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+    }
+    h3 {
+        width:100%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        text-align: center;
+    }
+}
+
+.timeline-carousel-item{
+    background: none!important;
+}
+
+.timeline-carousel-item{
+    margin-top:58px;
 }

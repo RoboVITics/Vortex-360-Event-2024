@@ -19,6 +19,11 @@ export const buttons = [
   { id: 5, slide: "4", class: "" },
 ];
 
+export const timelinebuttons = [
+  { id: 1, slide: "0", class: "active" },
+  { id: 2, slide: "1", class: "" },
+  { id: 3, slide: "2", class: "" },
+];
 export const prizes = [
   {
     id: 1,
@@ -37,6 +42,27 @@ export const prizes = [
     title: "Third Prize",
     desp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis velit possimus reprehenderit sunt, adipisci mollitia natus architecto molestiae assumenda soluta quo distinctio atque! Suscipit dolorum laborum, voluptatum nihil dolorem cumque?",
     icon: "./award_2058521.png",
+  },
+];
+export const timeline = [
+  {
+    id: 1,
+    name: "DAY 1",
+    upper: "carousel-item active",
+
+  },
+
+  {
+    id: 2,
+    name: "DAY 2",
+    upper: "carousel-item",
+
+  },
+  {
+    id: 3,
+    name: "DAY 3",
+    upper: "carousel-item",
+
   },
 ];
 export const domains = [
