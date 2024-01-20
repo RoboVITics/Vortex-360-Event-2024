@@ -39,7 +39,9 @@ const Prizes = () => {
 
   return (
     <div className="prizes-container">
-      <hr id="prizes" style={{ marginBottom: "6rem", visibility: "hidden" }} />
+
+      <hr id="prizes" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
+
       <h2>Prizes</h2>
       <motion.div
         className="prizes-row"
@@ -58,11 +60,11 @@ const Prizes = () => {
               src={prizes[0].icon}
               alt={`Prize ${prizes[0].id}`}
               height={300}
+              className="prize-image"
               style={{
                 width: "25%",
                 marginLeft: "39.5%",
               }}
-              className="prize-image"
             />
             <p
               style={{

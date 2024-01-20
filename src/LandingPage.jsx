@@ -107,10 +107,7 @@ const LandingPage = () => {
           <div className="text-section">
             <h2 className="name">VORTEX 360</h2>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              modi laborum quae sint soluta illo inventore ut ad et nesciunt
-              consequuntur delectus quia earum illum molestias, deserunt ipsa
-              nihil laudantium?
+              Vortex360 is an event organised by RoboVITics and powered by AutoDesk is a 3-day CAD modelling design-a-thon where participants think outside the box and come up with amazing designs and expand the horizons of innovation to solve real-world problems.
             </p>
           </div>
         </motion.div>
@@ -136,7 +133,10 @@ const LandingPage = () => {
         >
           <div className="text-section-right">
             <h1 className="heading">Registration</h1>
-            <button class="btn-53">
+            <a href="https://www.instagram.com/robovitics/">
+              
+            
+            <button class="btn-53" >
               <div class="original">Register</div>
               <div class="letters">
                 <span>R</span>
@@ -149,7 +149,8 @@ const LandingPage = () => {
                 <span>r</span>
               </div>
             </button>
-          </div>
+          
+          </a></div>
         </motion.div>
       </div>
     </MotionConfig>

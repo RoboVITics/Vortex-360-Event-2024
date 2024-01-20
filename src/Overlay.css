@@ -5,9 +5,9 @@
     height: 40vh;
     width: 100vw;
     bottom: 0;
-    
+
     border-radius: 100px 100px 0px 0px;
     background: linear-gradient(180deg, rgba(119, 13, 168, 0.00) 0%, rgba(173, 0, 255, 0.39) 48.11%, #AD00FF 98.38%);
-    
+
     filter: blur(2px);
 }
