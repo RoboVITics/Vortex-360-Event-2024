@@ -109,6 +109,7 @@ h4 {
 @media (max-width: 380px) {
   #domains {
     z-index: 3;
+    margin-top: 200px;
   }
 }
 @media (max-width: 750px) {
@@ -543,8 +544,18 @@ h4 {
   position: absolute;
   margin-left: 0;
 }
+.progressbar-container #three-container {
+  background-color: #000;
+  width: 100%;
+  margin-top: -390px;
+}
 @media (max-width: 400px) {
   #domains > h2 {
     margin-bottom: -100px;
+  }
+  .progressbar-container #three-container {
+    background-color: #000;
+    width: 100%;
+    margin-top: -290px;
   }
 }

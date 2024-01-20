@@ -32,7 +32,7 @@ function Progressbar({ value }) {
         if (window.innerWidth < 400) {
           model.scale.set(22, 26, 25);
         } else {
-          model.scale.set(28, 28, 28);
+          model.scale.set(27, 27, 27);
         }
         scene.add(model);
         camera.position.set(0, 2 * 2, 5 * 2);
@@ -89,15 +89,7 @@ function Progressbar({ value }) {
       animate={controls}
       transition={{ duration: 1 }}
     >
-      <div
-        id="three-container"
-        ref={threeContainerRef}
-        style={{
-          backgroundColor: "#000",
-          width: "100%",
-          marginTop: "-390px",
-        }}
-      ></div>
+      <div id="three-container" ref={threeContainerRef}></div>
       <div
         style={{
           display: "flex",

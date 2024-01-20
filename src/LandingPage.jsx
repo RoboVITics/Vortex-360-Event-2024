@@ -41,7 +41,7 @@ const LandingPage = () => {
     loader.load("plain white 3d logo.gltf", (gltf) => {
       const model = gltf.scene;
       if (window.innerWidth < 400) {
-        model.scale.set(25, 27, 25);
+        model.scale.set(22, 22, 22);
       } else {
         model.scale.set(28, 28, 28);
       }
