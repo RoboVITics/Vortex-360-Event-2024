@@ -282,6 +282,14 @@ h4 {
 
 .carousel-item {
   height: 27rem;
+  background: none;
+  background: url("../src/robot_vector.png") center/cover no-repeat,url("../src/Robot_arm.png") center/cover no-repeat;
+}
+
+@media only screen and (max-width: 910px){
+  .carousel-item{
+    background: none;
+  }
 }
 
 .carousel-item .container {

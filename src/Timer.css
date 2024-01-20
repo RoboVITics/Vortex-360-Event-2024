@@ -15,7 +15,7 @@ body {
   z-index: 10000;
   font-weight: bold;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 1rem 2rem;
   font-size: 12px;
   background-color: black;
   color: white;
@@ -24,6 +24,10 @@ body {
 
 #timer_text p {
   margin: 0;
+}
+
+#togotext{
+  font-size:6px ;
 }
 
 .countdown_visible {
@@ -190,6 +194,11 @@ body {
   animation: flip-bottom 0.8s linear;
 }
 
+#days_text{
+  font-size: 30px;
+}
+
+
 @keyframes flip-top {
   0% {
     transform: rotateX(0deg);
@@ -211,4 +220,98 @@ body {
   100% {
     transform: rotateX(0deg);
   }
+}
+
+
+@media only screen and (max-width: 768px){
+  .time-segment{
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .segment-overlay{
+    width: 20px;
+  }
+
+  .countdown{
+    gap: 35px;
+  }
+
+  .countdown p{
+    font-size: 8px;
+  }
+  .segment-overlay__top,.segment-overlay__bottom{
+    width: 20px;
+  }
+ 
+  .segment-display__top,.segment-display__bottom{
+    width: 20px;
+  }
+
+  #timer_text {
+    position: fixed;
+    top: 14rem;
+    right: 4rem;
+    z-index: 10000;
+    font-weight: bold;
+    border-radius: 50%;
+    padding:1rem 1rem;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    border: white 1px solid;
+  }
+
+  #days_text{
+    font-size: 30px;
+  }
+
+  #timer_text p{
+    font-size: 8px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1192px){
+  .time-segment{
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .segment-overlay{
+    width: 50px;
+  }
+
+  .countdown{
+    gap: 35px;
+  }
+
+  .countdown p{
+    font-size: 16px;
+  }
+  .segment-overlay__top,.segment-overlay__bottom{
+    width: 50px;
+  }
+ 
+  .segment-display__top,.segment-display__bottom{
+    width: 50px;
+  }
+  #timer_text {
+    position: fixed;
+    top: 14rem;
+    right: 4rem;
+    z-index: 10000;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 1rem 2rem;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    border: white 1px solid;
+  }
+
+  #days_text{
+    font-size: 20px;
+  }
+
 }

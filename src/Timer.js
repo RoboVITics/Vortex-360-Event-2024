@@ -176,8 +176,8 @@ const Timer = () => {
   return (
     <>
       <button onClick={handleButtonClick} id="timer_text">
-        <p>{days}</p>
-        <p> days to go</p>
+        <p id="days_text">{days}</p>
+        <p id="togotext"> days to go</p>
       </button>
       <div
         onClick={handleButtonClick}
