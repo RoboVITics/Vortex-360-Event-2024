@@ -31,16 +31,20 @@ const LandingPage = () => {
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
-      0.1,
+      2,
       1000
     );
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("three-container").appendChild(renderer.domElement);
     const loader = new GLTFLoader();
-    loader.load("Asset 1.gltf", (gltf) => {
+    loader.load("plain white 3d logo.gltf", (gltf) => {
       const model = gltf.scene;
-      model.scale.set(0.3, 0.3, 0.3);
+      if (window.innerWidth < 400) {
+        model.scale.set(25, 27, 25);
+      } else {
+        model.scale.set(28, 28, 28);
+      }
       scene.add(model);
 
       camera.position.set(0, 4, 10);
@@ -112,16 +116,6 @@ const LandingPage = () => {
         <motion.div
           id="three-container"
           ref={threeContainerRef}
-          style={{
-            backgroundColor: "#000",
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "-230px",
-            paddingRight: "0px",
-          }}
           variants={{
             hidden: { scale: 0.6 },
             visible: { scale: 1 },

@@ -6,7 +6,6 @@ function Progressbar({ value }) {
   const threeContainerRef = useRef(null);
   const progressRef = useRef(null);
   const controls = useAnimation();
-  let shouldRotate = true;
   let animationId;
   if (value === 100) {
     setTimeout(() => {
@@ -27,10 +26,14 @@ function Progressbar({ value }) {
     document.getElementById("three-container").appendChild(renderer.domElement);
     const loader = new GLTFLoader();
     loader.load(
-      "/skull_salazar_downloadable/scene.gltf",
+      "plain white 3d logo.gltf",
       (gltf) => {
         const model = gltf.scene;
-        model.scale.set(2, 2, 2);
+        if (window.innerWidth < 400) {
+          model.scale.set(22, 26, 25);
+        } else {
+          model.scale.set(28, 28, 28);
+        }
         scene.add(model);
         camera.position.set(0, 2 * 2, 5 * 2);
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -39,14 +42,12 @@ function Progressbar({ value }) {
         directionalLight.position.set(0, 1, 0);
         scene.add(directionalLight);
         const animate = function () {
-          if (shouldRotate) {
-            animationId = requestAnimationFrame(animate);
+          animationId = requestAnimationFrame(animate);
 
-            // Rotate the model
-            model.rotation.y += 0.02;
+          // Rotate the model
+          model.rotation.y += 0.02;
 
-            renderer.render(scene, camera);
-          }
+          renderer.render(scene, camera);
         };
 
         renderer.setSize(
@@ -65,10 +66,6 @@ function Progressbar({ value }) {
 
         window.addEventListener("resize", handleResize);
         animate();
-        setTimeout(() => {
-          shouldRotate = false;
-          cancelAnimationFrame(animationId);
-        }, 3500);
         return () => {
           window.removeEventListener("resize", handleResize);
           document
