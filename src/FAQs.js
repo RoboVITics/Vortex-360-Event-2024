@@ -10,6 +10,7 @@ const FAQs = () => {
   }
   return (
     <div id="faqs">
+      <hr style={{ marginBottom: "0.5rem", visibility: "hidden" }} />
       <h2>FAQs</h2>
       <motion.div
         ref={ref}

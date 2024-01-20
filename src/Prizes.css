@@ -17,3 +17,10 @@
     text-shadow: 2px 2px 4px rgb(207, 159, 255);
     margin-top: 10px;
   }
+
+.prize-image {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
