@@ -29,8 +29,10 @@ function Progressbar({ value }) {
       "plain white 3d logo.gltf",
       (gltf) => {
         const model = gltf.scene;
-        if (window.innerWidth < 400) {
-          model.scale.set(22, 26, 25);
+        if (window.innerWidth < 900) {
+          model.scale.set(20, 20, 20);
+        } else if (window.innerWidth < 500) {
+          model.scale.set(18, 20, 25);
         } else {
           model.scale.set(27, 27, 27);
         }

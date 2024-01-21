@@ -15,7 +15,11 @@ const Domains = () => {
   }
   return (
     <div id="domains">
-      <h2 style={{ marginBottom: "-100px" }}>Tracks</h2>
+      <hr
+        id="prizes"
+        style={{ marginBottom: "1.5rem", visibility: "hidden" }}
+      />
+      <h2 style={{ marginBottom: "-120px" }}>Tracks</h2>
 
       <motion.div
         id="carouselDemo"
@@ -48,7 +52,6 @@ const Domains = () => {
               key={domain.id}
               class={domain.upper}
               style={{
-                
                 backgroundSize: "auto 75%,auto 75%", // 80% height and width auto
                 backgroundPosition: "90% 120%,10% 120%", // Adjust these values based on your preference
               }}

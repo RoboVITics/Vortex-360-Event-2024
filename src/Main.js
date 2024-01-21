@@ -17,7 +17,6 @@ const Main = () => {
       <Navbar />
       <LandingPage />
       <Domains />
-      <Timeline />
       <Sponsors />
       <Prizes />
       <FAQs />

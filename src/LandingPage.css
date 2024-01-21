@@ -65,7 +65,7 @@
   background-color: #000;
   color: #fff;
   width: 2rem;
-  top: 30%;
+  top: 33%;
   left: 75%;
   padding-right: 3rem;
   margin-left: -8%;
@@ -74,8 +74,9 @@
 .text-section {
   animation: popUp 3s ease;
 }
-#three-container {
+.landing-page #three-container {
   z-index: -1;
+  margin-top: -100px;
 }
 @keyframes popUp {
   0% {
@@ -247,14 +248,35 @@
     z-index: -1;
   }
 }
-@media (max-width: 750px) {
-  button {
-    background-color: #fff;
+a {
+  text-decoration: none;
+}
+.mobile-button {
+  margin-top: 30px;
+  display: none;
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 999px;
+  width: 200px;
+  padding: 0.5rem;
+  border: 3px solid white;
+  background: none;
+}
+
+@media (max-width: 890px) {
+  .btn-53 {
+    display: none;
+  }
+  .mobile-button {
+    display: block;
   }
   .left-section h2 {
     text-align: center;
   }
   .left-section {
+    z-index: 1;
+    margin-top: 20px;
     margin-left: 20%;
     text-align: center;
   }
@@ -262,14 +284,17 @@
     margin-top: 780px;
   }
   .right-section {
+    margin-top: -60px;
     z-index: -1;
-    margin-left: -32%;
+    margin-left: -35%;
+  }
+  .landing-page #three-container {
+    margin-top: -230px;
   }
 }
 @media (max-width: 600px) {
   #three-container {
     margin-top: -150px;
-    height: 50vh;
   }
   .left-section {
     margin-top: -150px;
@@ -280,37 +305,31 @@
     margin-top: -150px;
     margin-left: -36%;
   }
-  .btn-53 {
-    border: 3px solid white;
-  }
-}
-@media (max-width: 470px) {
-  .left-section {
-    margin-left: 10%;
+  .mobile-button {
+    margin-left: -30%;
   }
 }
 @media (max-width: 430px) {
-  #three-container {
-    margin-top: -250px;
-    height: 80vh;
+  .landing-page #three-container {
+    margin-top: -130px;
   }
   .left-section {
-    margin-top: -60px;
-    margin-left: 1%;
+    margin-top: -180px;
+    margin-left: -1%;
   }
   .right-section {
-    margin-top: -40px;
+    margin-top: -230px;
   }
 }
-@media (max-width: 370px) {
-  #three-container {
-    margin-top: -300px;
-    height: 80vh;
+/*@media (max-width: 370px) {
+  .landing-page #three-container {
+    margin-top: -360px;
   }
   .left-section {
-    margin-top: -12%;
+    margin-top: 20px;
   }
   .right-section {
-    margin-top: -30%;
+    z-index: -1;
+    margin-top: -10%;
   }
-}
+}*/
