@@ -29,12 +29,11 @@ body {
   border: rgb(0, 0, 0) 1px solid;
 }
 
-#timer_text p {
-  margin: 0;
-}
+
 
 #togotext{
-  font-size:6px ;
+  font-size: 8px;
+  margin-bottom: 3px;
 }
 
 .countdown_visible {
@@ -203,6 +202,7 @@ body {
 
 #days_text{
   font-size: 30px;
+  margin: 0;
 }
 
 

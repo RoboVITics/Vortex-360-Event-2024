@@ -106,9 +106,12 @@ h4 {
     margin-top: 400px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 500px) {
   #domains {
     z-index: 3;
+  }
+  .mainLogo2{
+    margin-left: 15%;
   }
 }
 @media (max-width: 750px) {
