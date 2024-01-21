@@ -25,79 +25,70 @@ const FAQs = () => {
       >
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
-            </div>
+            <div className="front">What is Vortex360?</div>
             <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
+              Vortex360 is a three-day Mechanical Design Hackathon hosted by
+              RoboVITics, powered by AutoDesk's Fusion 360. It's an immersive
+              experience for participants to explore 3D modeling, rendering, and
+              manufacturing.
             </div>
           </div>
         </div>
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
+              When and where is Vortex360 taking place?
             </div>
             <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
+              Vortex360 is scheduled for February 2nd to 4th at Anna Auditorium,
+              offering a dynamic environment for hands-on exploration of
+              innovative design concepts.
+            </div>
+          </div>
+        </div>
+        <div className="cardcontainer">
+          <div className="flip">
+            <div className="front">Who can participate in Vortex360?</div>
+            <div className="back">
+              Vortex360 is open to enthusiasts, students, and professionals
+              passionate about mechanical design. Whether you're a beginner or
+              an experienced designer, everyone is welcome!
             </div>
           </div>
         </div>
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
+              What tools will participants use during the event?
             </div>
             <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
+              Participants will utilize Fusion 360 tools for 3D modeling,
+              rendering, and manufacturing. It's a chance to harness the power
+              of cutting-edge technology in the design process.
             </div>
           </div>
         </div>
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
+              Is there a registration fee for Vortex360?
             </div>
             <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
+              No, participation in Vortex360 is free of charge. We want to
+              encourage as many individuals as possible to join this exciting
+              journey of creativity and innovation.
             </div>
           </div>
         </div>
         <div className="cardcontainer">
           <div className="flip">
             <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
+              Can I participate remotely in Vortex360?
             </div>
             <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
-            </div>
-          </div>
-        </div>
-        <div className="cardcontainer">
-          <div className="flip">
-            <div className="front">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-              voluptate?
-            </div>
-            <div className="back">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repudiandae corporis rerum voluptatibus, at suscipit itaque ab
-              cumque aliquid omnis deleniti.
+              Vortex360 is an on-site event at Anna Auditorium. Unfortunately,
+              remote participation is not available. We encourage you to join us
+              in person for an immersive experience.
             </div>
           </div>
         </div>

@@ -39,7 +39,9 @@ const Prizes = () => {
 
   return (
     <div className="prizes-container">
+
       <hr id="prizes" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
+
       <h2>Prizes</h2>
       <motion.div
         className="prizes-row"

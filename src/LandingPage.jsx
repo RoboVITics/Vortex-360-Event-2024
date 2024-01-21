@@ -31,16 +31,20 @@ const LandingPage = () => {
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
-      0.1,
+      2,
       1000
     );
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("three-container").appendChild(renderer.domElement);
     const loader = new GLTFLoader();
-    loader.load("Asset 1.gltf", (gltf) => {
+    loader.load("plain white 3d logo.gltf", (gltf) => {
       const model = gltf.scene;
-      model.scale.set(0.3, 0.3, 0.3);
+      if (window.innerWidth < 400) {
+        model.scale.set(25, 27, 25);
+      } else {
+        model.scale.set(28, 28, 28);
+      }
       scene.add(model);
 
       camera.position.set(0, 4, 10);
@@ -103,10 +107,7 @@ const LandingPage = () => {
           <div className="text-section">
             <h2 className="name">VORTEX 360</h2>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              modi laborum quae sint soluta illo inventore ut ad et nesciunt
-              consequuntur delectus quia earum illum molestias, deserunt ipsa
-              nihil laudantium?
+              Vortex360 is an event organised by RoboVITics and powered by AutoDesk is a 3-day CAD modelling design-a-thon where participants think outside the box and come up with amazing designs and expand the horizons of innovation to solve real-world problems.
             </p>
           </div>
         </motion.div>
@@ -115,16 +116,6 @@ const LandingPage = () => {
         <motion.div
           id="three-container"
           ref={threeContainerRef}
-          style={{
-            backgroundColor: "#000",
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "-230px",
-            paddingRight: "0px",
-          }}
           variants={{
             hidden: { scale: 0.6 },
             visible: { scale: 1 },
@@ -142,7 +133,10 @@ const LandingPage = () => {
         >
           <div className="text-section-right">
             <h1 className="heading">Registration</h1>
-            <button class="btn-53">
+            <a href="https://www.instagram.com/robovitics/">
+              
+            
+            <button class="btn-53" >
               <div class="original">Register</div>
               <div class="letters">
                 <span>R</span>
@@ -155,7 +149,8 @@ const LandingPage = () => {
                 <span>r</span>
               </div>
             </button>
-          </div>
+          
+          </a></div>
         </motion.div>
       </div>
     </MotionConfig>

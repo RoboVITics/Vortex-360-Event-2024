@@ -16,6 +16,7 @@ const Domains = () => {
   return (
     <div id="domains">
       <h2 style={{ marginBottom: "-100px" }}>Tracks</h2>
+
       <motion.div
         id="carouselDemo"
         ref={ref}
@@ -73,7 +74,7 @@ const Domains = () => {
                   {domain.name}
                 </h2>
                 <p>{domain.desp}</p>
-                <Link
+                {/* <Link
                   to={`/domain/${domain.id}`}
                   style={{
                     fontWeight: "bold",
@@ -87,7 +88,7 @@ const Domains = () => {
                     alt=""
                     height="15px"
                   />
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}
