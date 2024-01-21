@@ -1,219 +1,216 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
-import { Timeline as ResponsiveTimeline } from "react-responsive-timeline";
-import { timelinebuttons } from "./Constants";
+import * as React from 'react';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import "./Timeline.css";
 
+/*
 const Timeline = () => {
-  const [position, setPosition] = useState({
-    pivot: "horizontal",
-    direction: "center",
-  });
-  const [tooltip] = useState(true);
-  const [textLimit, setTextLimit] = useState("none");
-  const [currentDay, setCurrentDay] = useState(1);
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const isMobile = window.innerWidth <= 768;
-      setPosition({
-        pivot: isMobile ? "vertical" : "horizontal",
-        direction: "center",
-      });
-      setIsMobileView(isMobile);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Initial check
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleTextLimit = (value) => {
-    setTextLimit(value);
-  };
-
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const controls = useAnimation();
-
-  const handleDayChange = (increment) => {
-    const newDay = currentDay + increment;
-    if (newDay >= 1 && newDay <= 3) {
-      setCurrentDay(newDay);
-    }
-  };
-
   if (inView) {
-    setTimeout(() => {
-      document.querySelectorAll("#next-slide")[0].click();
-    }, 2000);
     controls.start("visible");
   }
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const imageAddresses = [  
+//    timelineGif,
+    gff,
+
+    // Add more image addresses as needed
+  ];
+
+  const targetTimes = [
+    "2024-01-06T21:05:00",
+    "2024-01-07T12:30:00",
+    "2024-01-08T15:45:00",
+  ]; // Specify target date and times
+
+  useEffect(() => {
+    const updateIndex = () => {
+      const currentTime = new Date();
+      const targetTime = new Date(targetTimes[currentIndex]);
+
+      if (currentTime >= targetTime) {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % imageAddresses.length);
+      }
+    };
+
+    const intervalId = setInterval(updateIndex, 1000); // Check every second
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [currentIndex, imageAddresses.length, targetTimes]);
 
   return (
-    <div id="timeline">
-      <hr id="timeline" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
-      <h2 style={{ marginBottom: "20px", textAlign: "center" }}>Timeline</h2>
-      {isMobileView ? (
-        <div className="day-timeline">
-          {[1, 2, 3].map((day) => (
-            <div key={day}>
-              <h3>DAY {day}</h3>
-              <ResponsiveTimeline
-                pivot={position.pivot}
-                direction={position.direction}
-                tooltip={tooltip}
-                textLimit={textLimit}
-                timelines={getTimelineData(day)}
-              />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <motion.div
-          id="timelineDemo"
-          ref={ref}
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-touch="true"
-          variants={{
-            hidden: { scale: 0.6 },
-            visible: { scale: 1 },
-          }}
-          initial="hidden"
-          animate={controls}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="carousel-indicators">
-            {timelinebuttons.map((btn) => (
-              <button
-                key={btn.id}
-                type="button"
-                data-bs-target="#timelineDemo"
-                data-bs-slide-to={btn.slide}
-                className={btn.class}
-              ></button>
-            ))}
-          </div>
-          <div className="carousel-inner">
-            {[1, 2, 3].map((day) => (
-              <div
-                key={day}
-                className={`carousel-item timeline-carousel-item${day === currentDay ? " active" : ""
-                  }`}
-              >
-                <div className="day-timeline">
-                  <h3><b>DAY {day}</b></h3>
-                  <ResponsiveTimeline
-                    pivot={position.pivot}
-                    direction={position.direction}
-                    tooltip={tooltip}
-                    textLimit={textLimit}
-                    timelines={getTimelineData(day)}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <button
-            style={{ marginTop: "-10px" }}
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#timelineDemo"
-            data-bs-slide="prev"
-            onClick={() => handleDayChange(-1)}
-          >
-            <span className="carousel-control-prev-icon"></span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#timelineDemo"
-            data-bs-slide="next"
-            onClick={() => handleDayChange(1)}
-          >
-            <span style={{ marginTop: "-30px" }} className="carousel-control-next-icon"></span>
-          </button>
-        </motion.div>
-      )}
+    <div id="timeline" style={{ backgroundColor: "#000" }}>
+      <div className="container px-4 py-5">
+        <h2 className="border-bottom">Timeline</h2>
+      </div>
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { scale: 0.6 },
+          visible: { scale: 1 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.8 }}
+      >
+        <img src="https://picsum.photos/1000" />
+      </motion.div>
     </div>
   );
 };
 
-const getTimelineData = (day) => {
+export default Timeline;*/
 
-  switch (day) {
-    case 1:
-      return [
-        {
-          title: "Participants Registration",
-          sub: "9:00 AM",
-        },
-        {
-          title: "Introduction to the event",
-          sub: "10:00 AM",
-        },
-        {
-          title: "Introduction to Machine Design",
-          sub: "11:00 AM",
-        },
-        {
-          title: "Ideation Continues",
-          sub: "08:30 PM",
-        },
-      ];
-    case 2:
-      return [
-        {
-          title: "First Ideation Check",
-          sub: "1:00 AM",
-        },
-        {
-          title: "Crisis Challenge",
-          sub: "04:00 PM",
-        },
-        {
-          title: "Review: One",
-          sub: "10:30 AM",
-        },
-        {
-          title: "Project Showcase",
-          sub: "08:30 PM",
-        },
-      ];
-    case 3:
-      return [
-        {
-          title: "Project Showcase",
-          sub: "08:30 PM",
-        },
-        {
-          title: "Review: Two",
-          sub: "01:30 AM",
-        },
-        {
-          title: "Review: Three",
-          sub: "12:00 PM",
-        },
-        {
-          title: "Final Pitches",
-          sub: "04:15 PM",
-        },
-        {
-          title: "Results",
-          sub: "07:30 PM",
-        },
-      ];
-    default:
-      return [];
-  }
+
+const Timeline1 = () => {
+  return (<>
+    <hr id="timeline" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
+    <h2>Timeline</h2>
+
+    <h3>Day 1</h3>
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          09:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Participation Registration</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          10:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Introduction to Event</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          11:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Introduction to Machine Design</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          8:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Ideation Continues</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+    <h3>Day 2</h3>
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          1:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>First Ideation Check</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          4:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Crisis Challenge</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          10:30 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : One</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          8:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Project Showcase</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+
+    <h3>Day 3</h3>
+    <Timeline position="alternate">
+ 
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          1:30 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : Two</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          12:00 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : Three</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          4:15 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Final Pitches</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          7:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Results</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+
+  </>
+  );
 };
 
-export default Timeline;
+export default Timeline1;
