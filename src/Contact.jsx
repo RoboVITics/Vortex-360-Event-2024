@@ -61,7 +61,7 @@ const Contact = () => {
   <div className="row ">
     <div className="col-lg-6 mt-3 newform newperson ">
       <div className="contact-person ">
-        <h3>Aditya Subramaniam</h3>
+        <h3>Aditya Subramanian</h3>
         <p>Chairperson</p>
         <p>
           <strong>Phone:</strong> <a href="tel:+9840290425">+91 98402 90425</a>
