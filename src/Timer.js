@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Timer.css"; // Make sure to create a CSS file for styling
 
 const Timer = () => {
+
+
   const [targetDate, setTargetDate] = useState(() => {
-    const now = new Date();
-    now.setHours(now.getHours() + 5); // Set the target date to 5 hours from now
-    now.setMinutes(now.getMinutes() + 32); // Add 32 minutes
-    now.setSeconds(now.getSeconds() + 12); // Add 12 seconds
-    now.setDate(now.getDate() + 10); // Add 4 days
+    // Set the target date to February 2, 2024, at 00:00:00
+    const now = new Date(2024, 1, 2, 0, 0, 0);
     return now;
   });
   const [isComplete, setIsComplete] = useState(false);
@@ -154,7 +153,7 @@ const Timer = () => {
   // button feature
   const [days, setDays] = useState(0);
 
-  const TargetDate = new Date(2024, 1, 8); // December 31, 2024
+  const TargetDate = new Date(2024, 1, 1); // Feb 2nd, 2024
   useEffect(() => {
     const calculateDaysRemaining = () => {
       const currentDate = new Date();
@@ -177,7 +176,8 @@ const Timer = () => {
     <>
       <button onClick={handleButtonClick} id="timer_text">
         <p id="days_text">{days}</p>
-        <p id="togotext"> days to go</p>
+        <p id="togotext"> DAYS</p>
+        <p id="togotext">TO GO</p>
       </button>
       <div
         onClick={handleButtonClick}
