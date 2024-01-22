@@ -58,11 +58,11 @@ const Contact = () => {
             <h2>Contact Us</h2>
           </div>
         <div className="container" data-aos="fade-up">
-  <div className="row newperson">
-    <div className="col-lg-6 mt-3 newform">
-      <div className="contact-person">
-        <h3>Chairperson</h3>
-        <p>Aditya Subramaniam</p>
+  <div className="row ">
+    <div className="col-lg-6 mt-3 newform newperson ">
+      <div className="contact-person ">
+        <h3>Aditya Subramanian</h3>
+        <p>Chairperson</p>
         <p>
           <strong>Phone:</strong> <a href="tel:+9840290425">+91 98402 90425</a>
         </p>
@@ -70,8 +70,8 @@ const Contact = () => {
     </div>
     <div className="col-lg-6 mt-3 newform">
       <div className="contact-person">
-        <h3>Vice-Chairperson</h3>
-        <p>Achyut Duggal</p>
+        <h3>Achyut Duggal</h3>
+        <p>Vice-Chairperson</p>
         <p>
           <strong>Phone:</strong> <a href="tel:+7981693128">+91 79816 93128</a>
         </p>
@@ -79,8 +79,8 @@ const Contact = () => {
     </div>
     <div className="col-lg-6 mt-3 newform">
       <div className="contact-person">
-        <h3>Event Coordinator</h3>
-        <p>Yash Phatak</p>
+        <h3>Yash Phatak</h3>
+        <p>Event Coordinator</p>
         <p>
           <strong>Phone:</strong> <a href="tel:+9930770294">+91 99307 70294</a>
         </p>
@@ -88,8 +88,8 @@ const Contact = () => {
     </div>
     <div className="col-lg-6 mt-3 newform">
       <div className="contact-person">
-        <h3>Event Coordinator</h3>
-        <p>Virajit Dutt</p>
+        <h3>Virajit Dutt</h3>
+        <p>Event Coordinator</p>
         <p>
           <strong>Phone:</strong> <a href="tel:+7028027978">+91 70280 27978</a>
         </p>
