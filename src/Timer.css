@@ -23,7 +23,7 @@ body {
   transition: linear 0.3s;
 }
 
-#timer_text:hover{
+#timer_text:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   border: rgb(0, 0, 0) 1px solid;
@@ -33,8 +33,8 @@ body {
   margin: 0;
 }
 
-#togotext{
-  font-size:6px ;
+#togotext {
+  font-size: 6px;
 }
 
 .countdown_visible {
@@ -45,10 +45,10 @@ body {
 .countdown_hidden {
   opacity: 0;
   z-index: -10;
+  width: 100px;
 }
 
 .countdown {
-
   background: #000000;
   justify-content: center;
   margin: 100px auto;
@@ -68,7 +68,6 @@ body {
 }
 
 .time-section {
-
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -201,10 +200,9 @@ body {
   animation: flip-bottom 0.8s linear;
 }
 
-#days_text{
+#days_text {
   font-size: 30px;
 }
-
 
 @keyframes flip-top {
   0% {
@@ -218,7 +216,6 @@ body {
 }
 
 @keyframes flip-bottom {
-
   0%,
   50% {
     transform: rotateX(90deg);
@@ -229,29 +226,30 @@ body {
   }
 }
 
-
-@media only screen and (max-width: 768px){
-  .time-segment{
+@media only screen and (max-width: 768px) {
+  .time-segment {
     font-size: 20px;
     width: 100%;
   }
 
-  .segment-overlay{
+  .segment-overlay {
     width: 25px;
   }
 
-  .countdown{
+  .countdown {
     gap: 35px;
   }
 
-  .countdown p{
+  .countdown p {
     font-size: 10px;
   }
-  .segment-overlay__top,.segment-overlay__bottom{
+  .segment-overlay__top,
+  .segment-overlay__bottom {
     width: 20px;
   }
- 
-  .segment-display__top,.segment-display__bottom{
+
+  .segment-display__top,
+  .segment-display__bottom {
     width: 20px;
   }
 
@@ -262,45 +260,46 @@ body {
     z-index: 10000;
     font-weight: bold;
     border-radius: 50%;
-    padding:1rem 1rem;
+    padding: 1rem 1rem;
     font-size: 12px;
     background-color: black;
     color: white;
     border: white 1px solid;
   }
 
-  #days_text{
+  #days_text {
     font-size: 30px;
   }
 
-  #timer_text p{
+  #timer_text p {
     font-size: 8px;
   }
-
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1192px){
-  .time-segment{
+@media only screen and (min-width: 768px) and (max-width: 1192px) {
+  .time-segment {
     font-size: 30px;
     width: 100%;
   }
 
-  .segment-overlay{
+  .segment-overlay {
     width: 50px;
   }
 
-  .countdown{
+  .countdown {
     gap: 35px;
   }
 
-  .countdown p{
+  .countdown p {
     font-size: 16px;
   }
-  .segment-overlay__top,.segment-overlay__bottom{
+  .segment-overlay__top,
+  .segment-overlay__bottom {
     width: 50px;
   }
- 
-  .segment-display__top,.segment-display__bottom{
+
+  .segment-display__top,
+  .segment-display__bottom {
     width: 50px;
   }
   #timer_text {
@@ -317,8 +316,7 @@ body {
     border: white 1px solid;
   }
 
-  #days_text{
+  #days_text {
     font-size: 20px;
   }
-
 }
