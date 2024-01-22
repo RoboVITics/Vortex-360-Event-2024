@@ -123,11 +123,17 @@ h2 {
    }
  }
 
- @media (max-width: 380px) {
+ @media (max-width: 500px) {
    #domains {
      z-index: 3;
    }
+
  }
+ @media (max-width: 380px) {
+  #domains {
+    z-index: 3;
+  }
+  }
 
  @media (max-width: 750px) {
    .container {
@@ -497,6 +503,12 @@ h2 {
 @media (max-width: 600px) {
   .sponsor img {
     width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sponsor img {
+    width: 500px;
   }
 }
 .nav-item {

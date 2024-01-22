@@ -56,7 +56,7 @@ const Navbar = () => {
               <div className="mainIcon">
                 <div className="mainLogo">
                   <a class="navbar-brand" href="#">
-                    <img src="./Robovitics logo 1.png" alt="" height="40px" />
+                    <img src="./robvitcs logo website-3.png" alt="" height="40px" />
                   </a>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
         >
           <div className="mainLogo2">
             <a class="navbar-brand" href="#">
-              <img src="./Robovitics logo 1.png" alt="" height="40px" />
+              <img src="./robvitcs logo website-3.png" alt="" height="40px" />
             </a>
           </div>
         </motion.div>
