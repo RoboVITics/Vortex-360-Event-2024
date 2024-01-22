@@ -127,10 +127,13 @@ h2 {
    #domains {
      z-index: 3;
    }
-  .mainLogo2{
-    margin-left: 15%;
-  }
+
  }
+ @media (max-width: 380px) {
+  #domains {
+    z-index: 3;
+  }
+  }
 
  @media (max-width: 750px) {
    .container {
@@ -500,6 +503,12 @@ h2 {
 @media (max-width: 600px) {
   .sponsor img {
     width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sponsor img {
+    width: 500px;
   }
 }
 .nav-item {
