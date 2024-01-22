@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Domains from "./Domains";
-import Timeline from "./Timeline";
+import Timeline1 from "./Timeline";
 import Sponsors from "./Sponsors";
 import Prizes from "./Prizes";
 import FAQs from "./FAQs";
@@ -17,7 +17,7 @@ const Main = () => {
       <Navbar />
       <LandingPage />
       <Domains />
-      <Timeline />
+      <Timeline1 />
       <Sponsors />
       <Prizes />
       <FAQs />

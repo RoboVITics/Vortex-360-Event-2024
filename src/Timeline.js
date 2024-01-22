@@ -1,9 +1,14 @@
-/*import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import "../src/Timeline.css";
-import timelineGif from "./timeline_gif.gif"; // Import the images here
-import gff from "./gff.jpg";
+import * as React from 'react';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import "./Timeline.css";
 
+/*
 const Timeline = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -65,97 +70,147 @@ const Timeline = () => {
 };
 
 export default Timeline;*/
-import React from "react";
 
-const Timeline = () => {
-  return (
-    <div>
-      <div
-        id="agu"
-        class="carousel slide"
-        data-bs-ride="carousel"
-        data-bs-touch="true"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#agu"
-            data-bs-slide-to="0"
-            class="active"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#agu"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#agu"
-            data-bs-slide-to="2"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="https://picsum.photos/200"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://picsum.photos/200"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://picsum.photos/200"
-              class="d-block w-100"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button
-          id="prev-slide"
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#agu"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          id="next-slide"
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#agu"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
+
+const Timeline1 = () => {
+  return (<>
+    <hr id="timeline" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
+    <h2>Timeline</h2>
+
+    <h3>Day 1</h3>
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          09:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Participation Registration</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          10:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Introduction to Event</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          11:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Introduction to Machine Design</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          8:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Ideation Continues</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+    <h3>Day 2</h3>
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          1:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>First Ideation Check</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          4:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Crisis Challenge</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          10:30 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : One</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          8:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Project Showcase</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+
+    <h3>Day 3</h3>
+    <Timeline position="alternate">
+ 
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          1:30 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : Two</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          12:00 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Review : Three</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          4:15 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Final Pitches</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent color=" grey">
+          7:30 pm
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Results</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+
+  </>
   );
 };
 
-export default Timeline;
+export default Timeline1;

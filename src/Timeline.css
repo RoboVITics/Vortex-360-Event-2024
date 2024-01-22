@@ -1,10 +1,20 @@
-#timeline{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+h3{
+    width:100%;
+    text-align: center;
 }
 
-
-#timeline img{
-    width: 50%;
+@media (max-width: 500px) {
+    .day-timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+    }
+    h3 {
+        width:100%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        text-align: center;
+    }
 }
