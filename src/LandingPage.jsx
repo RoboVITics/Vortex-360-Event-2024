@@ -5,6 +5,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { MotionConfig, motion, useAnimation } from "framer-motion";
 import "./LandingPage.css";
 import { animate, useInView } from "framer-motion";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const LandingPage = () => {
   const threeContainerRef = useRef(null);
@@ -40,15 +41,22 @@ const LandingPage = () => {
     const loader = new GLTFLoader();
     loader.load("plain white 3d logo.gltf", (gltf) => {
       const model = gltf.scene;
-      if (window.innerWidth < 400) {
-        model.scale.set(25, 27, 25);
+      if (window.innerWidth < 900) {
+        model.scale.set(18, 18, 18);
       } else {
         model.scale.set(28, 28, 28);
       }
       scene.add(model);
 
       camera.position.set(0, 4, 10);
-
+      if (window.innerWidth > 300) {
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.25;
+        controls.screenSpacePanning = false;
+        controls.maxPolarAngle = Math.PI * 4;
+        controls.enableZoom = false;
+      }
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
       scene.add(ambientLight);
 
@@ -107,7 +115,10 @@ const LandingPage = () => {
           <div className="text-section">
             <h2 className="name">VORTEX 360</h2>
             <p className="description">
-              Vortex360 is an event organised by RoboVITics and powered by AutoDesk is a 3-day CAD modelling design-a-thon where participants think outside the box and come up with amazing designs and expand the horizons of innovation to solve real-world problems.
+              Vortex360 is an event organised by RoboVITics and powered by
+              AutoDesk is a 3-day CAD modelling design-a-thon where participants
+              think outside the box and come up with amazing designs and expand
+              the horizons of innovation to solve real-world problems.
             </p>
           </div>
         </motion.div>
@@ -134,23 +145,22 @@ const LandingPage = () => {
           <div className="text-section-right">
             <h1 className="heading">Registration</h1>
             <a href="https://www.instagram.com/robovitics/">
-              
-            
-            <button class="btn-53" >
-              <div class="original">Register</div>
-              <div class="letters">
-                <span>R</span>
-                <span>e</span>
-                <span>g</span>
-                <span>i</span>
-                <span>s</span>
-                <span>t</span>
-                <span>e</span>
-                <span>r</span>
-              </div>
-            </button>
-          
-          </a></div>
+              <button class="btn-53">
+                <div class="original">Register</div>
+                <div class="letters">
+                  <span>R</span>
+                  <span>e</span>
+                  <span>g</span>
+                  <span>i</span>
+                  <span>s</span>
+                  <span>t</span>
+                  <span>e</span>
+                  <span>r</span>
+                </div>
+              </button>
+              <button className="mobile-button">Register</button>
+            </a>
+          </div>
         </motion.div>
       </div>
     </MotionConfig>

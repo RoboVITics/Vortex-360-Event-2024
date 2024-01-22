@@ -29,10 +29,12 @@ function Progressbar({ value }) {
       "plain white 3d logo.gltf",
       (gltf) => {
         const model = gltf.scene;
-        if (window.innerWidth < 400) {
-          model.scale.set(22, 26, 25);
+        if (window.innerWidth < 900) {
+          model.scale.set(20, 20, 20);
+        } else if (window.innerWidth < 500) {
+          model.scale.set(18, 20, 25);
         } else {
-          model.scale.set(28, 28, 28);
+          model.scale.set(27, 27, 27);
         }
         scene.add(model);
         camera.position.set(0, 2 * 2, 5 * 2);
@@ -89,15 +91,7 @@ function Progressbar({ value }) {
       animate={controls}
       transition={{ duration: 1 }}
     >
-      <div
-        id="three-container"
-        ref={threeContainerRef}
-        style={{
-          backgroundColor: "#000",
-          width: "100%",
-          marginTop: "-390px",
-        }}
-      ></div>
+      <div id="three-container" ref={threeContainerRef}></div>
       <div
         style={{
           display: "flex",
