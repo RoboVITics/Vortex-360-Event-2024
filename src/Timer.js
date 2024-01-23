@@ -153,7 +153,7 @@ const Timer = () => {
   // button feature
   const [days, setDays] = useState(0);
 
-  const TargetDate = new Date(2024, 1, 1); // Feb 2nd, 2024
+  const TargetDate = new Date(2024, 1, 1); // Feb 2nd, 2024 (Month indexing starts from 0)
   useEffect(() => {
     const calculateDaysRemaining = () => {
       const currentDate = new Date();
@@ -161,7 +161,11 @@ const Timer = () => {
       const difference = targetDateTime - currentDate.getTime();
       const remainingDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
-      setDays(remainingDays);
+      const nonNegativeDays = Math.max(0, remainingDays);
+
+      setDays(nonNegativeDays);
+
+    
     };
 
     calculateDaysRemaining(); // Initial calculation
@@ -170,15 +174,14 @@ const Timer = () => {
     const intervalId = setInterval(calculateDaysRemaining, 1000 * 60 * 60 * 24);
 
     return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [targetDate]);
+  }, [TargetDate]);
 
   return (
     <>
-      <button onClick={handleButtonClick} id="timer_text">
-        <p id="days_text">{days}</p>
-        <p id="togotext"> DAYS</p>
-        <p id="togotext">TO GO</p>
-      </button>
+      
+        <p onClick={handleButtonClick} id="timer_text">{days} DAYS TO GO
+        {/* <img src="./Robot_arm.png"></img> */}
+        </p>
       <div
         onClick={handleButtonClick}
         className={`countdown ${

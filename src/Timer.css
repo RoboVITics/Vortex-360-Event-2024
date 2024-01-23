@@ -9,25 +9,27 @@ body {
 }
 
 #timer_text {
-  position: fixed;
-  top: 14rem;
-  right: 4rem;
-  z-index: 10000;
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  z-index: 10;
   font-weight: bold;
   border-radius: 50%;
-  padding: 1rem 2rem;
-  font-size: 12px;
-  background-color: black;
+  /* padding: 1rem 2rem; */
+  font-size: 28px;
+  font-style: italic;
+  /* background-color: black; */
   color: white;
-  border: white 1px solid;
   transition: linear 0.3s;
 }
 
-#timer_text:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border: rgb(0, 0, 0) 1px solid;
+#timer_text:hover{
+  text-shadow: 4px 4px 0 purple;
 }
+
+
+
+
 
 
 
@@ -44,13 +46,13 @@ body {
 .countdown_hidden {
   opacity: 0;
   z-index: -10;
-  width: 100px;
 }
 
 .countdown {
+
   background: #000000;
   justify-content: center;
-  margin: 100px auto;
+
   width: 100%;
   height: 100vh;
   height: 100vh;
@@ -67,6 +69,7 @@ body {
 }
 
 .time-section {
+
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -199,10 +202,11 @@ body {
   animation: flip-bottom 0.8s linear;
 }
 
-#days_text {
+#days_text{
   font-size: 30px;
   margin: 0;
 }
+
 
 @keyframes flip-top {
   0% {
@@ -216,6 +220,7 @@ body {
 }
 
 @keyframes flip-bottom {
+
   0%,
   50% {
     transform: rotateX(90deg);
@@ -226,97 +231,98 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .time-segment {
+
+@media only screen and (max-width: 768px){
+  .time-segment{
     font-size: 20px;
     width: 100%;
   }
 
-  .segment-overlay {
+  .segment-overlay{
     width: 25px;
   }
 
-  .countdown {
+  .countdown{
     gap: 35px;
   }
 
-  .countdown p {
+  .countdown p{
     font-size: 10px;
   }
-  .segment-overlay__top,
-  .segment-overlay__bottom {
+  .segment-overlay__top,.segment-overlay__bottom{
     width: 20px;
   }
-
-  .segment-display__top,
-  .segment-display__bottom {
+ 
+  .segment-display__top,.segment-display__bottom{
     width: 20px;
   }
 
   #timer_text {
-    position: fixed;
-    top: 14rem;
-    right: 4rem;
-    z-index: 10000;
+    position: absolute;
+    top: 100%;
+    right: 30%;
+    z-index: 10;
     font-weight: bold;
     border-radius: 50%;
-    padding: 1rem 1rem;
-    font-size: 12px;
-    background-color: black;
+    /* padding: 1rem 2rem; */
+    font-size: 20px;
+    font-style: italic;
+    /* background-color: black; */
     color: white;
-    border: white 1px solid;
+    transition: linear 0.3s;
   }
 
-  #days_text {
+  #days_text{
     font-size: 30px;
   }
 
-  #timer_text p {
+  #timer_text p{
     font-size: 8px;
   }
+
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1192px) {
-  .time-segment {
+@media only screen and (min-width: 768px) and (max-width: 1192px){
+  .time-segment{
     font-size: 30px;
     width: 100%;
   }
 
-  .segment-overlay {
+  .segment-overlay{
     width: 50px;
   }
 
-  .countdown {
+  .countdown{
     gap: 35px;
   }
 
-  .countdown p {
+  .countdown p{
     font-size: 16px;
   }
-  .segment-overlay__top,
-  .segment-overlay__bottom {
+  .segment-overlay__top,.segment-overlay__bottom{
     width: 50px;
   }
-
-  .segment-display__top,
-  .segment-display__bottom {
+ 
+  .segment-display__top,.segment-display__bottom{
     width: 50px;
   }
   #timer_text {
-    position: fixed;
-    top: 14rem;
-    right: 4rem;
-    z-index: 10000;
+    position: absolute;
+    top: 100%;
+    right: 40%;
+    z-index: 10;
     font-weight: bold;
     border-radius: 50%;
-    padding: 1rem 2rem;
-    font-size: 12px;
-    background-color: black;
+    /* padding: 1rem 2rem; */
+    font-size: 20px;
+    font-style: italic;
+    /* background-color: black; */
     color: white;
-    border: white 1px solid;
+    transition: linear 0.3s;
   }
 
-  #days_text {
+  #days_text{
     font-size: 20px;
   }
+
 }
