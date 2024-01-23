@@ -70,6 +70,7 @@ const Contact = () => {
           <div className="section-title">
             <h2>Contact Us</h2>
           </div>
+
           <motion.div
             className="container"
             data-aos="fade-up"
@@ -88,8 +89,7 @@ const Contact = () => {
                   <h3>Aditya Subramanian</h3>
                   <p>Chairperson</p>
                   <p>
-                    <strong>Phone:</strong>{" "}
-                    <a href="tel:+9840290425">+91 98402 90425</a>
+                    <strong>Phone:</strong> <a href="tel:+9840290425">+91 98402 90425</a>
                   </p>
                 </div>
               </div>
@@ -98,18 +98,7 @@ const Contact = () => {
                   <h3>Achyut Duggal</h3>
                   <p>Vice-Chairperson</p>
                   <p>
-                    <strong>Phone:</strong>{" "}
-                    <a href="tel:+7981693128">+91 79816 93128</a>
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-6 mt-3 newform">
-                <div className="contact-person">
-                  <h3>Yash Phatak</h3>
-                  <p>Event Coordinator</p>
-                  <p>
-                    <strong>Phone:</strong>{" "}
-                    <a href="tel:+9930770294">+91 99307 70294</a>
+                    <strong>Phone:</strong> <a href="tel:+7981693128">+91 79816 93128</a>
                   </p>
                 </div>
               </div>
@@ -118,8 +107,7 @@ const Contact = () => {
                   <h3>Virajit Dutt</h3>
                   <p>Event Coordinator</p>
                   <p>
-                    <strong>Phone:</strong>{" "}
-                    <a href="tel:+7028027978">+91 70280 27978</a>
+                    <strong>Phone:</strong> <a href="tel:+7028027978">+91 70280 27978</a>
                   </p>
                 </div>
               </div>
