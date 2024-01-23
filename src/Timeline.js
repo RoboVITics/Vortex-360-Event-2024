@@ -86,7 +86,7 @@ const Timeline1 = () => {
         id="timeline"
         style={{ marginBottom: "1.5rem", visibility: "hidden" }}
       />
-      <h2>Timeline</h2>
+      <h1>Timeline</h1>
       <motion.div
         ref={ref}
         variants={{

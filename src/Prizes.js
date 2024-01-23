@@ -42,7 +42,7 @@ const Prizes = () => {
 
       <hr id="prizes" style={{ marginBottom: "1.5rem", visibility: "hidden" }} />
 
-      <h2>Prizes</h2>
+      <h1>Prizes</h1>
       <motion.div
         className="prizes-row"
         ref={ref}
