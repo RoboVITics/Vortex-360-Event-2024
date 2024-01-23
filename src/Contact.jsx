@@ -79,15 +79,6 @@ const Contact = () => {
     </div>
     <div className="col-lg-6 mt-3 newform">
       <div className="contact-person">
-        <h3>Yash Phatak</h3>
-        <p>Event Coordinator</p>
-        <p>
-          <strong>Phone:</strong> <a href="tel:+9930770294">+91 99307 70294</a>
-        </p>
-      </div>
-    </div>
-    <div className="col-lg-6 mt-3 newform">
-      <div className="contact-person">
         <h3>Virajit Dutt</h3>
         <p>Event Coordinator</p>
         <p>

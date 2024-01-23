@@ -72,7 +72,7 @@ const Prizes = () => {
               }}
               className="prize-description"
             >
-              Prize Pool of Rs 1,10,000
+              Prize Pool of Rs. 1,00,000+
             </p>
           </div>
         </div>
