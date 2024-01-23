@@ -9,25 +9,27 @@ body {
 }
 
 #timer_text {
-  position: fixed;
-  top: 14rem;
-  right: 4rem;
-  z-index: 10000;
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  z-index: 10;
   font-weight: bold;
   border-radius: 50%;
-  padding: 1rem 2rem;
-  font-size: 12px;
-  background-color: black;
+  /* padding: 1rem 2rem; */
+  font-size: 28px;
+  font-style: italic;
+  /* background-color: black; */
   color: white;
-  border: white 1px solid;
   transition: linear 0.3s;
 }
 
 #timer_text:hover{
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border: rgb(0, 0, 0) 1px solid;
+  text-shadow: 4px 4px 0 purple;
 }
+
+
+
+
 
 
 
@@ -50,7 +52,7 @@ body {
 
   background: #000000;
   justify-content: center;
-  margin: 100px auto;
+
   width: 100%;
   height: 100vh;
   height: 100vh;
@@ -256,17 +258,18 @@ body {
   }
 
   #timer_text {
-    position: fixed;
-    top: 14rem;
-    right: 4rem;
-    z-index: 10000;
+    position: absolute;
+    top: 100%;
+    right: 30%;
+    z-index: 10;
     font-weight: bold;
     border-radius: 50%;
-    padding:1rem 1rem;
-    font-size: 12px;
-    background-color: black;
+    /* padding: 1rem 2rem; */
+    font-size: 20px;
+    font-style: italic;
+    /* background-color: black; */
     color: white;
-    border: white 1px solid;
+    transition: linear 0.3s;
   }
 
   #days_text{
@@ -304,17 +307,18 @@ body {
     width: 50px;
   }
   #timer_text {
-    position: fixed;
-    top: 14rem;
-    right: 4rem;
-    z-index: 10000;
+    position: absolute;
+    top: 100%;
+    right: 40%;
+    z-index: 10;
     font-weight: bold;
     border-radius: 50%;
-    padding: 1rem 2rem;
-    font-size: 12px;
-    background-color: black;
+    /* padding: 1rem 2rem; */
+    font-size: 20px;
+    font-style: italic;
+    /* background-color: black; */
     color: white;
-    border: white 1px solid;
+    transition: linear 0.3s;
   }
 
   #days_text{

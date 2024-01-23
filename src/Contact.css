@@ -22,6 +22,7 @@
 
 #leftContact {
   width: 30%;
+  z-index: 9;
 }
 
 #contact {
@@ -104,7 +105,7 @@
 
 #leftContact {
   position: relative;
-  z-index: 10;
+  z-index: 9;
 }
 
 .socialContainer:hover {

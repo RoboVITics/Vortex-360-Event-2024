@@ -174,11 +174,8 @@ const Timer = () => {
 
   return (
     <>
-      <button onClick={handleButtonClick} id="timer_text">
-        <p id="days_text">{days}</p>
-        <p id="togotext"> DAYS</p>
-        <p id="togotext">TO GO</p>
-      </button>
+      
+        <p onClick={handleButtonClick} id="timer_text">{days} DAYS TO GO<img src="./Robot_arm.png"></img></p>
       <div
         onClick={handleButtonClick}
         className={`countdown ${
