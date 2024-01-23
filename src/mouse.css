@@ -9,6 +9,9 @@
   pointer-events: none;
   z-index: 99999999; /* so that it stays on top of all other elements */
 }
+* {
+  cursor: none;
+}
 @media only screen and (max-width: 1192px) {
   .circle {
     display: none;
