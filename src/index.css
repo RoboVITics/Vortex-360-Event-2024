@@ -4,48 +4,48 @@ body {
   background-color: #000;
 }
 
- #home {
-   padding-top: 0;
- }
+#home {
+  padding-top: 0;
+}
 
- code {
-   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-     monospace;
- }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
- .navbar-nav {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
-   gap: 3rem;
- }
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 3rem;
+}
 
- /*.nav-item {
+/*.nav-item {
   position: relative;
 }*/
- .feature-icon {
-   background-color: white;
-   width: 4rem;
-   height: 4rem;
-   border-radius: 0.75rem;
- }
+.feature-icon {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+}
 
- .carousel {
-   height: 30rem;
- }
+.carousel {
+  height: 30rem;
+}
 
- .carousel-inner {
-   height: 100%;
- }
+.carousel-inner {
+  height: 100%;
+}
 
- .carousel-item {
-   height: 30rem;
- }
+.carousel-item {
+  height: 30rem;
+}
 
- .carousel-item .container {
-   margin-top: 10%;
- }
+.carousel-item .container {
+  margin-top: 10%;
+}
 
 h2 {
   text-align: center;
@@ -57,230 +57,229 @@ h2 {
   width: 100%;
 }
 
- h5,
- h4 {
-   color: #212529;
-   font-weight: bold;
- }
+h5,
+h4 {
+  color: #212529;
+  font-weight: bold;
+}
 
- .nav li a {
-   color: white;
- }
+.nav li a {
+  color: white;
+}
 
- .link {
-   text-decoration: none;
-   color: white;
-   font-size: 1.1rem;
- }
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
 
- .mainIcon {
-   margin-right: -2rem;
- }
+.mainIcon {
+  margin-right: -2rem;
+}
 
- .mainLogo {
-   margin-top: -29px;
-   padding-top: 20px;
-   clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
- }
+.mainLogo {
+  margin-top: -29px;
+  padding-top: 20px;
+  clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
+}
 
- .pls {
-   display: flex;
-   justify-content: center;
- }
+.pls {
+  display: flex;
+  justify-content: center;
+}
 
- .mainIcon2 {
-   z-index: 2;
-   display: none;
-   min-width: 440px;
-   justify-content: center;
-   align-items: center;
-   padding-bottom: 3px;
- }
+.mainIcon2 {
+  z-index: 2;
+  display: none;
+  min-width: 440px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3px;
+}
 
- .mainLogo2 {
-   margin-top: -10px;
-   padding-top: 20px;
-   padding-left: 20px;
-   padding-right: 40px;
-   clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
- }
+.mainLogo2 {
+  margin-top: -10px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 40px;
+  clip-path: polygon(0 0, 92% 0, 82% 96%, 10% 96%);
+}
 
- #domains {
-   margin-top: 150px;
- }
+#domains {
+  margin-top: 150px;
+}
 
- @media (max-width: 1000px) {
-   .mainIcon {
-     display: none;
-   }
+@media (max-width: 1000px) {
+  .mainIcon {
+    display: none;
+  }
 
-   .mainIcon2 {
-     display: flex;
-   }
+  .mainIcon2 {
+    display: flex;
+  }
 
-   #domains {
-     margin-top: 400px;
-   }
- }
+  #domains {
+    margin-top: 400px;
+  }
+}
 
- @media (max-width: 500px) {
-   #domains {
-     z-index: 3;
-   }
-
- }
- @media (max-width: 380px) {
+@media (max-width: 500px) {
   #domains {
     z-index: 3;
   }
+}
+@media (max-width: 380px) {
+  #domains {
+    z-index: 3;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
   }
 
- @media (max-width: 750px) {
-   .container {
-     max-width: 100% !important;
-     overflow-x: hidden !important;
-   }
+  #domains {
+    margin-top: 500px;
+  }
+}
 
-   #domains {
-     margin-top: 500px;
-   }
- }
+.mainLogo a img {
+  margin: -12px 10px 3px 10px;
+}
 
- .mainLogo a img {
-   margin: -12px 10px 3px 10px;
- }
+.mainLogo2 a img {
+  margin: -12px 10px 3px 10px;
+}
 
- .mainLogo2 a img {
-   margin: -12px 10px 3px 10px;
- }
+.cardcontainer {
+  height: 300px;
+  width: 300px;
+  perspective: 600px;
+}
 
- .cardcontainer {
-   height: 300px;
-   width: 300px;
-   perspective: 600px;
- }
+.cardcontainer:hover > .flip {
+  transform: rotateY(180deg);
+}
 
- .cardcontainer:hover>.flip {
-   transform: rotateY(180deg);
- }
+.flip {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
+}
 
- .flip {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   width: 100%;
-   transform-style: preserve-3d;
-   position: relative;
-   transition: transform 1000ms;
- }
+.front,
+.back {
+  background-color: #212529;
+  color: white;
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .front,
- .back {
-   background-color: #212529;
-   color: white;
-   backface-visibility: hidden;
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   border-radius: 30px;
-   padding: 1rem;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+.back {
+  transform: rotateY(180deg);
+}
 
- .back {
-   transform: rotateY(180deg);
- }
+.domain-info {
+  height: 100vh;
+  overflow-y: hidden;
+}
 
- .domain-info {
-   height: 100vh;
-   overflow-y: hidden;
- }
+.domain-info header {
+  text-align: center;
+  padding: 20px;
+}
 
- .domain-info header {
-   text-align: center;
-   padding: 20px;
- }
+.domain-info header h1 {
+  color: black;
+}
 
- .domain-info header h1 {
-   color: black;
- }
+.domain-info header p {
+  width: 50%;
+  margin-left: 25%;
+  color: white;
+}
 
- .domain-info header p {
-   width: 50%;
-   margin-left: 25%;
-   color: white;
- }
+.domain-info section {
+  padding: 20px;
+  background-color: #212529;
+  border-radius: 20px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0);
+}
 
- .domain-info section {
-   padding: 20px;
-   background-color: #212529;
-   border-radius: 20px;
-   box-shadow: -10px 10px 10px rgba(0, 0, 0);
- }
+.domain-sections {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 
- .domain-sections {
-   margin-left: 25px;
-   margin-right: 25px;
-   display: flex;
-   justify-content: center;
-   gap: 2rem;
-   margin-bottom: 2rem;
- }
+.domain-info h2 {
+  color: white;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
 
- .domain-info h2 {
-   color: white;
-   border-bottom: 2px solid #fff;
-   padding-bottom: 10px;
- }
+.domain-info p {
+  line-height: 1.6;
+}
 
- .domain-info p {
-   line-height: 1.6;
- }
+@media (max-width: 900px) {
+  .domain-info {
+    height: 100vh;
+  }
+}
 
- @media (max-width: 900px) {
-   .domain-info {
-     height: 100vh;
-   }
- }
+@media (max-width: 830px) {
+  .domain-info section {
+    padding: 10px;
+    width: 70%;
+  }
 
- @media (max-width: 830px) {
-   .domain-info section {
-     padding: 10px;
-     width: 70%;
-   }
+  .domain-sections {
+    flex-direction: column;
+    align-items: center;
+  }
 
-   .domain-sections {
-     flex-direction: column;
-     align-items: center;
-   }
+  .domain-info {
+    height: 100%;
+  }
+}
 
-   .domain-info {
-     height: 100%;
-   }
- }
+@media (max-width: 759px) {
+  .head {
+    flex-direction: column;
+  }
+}
 
- @media (max-width: 759px) {
-   .head {
-     flex-direction: column;
-   }
- }
+.head {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  width: 30%;
+  margin-left: 35%;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
- .head {
-   padding-top: 2rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-bottom: 2px solid black;
-   width: 30%;
-   margin-left: 35%;
-   gap: 1.5rem;
-   margin-bottom: 2rem;
- }
-
- /*.links {
+/*.links {
   display: flex;
   gap: 1rem;
 }
@@ -289,7 +288,7 @@ h2 {
   height: 1.5rem;
 }*/
 
- /*.gradient-background {
+/*.gradient-background {
   height: 100%;
   width: 100%;
   background: linear-gradient(90deg, #8594e4, #6643b5, #430f58);
@@ -311,20 +310,20 @@ h2 {
   }
 }*/
 
- .feature-icon {
-   background-color: white;
-   width: 4rem;
-   height: 4rem;
-   border-radius: 0.75rem;
- }
+.feature-icon {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+}
 
- .carousel {
-   height: 27rem;
- }
+.carousel {
+  height: 27rem;
+}
 
- .carousel-inner {
-   height: 100%;
- }
+.carousel-inner {
+  height: 100%;
+}
 
 .carousel-item {
   height: 27rem;
@@ -339,123 +338,123 @@ h2 {
   }
 }
 
- .carousel-item .container {
-   margin-top: 10%;
- }
+.carousel-item .container {
+  margin-top: 10%;
+}
 
- h5,
- h4 {
-   color: #212529;
-   font-weight: bold;
- }
+h5,
+h4 {
+  color: #212529;
+  font-weight: bold;
+}
 
- .link {
-   text-decoration: none;
-   color: white;
- }
+.link {
+  text-decoration: none;
+  color: white;
+}
 
- .cardcontainer {
-   height: 300px;
-   width: 300px;
-   perspective: 600px;
- }
+.cardcontainer {
+  height: 300px;
+  width: 300px;
+  perspective: 600px;
+}
 
- .cardcontainer:hover>.flip {
-   transform: rotateY(180deg);
- }
+.cardcontainer:hover > .flip {
+  transform: rotateY(180deg);
+}
 
- .flip {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   width: 100%;
-   transform-style: preserve-3d;
-   position: relative;
-   transition: transform 1000ms;
- }
+.flip {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
+}
 
- .front,
- .back {
-   background-color: #212529;
-   color: white;
-   backface-visibility: hidden;
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   border-radius: 30px;
-   padding: 1rem;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+.front,
+.back {
+  background-color: #212529;
+  color: white;
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .back {
   transform: rotateY(180deg);
 }
 
- .domain-info {
-   height: 100vh;
-   overflow-y: hidden;
- }
+.domain-info {
+  height: 100vh;
+  overflow-y: hidden;
+}
 
- .domain-info header {
-   text-align: center;
-   padding: 20px;
- }
+.domain-info header {
+  text-align: center;
+  padding: 20px;
+}
 
- .domain-info header h1 {
-   color: black;
- }
+.domain-info header h1 {
+  color: black;
+}
 
- .domain-info header p {
-   width: 50%;
-   margin-left: 25%;
-   color: white;
- }
+.domain-info header p {
+  width: 50%;
+  margin-left: 25%;
+  color: white;
+}
 
- .domain-info section {
-   padding: 20px;
-   background-color: #212529;
-   border-radius: 20px;
-   box-shadow: -10px 10px 10px rgba(0, 0, 0);
- }
+.domain-info section {
+  padding: 20px;
+  background-color: #212529;
+  border-radius: 20px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0);
+}
 
- .domain-sections {
-   margin-left: 25px;
-   margin-right: 25px;
-   display: flex;
-   justify-content: center;
-   gap: 2rem;
-   margin-bottom: 2rem;
- }
+.domain-sections {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 
- .domain-info h2 {
-   color: white;
-   border-bottom: 2px solid #fff;
-   padding-bottom: 10px;
- }
+.domain-info h2 {
+  color: white;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
 
- .domain-info p {
-   line-height: 1.6;
- }
+.domain-info p {
+  line-height: 1.6;
+}
 
- @media (max-width: 900px) {
-   .domain-info {
-     height: 100vh;
-   }
- }
+@media (max-width: 900px) {
+  .domain-info {
+    height: 100vh;
+  }
+}
 
- @media (max-width: 830px) {
-   .domain-info section {
-     padding: 10px;
-     width: 70%;
-   }
+@media (max-width: 830px) {
+  .domain-info section {
+    padding: 10px;
+    width: 70%;
+  }
 
-   .domain-sections {
-     flex-direction: column;
-     align-items: center;
-   }
+  .domain-sections {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .domain-info {
     height: 100%;
@@ -465,40 +464,40 @@ h2 {
   }
 }
 
- .head {
-   padding-top: 2rem;
-   margin-bottom: 2rem;
- }
+.head {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
 
- .head hr {
-   position: relative;
-   border: none;
-   height: 0.2rem;
-   width: 30%;
-   margin-left: 35%;
-   background: black;
-   opacity: 0.8;
- }
+.head hr {
+  position: relative;
+  border: none;
+  height: 0.2rem;
+  width: 30%;
+  margin-left: 35%;
+  background: black;
+  opacity: 0.8;
+}
 
- .row {
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   align-items: center;
-   width: 100%;
-   padding-left: 48px;
-   padding-right: 48px;
- }
+.row {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 48px;
+  padding-right: 48px;
+}
 
- .sponsor {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+.sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .sponsor img {
-   width: 80%;
- }
+.sponsor img {
+  width: 80%;
+}
 
 @media (max-width: 600px) {
   .sponsor img {
@@ -624,25 +623,25 @@ h2 {
   }
 }
 
- .faqs {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-   justify-content: center;
-   gap: 3rem;
-   margin: 10px auto;
-   max-width: 1200px;
-   padding: 2rem;
- }
+.faqs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 3rem;
+  margin: 10px auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
 
- .cardcontainer {
-   max-width: 300px;
- }
+.cardcontainer {
+  max-width: 300px;
+}
 
- @media (max-width: 768px) {
-   .faqs {
-     grid-template-columns: 1fr 1fr;
-   }
- }
+@media (max-width: 768px) {
+  .faqs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 @media (max-width: 668px) {
   .faqs {
@@ -654,8 +653,11 @@ h2 {
 }
 @media (max-width: 1000px) {
   .navbar-nav {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
   }
+}
+#home {
+  top: -60;
 }
 @media (max-width: 450px) {
   #domains {

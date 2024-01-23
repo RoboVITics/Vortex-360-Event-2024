@@ -41,10 +41,13 @@ const LandingPage = () => {
     const loader = new GLTFLoader();
     loader.load("plain white 3d logo.gltf", (gltf) => {
       const model = gltf.scene;
+      model.rotation.x = -0.3;
+      model.rotation.y = 0;
+      model.rotation.z = 0;
       if (window.innerWidth < 900) {
         model.scale.set(18, 18, 18);
       } else {
-        model.scale.set(28, 28, 28);
+        model.scale.set(33, 33, 33);
       }
       scene.add(model);
 
@@ -57,17 +60,17 @@ const LandingPage = () => {
         controls.maxPolarAngle = Math.PI * 4;
         controls.enableZoom = false;
       }
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
       directionalLight.position.set(0, 1, 0);
       scene.add(directionalLight);
 
       const animate = function () {
         requestAnimationFrame(animate);
 
-        model.rotation.y += 0.01;
+        model.rotation.y += 0.005;
 
         renderer.render(scene, camera);
       };

@@ -16,7 +16,7 @@ const Domains = () => {
   return (
     <div id="domains">
       <hr
-        id="prizes"
+        id="domains"
         style={{ marginBottom: "1.5rem", visibility: "hidden" }}
       />
       <h2 style={{ marginBottom: "-120px" }}>Tracks</h2>

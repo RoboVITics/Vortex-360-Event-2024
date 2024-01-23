@@ -4,12 +4,39 @@ import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
   const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  if (inView) {
+    if (window.innerWidth < 1000) {
+      for (var i = 0; i < 6; i = i + 1) {
+        document
+          .querySelectorAll(".link")
+          [i].addEventListener("click", function () {
+            document.querySelector(".navbar-toggler").click();
+          });
+      }
+    } else {
+      if (document.getElementById("home")) {
+        const nav = document.getElementById("home");
+        var lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+          if (lastScrollY <= window.scrollY) {
+            controls.start("up");
+          } else {
+            controls.start("down");
+          }
+          lastScrollY = window.scrollY;
+        });
+      }
+    }
+  }
   const controls = useAnimation();
   useEffect(() => {
     setTimeout(() => {
       controls.start("visible");
     }, 2000);
   });
+
   return (
     <div id="home">
       <motion.nav
@@ -19,6 +46,18 @@ const Navbar = () => {
         variants={{
           hidden: { opacity: 0, y: -30 },
           visible: { opacity: 1, y: 0 },
+          up: {
+            y: -50,
+            transition: {
+              duration: 0,
+            },
+          },
+          down: {
+            y: -2,
+            transition: {
+              duration: 0,
+            },
+          },
         }}
         initial="hidden"
         animate={controls}
@@ -56,7 +95,11 @@ const Navbar = () => {
               <div className="mainIcon">
                 <div className="mainLogo">
                   <a class="navbar-brand" href="#">
-                    <img src="./robvitcs logo website-3.png" alt="" height="40px" />
+                    <img
+                      src="./robvitcs logo website-3.png"
+                      alt=""
+                      height="40px"
+                    />
                   </a>
                 </div>
               </div>
