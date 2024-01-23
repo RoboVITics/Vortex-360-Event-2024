@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #three-container {
   background-color: #000;
   width: 100%;
@@ -20,9 +21,11 @@
   position: relative;
   margin-top: 3%;
 }
+
 .landing-page h2 {
   text-align: left;
 }
+
 .name {
   font-size: 3rem;
   font-weight: bold;
@@ -74,10 +77,12 @@
 .text-section {
   animation: popUp 3s ease;
 }
+
 .landing-page #three-container {
   z-index: -1;
   margin-top: -100px;
 }
+
 @keyframes popUp {
   0% {
     transform: translateY(100px);
@@ -166,7 +171,7 @@
 
 .btn-53 .letters {
   display: inline-flex;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .btn-53 span {
@@ -203,54 +208,68 @@
 .btn-53:hover span:nth-child(6) {
   transition-delay: 0.5s;
 }
+
 .btn-53:hover span:nth-child(7) {
   transition-delay: 0.6s;
 }
+
 .btn-53:hover span:nth-child(8) {
   transition-delay: 0.7s;
 }
+
 @media (max-width: 1250px) {
   .landing-page {
     margin-top: 10%;
   }
+
   .text-section {
     display: block;
   }
+
   .right-section {
     margin-top: -60px;
   }
 }
+
 @media (max-width: 1000px) {
   .landing-page {
     display: block;
     margin-top: -10%;
   }
+
   .text-section {
     display: block;
     position: absolute;
     top: 400px;
     margin-left: 20%;
   }
+
   .description {
     min-width: 300px;
   }
+
   .text-section-right {
     margin-top: 520px;
     margin-left: -60px;
   }
+
   .name {
     font-size: 2.5rem;
   }
+
   .description {
     font-size: 1rem;
   }
+
   .right-section {
     z-index: -1;
   }
 }
+
 a {
   text-decoration: none;
 }
+
 .mobile-button {
   margin-top: 30px;
   display: none;
@@ -264,64 +283,82 @@ a {
   background: none;
 }
 
+.extra {
+  border: white 2px solid;
+}
+
 @media (max-width: 890px) {
   .btn-53 {
     display: none;
   }
+
   .mobile-button {
     display: block;
   }
+
   .left-section h2 {
     text-align: center;
   }
+
   .left-section {
     z-index: 1;
     margin-top: 20px;
     margin-left: 20%;
     text-align: center;
   }
+
   .text-section-right {
     margin-top: 780px;
   }
+
   .right-section {
     margin-top: -60px;
     z-index: -1;
     margin-left: -35%;
   }
+
   .landing-page #three-container {
     margin-top: -230px;
   }
 }
+
 @media (max-width: 600px) {
   #three-container {
     margin-top: -150px;
   }
+
   .left-section {
     margin-top: -150px;
     margin-left: 13%;
     z-index: 1;
   }
+
   .right-section {
     margin-top: -150px;
     margin-left: -36%;
   }
+
   .mobile-button {
     margin-left: -30%;
   }
-  
+
 }
+
 @media (max-width: 430px) {
   .landing-page #three-container {
     margin-top: -130px;
   }
+
   .left-section {
     margin-top: -180px;
     margin-left: -1%;
   }
+
   .right-section {
     margin-top: -230px;
   }
 }
+
 /*@media (max-width: 370px) {
   .landing-page #three-container {
     margin-top: -360px;
