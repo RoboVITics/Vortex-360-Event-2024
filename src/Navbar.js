@@ -94,7 +94,11 @@ const Navbar = () => {
               </li>
               <div className="mainIcon">
                 <div className="mainLogo">
-                  <a class="navbar-brand" href="#">
+                  <a
+                    class="navbar-brand"
+                    href="https://robovitics.in/"
+                    target="_blank"
+                  >
                     <img
                       src="./robvitcs logo website-3.png"
                       alt=""

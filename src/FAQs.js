@@ -11,7 +11,7 @@ const FAQs = () => {
   return (
     <div id="faqs">
       <hr style={{ marginBottom: "0.5rem", visibility: "hidden" }} />
-      <h2>FAQs</h2>
+      <h1>FAQs</h1>
       <motion.div
         ref={ref}
         className="faqs"
