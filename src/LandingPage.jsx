@@ -146,31 +146,34 @@ const LandingPage = () => {
           animate={textAnimationControls}
         >
           <div className="text-section-right">
-    <a href="https://www.instagram.com/robovitics/">
-      
-        <button
-            class="btn-53"
-        >
-            <div class="original" style={{
-              textShadow: '3px 3px 4px rgb(207, 159, 255)',
-                fontSize: '40px'
-            }}>Register</div>
-            <div class="letters" >
-                <span>R</span>
-                <span>e</span>
-                <span>g</span>
-                <span>i</span>
-                <span>s</span>
-                <span>t</span>
-                <span>e</span>
-                <span>r</span>
-            </div>
-        </button>
-        <button className="mobile-button" >Register</button>
-    </a>
-</div>
-
-
+            <a href="https://www.instagram.com/robovitics/">
+              <button class="btn-53">
+                <div
+                  class="original"
+                  style={{
+                    textShadow: "3px 3px 4px rgb(207, 159, 255)",
+                    fontSize: "30px",
+                    border: "2px solid white",
+                    borderRadius: "50px",
+                    paddingBottom: "10px",
+                  }}
+                >
+                  Register
+                </div>
+                <div class="letters">
+                  <span>R</span>
+                  <span>e</span>
+                  <span>g</span>
+                  <span>i</span>
+                  <span>s</span>
+                  <span>t</span>
+                  <span>e</span>
+                  <span>r</span>
+                </div>
+              </button>
+              <button className="mobile-button">Register</button>
+            </a>
+          </div>
         </motion.div>
       </div>
     </MotionConfig>
