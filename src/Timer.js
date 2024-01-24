@@ -175,17 +175,19 @@ const Timer = () => {
 
   return (
     <>
-      <btn onClick={handleButtonClick} id="timer_text">
-        {days} DAYS TO GO
-        {/* <img src="./Robot_arm.png"></img> */}
-      </btn>
+      <div id="btn_div">
+        <btn onClick={handleButtonClick} id="timer_text">
+          {days} DAYS TO GO
+          {/* <img src="./Robot_arm.png"></img> */}
+        </btn>
+      </div>
       <div
         onClick={handleButtonClick}
         className={`countdown ${
           showTimer ? "countdown_visible" : "countdown_hidden"
         }`}
       >
-        <img  id="timer_logo" src={img1}></img>
+        <img id="timer_logo" src={img1}></img>
         <div className="time-section" id="days">
           <div className="time-group">
             <div className="time-segment">
