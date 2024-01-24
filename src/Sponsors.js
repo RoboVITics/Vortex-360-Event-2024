@@ -10,7 +10,7 @@ const Sponsors = () => {
   }
   return (
     <div id="sponsors">
-      <h2>Sponsors</h2>
+      <h1>Sponsors</h1>
       <motion.div
         class="container marketing"
         ref={ref}

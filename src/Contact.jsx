@@ -68,7 +68,7 @@ const Contact = () => {
       <div id="leftContact">
         <section id="contact" className="contact">
           <div className="section-title">
-            <h2>Contact Us</h2>
+            <h1>Contact Us</h1>
           </div>
 
           <motion.div
