@@ -106,7 +106,7 @@ h4 {
 }
 
 #domains {
-  margin-top: 150px;
+  margin-top: 20px;
 }
 
 @media (max-width: 1000px) {
@@ -460,7 +460,7 @@ h4 {
     height: 100%;
   }
   #domains {
-    margin-top: 300px;
+    margin-top: 260px;
   }
 }
 
@@ -661,7 +661,7 @@ h4 {
 }
 @media (max-width: 450px) {
   #domains {
-    margin-top: 280px;
+    margin-top: 150px;
   }
   #domains > h2 {
     margin-bottom: -100px;
