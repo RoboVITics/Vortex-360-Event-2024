@@ -10,7 +10,7 @@ const Sponsors = () => {
   }
   return (
     <div id="sponsors">
-      <h2>Sponsors</h2>
+      <h1>Sponsors</h1>
       <motion.div
         class="container marketing"
         ref={ref}
@@ -24,7 +24,7 @@ const Sponsors = () => {
       >
         <div class="row">
           {sponsors.map((s) => (
-            <div key={s.id} class="col-6 mt-sm-3 mt-4 mb-3 mx-0 sponsor">
+            <div key={s.id} class="sponsor">
               <img src={s.icon} alt="" />
             </div>
           ))}

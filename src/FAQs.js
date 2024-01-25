@@ -11,7 +11,7 @@ const FAQs = () => {
   return (
     <div id="faqs">
       <hr style={{ marginBottom: "0.5rem", visibility: "hidden" }} />
-      <h2>FAQs</h2>
+      <h1>FAQs</h1>
       <motion.div
         ref={ref}
         className="faqs"
@@ -25,7 +25,15 @@ const FAQs = () => {
       >
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">What is Vortex360?</div>
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
+              What is Vortex360?
+            </div>
             <div className="back">
               Vortex360 is a three-day Mechanical Design Hackathon hosted by
               RoboVITics, powered by AutoDesk's Fusion 360. It's an immersive
@@ -36,7 +44,13 @@ const FAQs = () => {
         </div>
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
               When and where is Vortex360 taking place?
             </div>
             <div className="back">
@@ -48,7 +62,15 @@ const FAQs = () => {
         </div>
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">Who can participate in Vortex360?</div>
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
+              Who can participate in Vortex360?
+            </div>
             <div className="back">
               Vortex360 is open to enthusiasts, students, and professionals
               passionate about mechanical design. Whether you're a beginner or
@@ -58,7 +80,13 @@ const FAQs = () => {
         </div>
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
               What tools will participants use during the event?
             </div>
             <div className="back">
@@ -70,7 +98,13 @@ const FAQs = () => {
         </div>
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
               Is there a registration fee for Vortex360?
             </div>
             <div className="back">
@@ -82,11 +116,17 @@ const FAQs = () => {
         </div>
         <div className="cardcontainer">
           <div className="flip">
-            <div className="front">
+            <div
+              className="front"
+              style={{
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
               Can I participate remotely in Vortex360?
             </div>
             <div className="back">
-              Vortex360 is an on-site event at Anna Auditorium. Unfortunately,
+              Vortex360 is an offline event at Anna Auditorium. Unfortunately,
               remote participation is not available. We encourage you to join us
               in person for an immersive experience.
             </div>

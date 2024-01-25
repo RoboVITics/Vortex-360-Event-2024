@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Timer.css"; // Make sure to create a CSS file for styling
+import img1 from "./Vortex_360_logo.png";
 
 const Timer = () => {
-
-
   const [targetDate, setTargetDate] = useState(() => {
     // Set the target date to February 2, 2024, at 00:00:00
     const now = new Date(2024, 1, 2, 0, 0, 0);
@@ -153,7 +152,7 @@ const Timer = () => {
   // button feature
   const [days, setDays] = useState(0);
 
-  const TargetDate = new Date(2024, 1, 1); // Feb 2nd, 2024
+  const TargetDate = new Date(2024, 1, 1); // Feb 2nd, 2024 (Month indexing starts from 0)
   useEffect(() => {
     const calculateDaysRemaining = () => {
       const currentDate = new Date();
@@ -161,7 +160,9 @@ const Timer = () => {
       const difference = targetDateTime - currentDate.getTime();
       const remainingDays = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
-      setDays(remainingDays);
+      const nonNegativeDays = Math.max(0, remainingDays);
+
+      setDays(nonNegativeDays);
     };
 
     calculateDaysRemaining(); // Initial calculation
@@ -170,18 +171,23 @@ const Timer = () => {
     const intervalId = setInterval(calculateDaysRemaining, 1000 * 60 * 60 * 24);
 
     return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [targetDate]);
+  }, [TargetDate]);
 
   return (
     <>
-      
-        <p onClick={handleButtonClick} id="timer_text">{days} DAYS TO GO<img src="./Robot_arm.png"></img></p>
+      <div id="btn_div">
+        <btn onClick={handleButtonClick} id="timer_text">
+          {days} DAYS TO GO
+          {/* <img src="./Robot_arm.png"></img> */}
+        </btn>
+      </div>
       <div
         onClick={handleButtonClick}
         className={`countdown ${
           showTimer ? "countdown_visible" : "countdown_hidden"
         }`}
       >
+        <img id="timer_logo" src={img1}></img>
         <div className="time-section" id="days">
           <div className="time-group">
             <div className="time-segment">

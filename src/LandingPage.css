@@ -59,14 +59,13 @@
 
 .right-section {
   position: absolute;
-  right: 0;
   width: 30%;
   padding: 20px;
   background-color: #000;
   color: #fff;
   width: 2rem;
-  top: 30%;
-  left: 75%;
+  top: 28.5%;
+  left: 80%;
   padding-right: 3rem;
   margin-left: -8%;
 }
@@ -74,8 +73,9 @@
 .text-section {
   animation: popUp 3s ease;
 }
-#three-container {
+.landing-page #three-container {
   z-index: -1;
+  margin-top: -100px;
 }
 @keyframes popUp {
   0% {
@@ -247,33 +247,53 @@
     z-index: -1;
   }
 }
-@media (max-width: 750px) {
-  button {
-    background-color: #fff;
+a {
+  text-decoration: none;
+}
+.mobile-button {
+  margin-top: 30px;
+  display: none;
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 999px;
+  width: 200px;
+  padding: 0.5rem;
+  border: 3px solid white;
+  background: none;
+}
+
+@media (max-width: 890px) {
+  .btn-53 {
+    display: none;
+  }
+  .mobile-button {
+    display: block;
   }
   .left-section h2 {
     text-align: center;
   }
   .left-section {
-    margin-left: 20%;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 23%;
     text-align: center;
   }
   .text-section-right {
     margin-top: 780px;
   }
   .right-section {
+    margin-top: -50px;
     z-index: -1;
-    margin-left: -32%;
+    margin-left: -37%;
+  }
+  .landing-page #three-container {
+    margin-top: -230px;
   }
 }
 @media (max-width: 600px) {
   #three-container {
     margin-top: -150px;
-    height: 50vh;
-  }
-  #domains {
-    margin-top: 550px;
-    margin-bottom: 100px;
   }
   .left-section {
     margin-top: -150px;
@@ -284,30 +304,32 @@
     margin-top: -150px;
     margin-left: -36%;
   }
-  .btn-53 {
-    border: 3px solid white;
+  .mobile-button {
+    margin-left: -30%;
   }
-}
-@media (max-width: 470px) {
-  .left-section {
-    margin-left: 10%;
-  }
-  
 }
 @media (max-width: 430px) {
-  .left-section {
-    margin-left: 1%;
-  }
-}
-@media (max-width: 380px) {
-  #three-container {
-    margin-top: -200px;
-    height: 67vh;
+  .landing-page #three-container {
+    margin-top: -130px;
   }
   .left-section {
-    margin-top: -30%;
+    margin-top: -180px;
+    margin-left: -1%;
   }
   .right-section {
-    margin-top: -30%;
+    margin-top: -230px;
+    margin-left: -150px;
   }
 }
+/*@media (max-width: 370px) {
+  .landing-page #three-container {
+    margin-top: -360px;
+  }
+  .left-section {
+    margin-top: 20px;
+  }
+  .right-section {
+    z-index: -1;
+    margin-top: -10%;
+  }
+}*/

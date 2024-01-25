@@ -19,7 +19,6 @@ function App() {
       }, 1500);
     }
   }, [a]);
-  console.log(a);
   return (
     <>
       <Routes>

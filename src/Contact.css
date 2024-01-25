@@ -355,4 +355,20 @@
   #contact .container {
     max-width: 886px !important;
   }
+
+}
+
+@media (max-width: 768px) {
+  #contact .row {
+    max-width: 886px !important;
+    flex-direction: column;
+  }
+
+}
+
+
+.newperson{
+  display: block;
+  width: 300px;
+  /* justify-content: center; */
 }

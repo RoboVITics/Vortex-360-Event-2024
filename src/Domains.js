@@ -15,9 +15,14 @@ const Domains = () => {
   }
   return (
     <div id="domains">
-      <h2 style={{ marginBottom: "-100px" }}>Tracks</h2>
+      <hr
+        id="domains"
+        style={{ marginBottom: "1.5rem", visibility: "hidden" }}
+      />
+      <h1 style={{ marginBottom: "-120px" }}>Tracks</h1>
 
-      <motion.div
+    <h2>Tracks to be released soon!</h2>
+      {/* <motion.div
         id="carouselDemo"
         ref={ref}
         class="carousel slide"
@@ -48,9 +53,8 @@ const Domains = () => {
               key={domain.id}
               class={domain.upper}
               style={{
-                
-                backgroundSize: "auto 75%,auto 75%", // 80% height and width auto
-                backgroundPosition: "90% 120%,10% 120%", // Adjust these values based on your preference
+                backgroundSize: "auto 75%,auto 75%", 
+                backgroundPosition: "90% 120%,10% 120%", 
               }}
             >
               <div
@@ -74,7 +78,7 @@ const Domains = () => {
                   {domain.name}
                 </h2>
                 <p>{domain.desp}</p>
-                {/* <Link
+                <Link
                   to={`/domain/${domain.id}`}
                   style={{
                     fontWeight: "bold",
@@ -88,7 +92,7 @@ const Domains = () => {
                     alt=""
                     height="15px"
                   />
-                </Link> */}
+                </Link>
               </div>
             </div>
           ))}
@@ -111,7 +115,7 @@ const Domains = () => {
         >
           <span class="carousel-control-next-icon"></span>
         </button>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
