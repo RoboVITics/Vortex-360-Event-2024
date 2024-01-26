@@ -29,7 +29,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               What is Vortex360?
@@ -48,7 +48,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               When and where is Vortex360 taking place?
@@ -66,7 +66,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               Who can participate in Vortex360?
@@ -84,7 +84,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               What tools will participants use during the event?
@@ -102,7 +102,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               Is there a registration fee for Vortex360?
@@ -120,7 +120,7 @@ const FAQs = () => {
               className="front"
               style={{
                 fontWeight: "bold",
-                fontSize: "20px",
+                fontSize: "30px",
               }}
             >
               Can I participate remotely in Vortex360?
