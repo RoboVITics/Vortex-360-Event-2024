@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Timer.css"; // Make sure to create a CSS file for styling
-import img1 from "./Vortex_360_logo.png";
+import img1 from "../../assets/Vortex_360_logo.png";
 
 const Timer = () => {
   const [targetDate, setTargetDate] = useState(() => {

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { domains, buttons } from "./Constants";
+import { domains, buttons } from "../../Constants";
 import { Link } from "react-router-dom";
 import { motion, useInView, useAnimation } from "framer-motion";
 
