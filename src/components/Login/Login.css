@@ -84,3 +84,8 @@ body {
 .register-link a:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .wrapper {
+    border: none;
+  }
+}
