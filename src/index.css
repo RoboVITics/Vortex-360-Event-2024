@@ -340,8 +340,8 @@ h4 {
 .carousel-item {
   height: 27rem;
   background: none;
-  background: url("../src/robot_vector.png") center/cover no-repeat,
-    url("../src/Robot_arm.png") center/cover no-repeat;
+  background: url("../src/assets/robot_vector.png") center/cover no-repeat,
+    url("../src/assets/Robot_arm.png") center/cover no-repeat;
 }
 
 @media only screen and (max-width: 910px) {
@@ -664,6 +664,16 @@ h4 {
   max-width: 1200px;
   padding: 2rem;
 }
+
+.front, .back{
+  font-family: 'Rockwell';
+}
+
+
+ .back {
+   font-size: 20px;
+   text-align: justify;
+ }
 
 .cardcontainer {
   max-width: 300px;
