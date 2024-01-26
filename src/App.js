@@ -4,8 +4,8 @@ import Main from "./Main";
 import { Route, Routes } from "react-router-dom";
 import DomainInfo from "./components/Landing-Page/DomainInfo";
 import Progressbar from "./components/Landing-Page/Progressbar";
-import Login from "./Login/Login";
-import Register from "./Login/Register";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 
 function App() {
   const [a, setA] = useState(100);
