@@ -1,15 +1,15 @@
-import Navbar from "./Navbar";
-import Domains from "./Domains";
-import Timeline1 from "./Timeline";
-import Sponsors from "./Sponsors";
-import Prizes from "./Prizes";
-import FAQs from "./FAQs";
-import Contact from "./Contact";
+import Navbar from "./components/Landing-Page/Navbar";
+import Domains from "./components/Landing-Page/Domains";
+import Timeline1 from "./components/Landing-Page/Timeline";
+import Sponsors from "./components/Landing-Page/Sponsors";
+import Prizes from "./components/Landing-Page/Prizes";
+import FAQs from "./components/Landing-Page/FAQs";
+import Contact from "./components/Landing-Page/Contact";
 import React from "react";
-import LandingPage from "./LandingPage";
-import Timer from "./Timer";
-import Mouse from "./Mouse";
-import Overlay from "./Overlay";
+import LandingPage from "./components/Landing-Page/LandingPage";
+import Timer from "./components/Landing-Page/Timer";
+import Mouse from "./components/Landing-Page/Mouse";
+import Overlay from "./components/Landing-Page/Overlay";
 
 const Main = () => {
   return (

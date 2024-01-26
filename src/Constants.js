@@ -1,12 +1,12 @@
-import imgd1 from "./robotsurgery.jpg";
-import imgd2 from "./internet-of-things-iot-istock-1201992144.jpg";
-import imgd3 from "./abstract-technology-background-blue-glowing_41981-259.avif";
-import imgd4 from "./electronic-engineering-1.jpg";
-import imgd5 from "./gff.jpg";
-import simg1 from "./autodesk_new.png";
-import vect1 from "./Robot_arm.png";
+import imgd1 from "./assets/robotsurgery.jpg";
+import imgd2 from "./assets/internet-of-things-iot-istock-1201992144.jpg";
+import imgd3 from "./assets/abstract-technology-background-blue-glowing_41981-259.avif";
+import imgd4 from "./assets/electronic-engineering-1.jpg";
+import imgd5 from "./assets/gff.jpg";
+import simg1 from "./assets/autodesk_new.png";
+import vect1 from "./assets/Robot_arm.png";
 
-import vect2 from "./robot_vector.png";
+import vect2 from "./assets/robot_vector.png";
 // import simg2 from "./sponsor-img/schneider.png";
 // import simg3 from "./sponsor-img/texas-instruments.png";
 // import simg4 from "./sponsor-img/siemens.png";

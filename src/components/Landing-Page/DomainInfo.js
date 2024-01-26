@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { domains } from "./Constants";
+import { domains } from "../../Constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const DomainInfo = () => {

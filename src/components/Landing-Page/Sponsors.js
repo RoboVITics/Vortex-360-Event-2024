@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { sponsors } from "./Constants";
+import { sponsors } from "../../Constants";
 const Sponsors = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
