@@ -665,6 +665,19 @@ h4 {
   padding: 2rem;
 }
 
+.front, .back{
+  font-family: 'Rockwell';
+}
+
+.back{
+  
+}
+
+ .back {
+   font-size: 20px;
+   text-align: justify;
+ }
+
 .cardcontainer {
   max-width: 300px;
 }
