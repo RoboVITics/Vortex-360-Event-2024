@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-
+import { Link } from "react-router-dom";
 import { MotionConfig, motion, useAnimation } from "framer-motion";
 import "./LandingPage.css";
 import { animate, useInView } from "framer-motion";
@@ -100,9 +100,10 @@ const LandingPage = () => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      document
-        .getElementById("three-container")
-        .removeChild(renderer.domElement);
+      const threeContainer = document.getElementById("three-container");
+      if (threeContainer && threeContainer.contains(renderer.domElement)) {
+        threeContainer.removeChild(renderer.domElement);
+      }
     };
   }, [textAnimationControls]);
 
@@ -145,8 +146,8 @@ const LandingPage = () => {
           initial={{ y: 50, opacity: 0 }}
           animate={textAnimationControls}
         >
-          <div className="text-section-right">
-            <a href="https://www.instagram.com/robovitics/">
+          <Link to="/login">
+            <div className="text-section-right">
               <button class="btn-53">
                 <div
                   class="original"
@@ -172,8 +173,8 @@ const LandingPage = () => {
                 </div>
               </button>
               <button className="mobile-button">Register</button>
-            </a>
-          </div>
+            </div>
+          </Link>
         </motion.div>
       </div>
     </MotionConfig>
