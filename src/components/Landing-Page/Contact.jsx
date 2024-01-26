@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "./Contact.css";
-import img1 from "../src/gff.jpg";
+import img1 from "../../assets/gff.jpg";
 import { useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 

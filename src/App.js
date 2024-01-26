@@ -2,8 +2,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Main from "./Main";
 import { Route, Routes } from "react-router-dom";
-import DomainInfo from "./DomainInfo";
-import Progressbar from "./Progressbar";
+import DomainInfo from "./components/Landing-Page/DomainInfo";
+import Progressbar from "./components/Landing-Page/Progressbar";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 
