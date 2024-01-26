@@ -4,6 +4,8 @@ import Main from "./Main";
 import { Route, Routes } from "react-router-dom";
 import DomainInfo from "./DomainInfo";
 import Progressbar from "./Progressbar";
+import Login from "./Login/Login";
+import Register from "./Login/Register";
 
 function App() {
   const [a, setA] = useState(100);
@@ -27,6 +29,8 @@ function App() {
           element={loading ? <Progressbar value={100 - a} /> : <Main />}
         ></Route>
         <Route path="/domain/:domainId" element={<DomainInfo />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
     </>
   );
