@@ -14,7 +14,7 @@ const Submissions = () => {
 
 
   return (
-    <div>
+    <div id="submission">
       <header>
         <h1
         style={{textShadow: "3px 3px 4px rgb(207, 159, 255)",

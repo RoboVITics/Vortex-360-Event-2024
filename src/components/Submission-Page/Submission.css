@@ -1,4 +1,4 @@
-body {
+#submission body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     overflow: hidden;
 }
 
-header {
+#submission header {
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -24,22 +24,22 @@ header {
     margin-left: 200px;
 }
 
-h2 {
+#submission h2 {
     color: #fff;
 }
 
-form {
+#submission form {
     margin-top: 20px;
 }
 
-label {
+#submission label {
     display: block;
     margin-bottom: 10px;
     margin-top: 6px;
 }
 
-input,
-textarea {
+#submission input,
+#submission textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 25px;
@@ -50,7 +50,7 @@ textarea {
     box-shadow: 1px 3px 7px 0px rgb(207, 159, 255);
 }
 
-button {
+#submission button {
     background-color: #333;
     color: #fff;
     padding: 20px 20px;
@@ -59,6 +59,6 @@ button {
     font-size: 19px;
 }
 
-button:hover {
+#submission button:hover {
     background-color: #555;
 }
