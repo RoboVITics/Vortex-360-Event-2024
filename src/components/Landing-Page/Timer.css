@@ -9,46 +9,32 @@ body {
 }
 
 #timer_text {
-  position: inherit;
-
+  position: absolute;
+  top: 60%;
+  right: 20%;
   z-index: 10;
   font-weight: bold;
+  border-radius: 50%;
   /* padding: 1rem 2rem; */
-  font-size: 36px;
+  font-size: 28px;
   font-style: italic;
   /* background-color: black; */
-  /* border: 2px white solid; */
-  padding: 6px;
   color: white;
   transition: linear 0.3s;
 }
 
-#btn_div {
-    position: absolute;
-      display: flex;
-      justify-content: center;
-      top: 80%;
-      /* left: 71%; */
-      z-index: 10;
-      width: 100vw;
+#timer_text:hover{
+  text-shadow: 4px 4px 0 purple;
 }
 
-#timer_text:hover {
-  text-shadow: 4px 4px 0 rgb(0, 0, 0);
-  background-color: grey;
-  border: none;
-  color: white;
-}
-
-
-#togotext {
+#togotext{
   font-size: 8px;
   margin-bottom: 3px;
 }
 
 .countdown_visible {
   opacity: 1;
-  z-index: 11;
+  z-index: 10;
 }
 
 .countdown_hidden {
@@ -57,12 +43,13 @@ body {
 }
 
 .countdown {
+
   background: #000000;
   justify-content: center;
 
   width: 100%;
-
-  height: 140vh;
+  height: 100vh;
+  height: 100vh;
   display: flex;
   gap: 30px;
   gap: 30px;
@@ -76,6 +63,7 @@ body {
 }
 
 .time-section {
+
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -208,19 +196,10 @@ body {
   animation: flip-bottom 0.8s linear;
 }
 
-#days_text {
+#days_text{
   font-size: 30px;
   margin: 0;
 }
-
-
-#timer_logo {
-  height: auto;
-  width: 30%;
-  position: absolute;
-  top: 0;
-}
-
 
 
 @keyframes flip-top {
@@ -247,105 +226,35 @@ body {
 }
 
 
-@media only screen and (max-width: 768px) {
-  .time-segment {
+@media only screen and (max-width: 768px){
+  .time-segment{
     font-size: 20px;
     width: 100%;
   }
 
-  .segment-overlay {
+  .segment-overlay{
     width: 25px;
   }
 
-  .countdown {
+  .countdown{
     gap: 35px;
   }
 
-  .countdown p {
+  .countdown p{
     font-size: 10px;
   }
-
-  .segment-overlay__top,
-  .segment-overlay__bottom {
+  .segment-overlay__top,.segment-overlay__bottom{
     width: 20px;
   }
-
-  .segment-display__top,
-  .segment-display__bottom {
+ 
+  .segment-display__top,.segment-display__bottom{
     width: 20px;
-  }
-
-#btn_div {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 100%;
-  /* left: 71%; */
-  z-index: 10;
-  width: 100vw;
-}
-
-  #timer_text {
-
-    font-weight: bold;
-    border-radius: 50%;
-    /* padding: 1rem 2rem; */
-    font-size: 20px;
-    font-style: italic;
-    /* background-color: black; */
-    color: white;
-    transition: linear 0.3s;
-  }
-
-  #days_text {
-    font-size: 30px;
-  }
-
-  #timer_text p {
-    font-size: 8px;
-  }
-
-  #timer_logo {
-    height: auto;
-    width: 50%;
-    position: absolute;
-    top: 2rem;
-  }
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1192px) {
-  .time-segment {
-    font-size: 30px;
-    width: 100%;
-  }
-
-  .segment-overlay {
-    width: 50px;
-  }
-
-  .countdown {
-    gap: 35px;
-  }
-
-  .countdown p {
-    font-size: 16px;
-  }
-
-  .segment-overlay__top,
-  .segment-overlay__bottom {
-    width: 50px;
-  }
-
-  .segment-display__top,
-  .segment-display__bottom {
-    width: 50px;
   }
 
   #timer_text {
     position: absolute;
     top: 100%;
-    right: 41%;
+    right: 30%;
     z-index: 10;
     font-weight: bold;
     border-radius: 50%;
@@ -357,23 +266,57 @@ body {
     transition: linear 0.3s;
   }
 
-    #btn_div {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      top: 130%;
-      /* left: 71%; */
-      z-index: 10;
-      width: 100vw;
-    }
-
-  #days_text {
-    font-size: 20px;
+  #days_text{
+    font-size: 30px;
   }
+
+  #timer_text p{
+    font-size: 8px;
+  }
+
 }
 
-@media (max-width: 430px) {
-  #timer_text {
-    margin-top: 65px;
+@media only screen and (min-width: 768px) and (max-width: 1192px){
+  .time-segment{
+    font-size: 30px;
+    width: 100%;
   }
+
+  .segment-overlay{
+    width: 50px;
+  }
+
+  .countdown{
+    gap: 35px;
+  }
+
+  .countdown p{
+    font-size: 16px;
+  }
+  .segment-overlay__top,.segment-overlay__bottom{
+    width: 50px;
+  }
+ 
+  .segment-display__top,.segment-display__bottom{
+    width: 50px;
+  }
+  #timer_text {
+    position: absolute;
+    top: 100%;
+    right: 40%;
+    z-index: 10;
+    font-weight: bold;
+    border-radius: 50%;
+    /* padding: 1rem 2rem; */
+    font-size: 20px;
+    font-style: italic;
+    /* background-color: black; */
+    color: white;
+    transition: linear 0.3s;
+  }
+
+  #days_text{
+    font-size: 20px;
+  }
+
 }
