@@ -7,10 +7,10 @@ import { Route, Routes } from "react-router-dom";
 import DomainInfo from "./components/Landing-Page/DomainInfo";
 import Profile from "./components/Profile/Profile";
 import Progressbar from "./components/Landing-Page/Progressbar";
+import Teams from "../src/components/Teams/Teams";
 import Submissions from "./components/Submission-Page/Submission";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-
 
 function App() {
   const [a, setA] = useState(100);
@@ -34,6 +34,7 @@ function App() {
           element={loading ? <Progressbar value={100 - a} /> : <Main />}
         ></Route>
         <Route path="/domain/:domainId" element={<DomainInfo />}></Route>
+        <Route path="/teams" element={<Teams />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/submissions" element={<Submissions />} />
         <Route path="/login" element={<Login />}></Route>
