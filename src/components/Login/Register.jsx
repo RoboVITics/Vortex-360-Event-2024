@@ -1,12 +1,24 @@
 import React from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import "./Login.css";
+
 const Register = () => {
+  // // const handleSubmit = async () => {
+  // //   const response = await axios.post('http://localhost:3000',{
+  // //     email: email,
+  // //     password: password
+  // //   });
+
+  // //   if(response.status == 201){
+  // //     redirect('/dashboard');
+  // //   }
+
+  // }
   return (
     <div className="wrapper">
-      <form action="">
+      <form action="" onSubmit={handleSumbit()}>
         <h1>Register</h1>
         <div className="input-box">
           <input type="text" placeholder="Username" required />
