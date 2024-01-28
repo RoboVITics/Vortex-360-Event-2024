@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 const Register = () => {
   return (
+    <div className="body">
     <div className="wrapper register">
       <form action="">
         <h1>Register</h1>
@@ -57,6 +58,7 @@ const Register = () => {
           </p>
         </div>
       </form>
+    </div>
     </div>
   );
 };
