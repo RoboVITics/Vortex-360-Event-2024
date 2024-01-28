@@ -71,3 +71,17 @@
     display: block;
     margin: 0 auto;
 }
+
+#submission .error {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#submission .success {
+    color: #4caf50;
+    font-size: 18px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
