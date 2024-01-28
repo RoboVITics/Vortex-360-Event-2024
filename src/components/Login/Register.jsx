@@ -1,10 +1,23 @@
 import React from "react";
 import { FaUser, FaLock, FaGoogle, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import "./Login.css";
+
 const Register = () => {
+  // // const handleSubmit = async () => {
+  // //   const response = await axios.post('http://localhost:3000',{
+  // //     email: email,
+  // //     password: password
+  // //   });
+
+  // //   if(response.status == 201){
+  // //     redirect('/dashboard');
+  // //   }
+
+  // }
   return (
+
     <div className="body">
     <div className="wrapper register">
       <form action="">

@@ -12,11 +12,9 @@ class AuthController {
 
   // controller actions
   static signup = async (req, res) => {
-    const body = req.body;
-    const { email, password } = body;
-    console.log(email);
+    const data = req.body;
     try {
-      const user = await AuthService.createUser(email, password);
+      const user = await AuthService.createUser(data.email, data.password);
       console.log(user);
       const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
       console.log(token);
