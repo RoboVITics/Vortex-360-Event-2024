@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
   return (
+    <div className="body">
     <div className="wrapper">
       <form action="">
         <h1>Login</h1>
@@ -55,6 +56,7 @@ const Login = () => {
           </p>
         </div>
       </form>
+    </div>
     </div>
   );
 };
