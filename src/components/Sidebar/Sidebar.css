@@ -17,12 +17,13 @@
     font-size: 18px;
     line-height: 0;
     margin-left: -3px;
+    margin-top: 37px;
 }
 
 .bars {
     width: 26px;
     margin-right: 5px;
-    margin-top: 43px;
+    margin-top: 7px;
 }
 
 .hide {
@@ -47,13 +48,11 @@
 }
 
 .links:hover {
-    /* border-right: 4px solid white; */
     background: rgb(45, 51, 89);
     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .active {
-    /* border-right: 4px solid white; */
     background: rgb(45, 51, 89);
 }
 
@@ -84,4 +83,17 @@
 .menu_container .links {
     padding-left: 20px;
     border-bottom: #fff 0.5px solid;
+}
+
+.bars :hover {
+    cursor: pointer;
+    background: rgb(45, 51, 89);
+    transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.bars {
+    /* transition: 0.3s linear; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
