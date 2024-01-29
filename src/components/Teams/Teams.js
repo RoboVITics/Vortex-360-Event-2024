@@ -65,24 +65,31 @@ const Teams = () => {
 
                     <form onSubmit={handleSubmit} className={`registration-form ${activeForm === 'teamLeader' ? 'team-leader' : 'team-member'}`}>
                         <h2>{activeForm === 'teamLeader' ? 'Team Leader' : 'Team Member'} Registration</h2>
-
-                        <div className="input-box">
+                        
+                        {activeForm === 'teamLeader' && (
+                            <>
+                            <div className="input-box">
                             <label htmlFor="firstName">First Name:</label>
                             <input type="text" placeholder="First Name" id="firstName" name="firstName" value={formData.firstName}
                                 onChange={handleInputChange}required />
                         </div>
-
                         <div className="input-box">
-                            <label htmlFor="lastName">Last Name:</label>
-                            <input type="text" placeholder="Last Name"  id="lastName" name="lastName"  value={formData.lastName}
-                                onChange={handleInputChange}required />
-                        </div>
-
-                        <div className="input-box">
+                        <label htmlFor="lastName">Last Name:</label>
+                        <input type="text" placeholder="Last Name"  id="lastName" name="lastName"  value={formData.lastName}
+                            onChange={handleInputChange}required />
+                    </div>
+                    <div className="input-box">
                             <label htmlFor="teamName">Team Name:</label>
                             <input type="text" placeholder="Team Name" id="teamName" name="teamName"     value={formData.teamName}
                                 onChange={handleInputChange} required />
                         </div>
+                    </>
+                        )}
+                        
+
+                        
+
+                        
 
                         <div className="input-box">
                             <label htmlFor="email">Email:</label>
@@ -97,16 +104,18 @@ const Teams = () => {
                                     onChange={handleInputChange} />
                             </div>
                         )}
-
-                        <div className="input-box">
+                        {activeForm === 'teamLeader' && (
+                            <div className="input-box">
                             <label htmlFor="phoneNumber">Phone Number:</label>
                             <input type="tel" placeholder="72230-XXXXX" id="phoneNumber" name="phoneNumber"     value={formData.phoneNumber}
                                 onChange={handleInputChange}required />
                         </div>
+                        )}
+                        
 
                         {activeForm === 'teamMember' && (
                             <div className="input-box">
-                                <label htmlFor="referralCode">Referral Code:</label>
+                                <label htmlFor="referralCode">Team Referral Code:</label>
                                 <input type="text" placeholder="Referral Code"  id="referralCode" name="referralCode"        value={formData.referralCode}
                                     onChange={handleInputChange} />
                             </div>

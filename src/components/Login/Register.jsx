@@ -3,42 +3,59 @@ import { FaUser, FaLock, FaGoogle, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link, redirect } from "react-router-dom";
 import "./Login.css";
-
+import { useState } from "react";
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 const Register = () => {
-  // // const handleSubmit = async () => {
-  // //   const response = await axios.post('http://localhost:3000',{
-  // //     email: email,
-  // //     password: password
-  // //   });
-
-  // //   if(response.status == 201){
-  // //     redirect('/dashboard');
-  // //   }
-
-  // }
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+  
+  const [password2,setPassword2]=useState("");
+  const navigate = useNavigate();
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    if(password===password2){
+      const response = await axios.post('http://localhost:5000/auth/signup',
+    {
+      email: email,
+      password: password,
+    },{headers:{"Content-Type": "application/json"}})
+    if(response.status == 201){
+      navigate('/dashboard');
+  }
+    }
+  }
   return (
 
     <div className="body">
     <div className="wrapper register">
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <h1>Register</h1>
+        
         <div className="input-box">
-          <input
-            type="text"
-            placeholder="Username"
-            required
-            className="input"
-          />
-          <FaUser className="icon" />
-        </div>
-        <div className="input-box">
-          <input type="text" placeholder="Email" required className="input" />
+          <input onChange={(e)=>setEmail(e.target.value)} value={email}
+            id="email" type="text" placeholder="Email" required className="input" />
           <MdEmail className="icon" />
         </div>
         <div className="input-box">
-          <input
+          <input 
+          onChange={(e)=>setPassword(e.target.value)} 
+          value={password}
+            id="password"
             type="password"
             placeholder="Password"
+            required
+            className="input"
+          />
+          <FaLock className="icon" />
+        </div>
+        <div className="input-box">
+          <input 
+          onChange={(e)=>setPassword2(e.target.value)} 
+          value={password2}
+            id="password2"
+            type="password"
+            placeholder="Confirm Password"
             required
             className="input"
           />
@@ -75,5 +92,6 @@ const Register = () => {
     </div>
   );
 };
+
 
 export default Register;
