@@ -1,37 +1,46 @@
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
+import fireapp from '../database.js';
+import AuthMiddleware from '../middleware/authMiddleware.js';
+const db = getFirestore(fireapp);
+import { getStorage, ref, uploadBytes,  getDownloadURL } from "firebase/storage";
+
+const storage = getStorage();
+
 class SubmitService {
     static createSubmission = async (req, res, next) => {
-        // 1. Get the request data
-        const data = req.body;
-        // 2. Send data to firestore
+        // Fetch the file from request:
+        const file = req.file;
+        console.log(req.file);
         try {
-            // 2. Send data to Firestore
-            const db = admin.firestore();
-            const collectionRef = db.collection('submissions');
-            await collectionRef.add(data);
-                res.status(200).json({ content: [{ msg: 'Created Submission' }] });
-            } catch (error) {
-                console.error('Error creating submission:', error);
-                res.status(500).json({ error: 'Failed to create submission' });
-            }
+            // Upload the file to storage
+            const storageRef = ref(storage, file.originalname);
+            const snapshot = await uploadBytes(storageRef, file.buffer);
+
+            // Get the download URL of the uploaded file
+            const downloadURL = await getDownloadURL(snapshot.ref);
+
+            // Return the file reference in the response
+            res.status(200).json({ fileReference: downloadURL, content: [{ msg: 'Created Submission' }] });
+        } catch (error) {
+            console.error('Error creating submission:', error);
+            res.status(500).json({ error: 'Failed to create submission' });
+        }
     }
 
     static updateSubmission = async (req, res, next) => {
-        res.status(200).json({content: [{ msg: 'Update Submission'}]});
+        const data = req.body;
+        try {
+            res.status(200).json({content: [{ msg: 'Update Submission'}]});
+        } catch (error) {
+            console.error('Error creating submission:', error);
+            res.status(500).json({ error: 'Failed to create submission' });
+        }
     }
 
     static getSubmission = async (req, res, next) => {
         try {
-            const submissionId = req.params.submissionId;
-            const db = admin.firestore();
-            const submissionRef = db.collection('submissions').doc(submissionId);
-            const submissionDoc = await submissionRef.get();
-            
-            if (!submissionDoc.exists) {
-                res.status(404).json({ error: 'Submission not found' });
-            } else {
-                const submissionData = submissionDoc.data();
-                res.status(200).json({ content: submissionData });
-            }
+            // Get submission code
+            res.status(200).json({content: [{ msg: 'Fetch Submission'}]});
         } catch (error) {
             console.error('Error getting submission:', error);
             res.status(500).json({ error: 'Failed to get submission' });
