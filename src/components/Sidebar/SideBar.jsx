@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import './Sidebar.css';
 const routes = [
   {
-    path: "/Dashboar",
+    path: "/Dashboard",
     name: "Dashboard",
     icon: <FaHome />,
   },

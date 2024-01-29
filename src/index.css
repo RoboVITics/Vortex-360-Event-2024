@@ -387,7 +387,7 @@ h4 {
 
 .front,
 .back {
-  background-color: #212529;
+  background: url("../public/img123.jpg") center/cover no-repeat;
   color: white;
   backface-visibility: hidden;
   position: absolute;
