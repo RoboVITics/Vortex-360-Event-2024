@@ -14,13 +14,14 @@ import cors from 'cors';
 import { config } from 'dotenv';
 config();
 
-const port = 3000
+const port = 5000
 const app = express();
 
 // middleware
 app.use(bodyParser.json())
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 // routes
 app.get('*', AuthMiddleware.checkUser);
