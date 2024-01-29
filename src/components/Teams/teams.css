@@ -21,10 +21,14 @@
     padding: 0;
 }
 #teams button {
-    color: rgb(0, 0, 0);
-    padding: 0.5rem 1rem;
-    background-color: white;
-    border-radius: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 #teams_body {
@@ -59,6 +63,17 @@
 }
 
 
+/* .input_div input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px 45px 10px 20px;
+    color: #fff;
+} */
 #teams_pro_img {
     display: flex;
     position: relative;

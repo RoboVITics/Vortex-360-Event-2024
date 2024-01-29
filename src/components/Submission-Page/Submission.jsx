@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import './Submission.css';
-
 const Submissions = () => {
   const [file, setFile] = useState(null);
-  const [teamLeaderName, setTeamLeaderName] = useState('');
   const [teamName, setTeamName] = useState('');
   const [idea, setIdea] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { file, teamLeaderName, teamName, idea });
+    console.log('Form submitted:', { file, teamName, idea });
   };
-
 
   return (
     <div id="submission">
@@ -20,6 +17,7 @@ const Submissions = () => {
         style={{textShadow: "3px 3px 4px rgb(207, 159, 255)",
                 fontSize: "30px",
                 paddingBottom: "10px",
+                marginTop:"-15px",
                   }}
         >Submission Page</h1>
       </header>
@@ -42,7 +40,7 @@ const Submissions = () => {
           ></textarea>
 
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <label htmlFor="file">Upload Design:</label>
+          <label htmlFor="file" style={{marginBottom:"8px",}}>Upload Design:</label>
           <input
             type="file"
             name="file"

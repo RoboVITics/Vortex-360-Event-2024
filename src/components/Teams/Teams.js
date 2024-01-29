@@ -13,7 +13,7 @@ const Teams = () => {
                         <img src={profile}></img>
                     </div>
                     <div id="track_info">
-                        
+
                     </div>
                     <div id="teams_info">
                         <h2>Team info</h2>
@@ -29,9 +29,9 @@ const Teams = () => {
                                 <tr>
                                     <td>Tanay</td>
                                     <td>tanaynaik@gmail.com</td>
-                                    
+
                                 </tr>
-                              
+
                                 {/* <tr>
                                     <td>Name</td>
                                     <td>Tanay</td>
@@ -55,24 +55,24 @@ const Teams = () => {
                     <form>
                         <h2>Individual</h2>
 
-                        <div className="input_div">
-                            <label htmlFor="name">Name:</label>
-                            <input type="text" id="name" name="name" required />
+                        <div className="input-box">
+
+                            <input placeholder="Name" type="text" id="name" name="name" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" id="email" name="email" required />
+                        <div className="input-box">
+
+                            <input placeholder="E-mail" type="email" id="email" name="email" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" id="password" name="password" required />
+                        <div className="input-box">
+
+                            <input placeholder="Password" type="password" id="password" name="password" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="teamCode">Team Code:</label>
-                            <input type="text" id="teamCode" name="teamCode" required />
+                        <div className="input-box">
+
+                            <input placeholder="Team code" type="text" id="teamCode" name="teamCode" />
                         </div>
 
                         <button type="submit">Register</button>
@@ -82,24 +82,24 @@ const Teams = () => {
                     <form>
                         <h2>Team</h2>
 
-                        <div className="input_div">
-                            <label htmlFor="name">Name:</label>
-                            <input type="text" id="name" name="name" required />
+                        <div className="input-box">
+
+                            <input placeholder="Name" type="text" id="name" name="name" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" id="email" name="email" required />
+                        <div className="input-box">
+
+                            <input placeholder="E-mail" type="email" id="email" name="email" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" id="password" name="password" required />
+                        <div className="input-box">
+
+                            <input placeholder="Password" type="password" id="password" name="password" required />
                         </div>
 
-                        <div className="input_div">
-                            <label htmlFor="teamCode"> Teammate 1 email:</label>
-                            <input type="text" id="teamCode" name="teamCode" required />
+                        <div className="input-box">
+
+                            <input placeholder="Teammate 1 Email" type="email" id="teamCode" name="teamCode" required />
                         </div>
 
                         <button type="submit">Register</button>
