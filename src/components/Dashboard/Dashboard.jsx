@@ -8,7 +8,7 @@ const Dashboard = () => {
     isRegistrationOpen: true,
     teamName: "",
     registrationFormCompleted: true,
-    teamFormationCompleted: true,
+    teamFormationCompleted: false,
     round1Completed: false,
     round2Completed: false,
     round3Completed: false,
@@ -73,7 +73,7 @@ const Dashboard = () => {
           {teamName && <p>Team: {teamName}</p>}
 
           <div className="timeline">
-            <div className="timeline-item">
+            <div className={`timeline-item ${registrationFormCompleted ? 'completed' : ''}`}>
               <input type="checkbox" checked={registrationFormCompleted} readOnly />
               <label>Profile</label>
             </div>

@@ -107,7 +107,7 @@
 }
 
 #Dashboard .timeline-item:not(:first-child)::before {
-    content: '-------------';
+    content: '------------------------';
     position: absolute;
     top: -5%;
     left: -47%;
@@ -121,4 +121,9 @@
 .dashboard-container {
     /* border: 1px solid #ddd; */
     padding: 52px;
+}
+
+#Dashboard .completed input[type="checkbox"] {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
 }
