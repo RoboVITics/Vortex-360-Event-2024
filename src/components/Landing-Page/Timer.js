@@ -188,6 +188,7 @@ const Timer = () => {
         }`}
       >
         <img id="timer_logo" src={img1}></img>
+        <div id="section-container">
         <div className="time-section" id="days">
           <div className="time-group">
             <div className="time-segment">
@@ -290,6 +291,7 @@ const Timer = () => {
             </div>
           </div>
           <p>Seconds</p>
+        </div>
         </div>
       </div>
     </>

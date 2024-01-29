@@ -13,33 +13,34 @@ const Profile = () => {
 
     const onSubmit = (data) => {
         setTimeout(() => {
-            if (data.name && data.gender && data.email && data.number) {
-                // Successful submission
+            if (data.name && data.reg && data.gender && data.email && data.vit_email && data.number) {
+                // Simulate sending data to a server
+                console.log("Submitted data:", data);
                 toast.success('Submitted successfully!', {
                     position: 'top-center',
                 });
             } else {
-                // Failed submission
                 toast.error('Failed to submit form. Please fill in all fields.', {
                     position: 'top-center',
                 });
             }
 
-            // Reset the form
-            reset();
+            reset(); 
         }, 1000);
     };
 
     return (
+        <div className="body">
         <div className='profile'>
             <Toaster position="top-center" reverseOrder={false} />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <h1>Profile</h1>
                 </div>
-                <div>
-                    <label>Name</label>
+                <div className="text-box">
+                    <label>Name :</label>
                     <input
+                        className='input'
                         placeholder="Enter your name"
                         {...register("name", {
                             required: true,
@@ -51,12 +52,30 @@ const Profile = () => {
                         {errors.name?.type === "required" && "Name is required"}
                         {errors.name?.type === "pattern" && "Name should not contain numbers"}
                     </span>
-                </div>
-                <div className="form-group">
-                    <label>Gender</label>
+                    </div>
+                
+                    <div className="text-box">
+                        <label>Register number :</label>
+                        <input
+                            className='input'
+                            placeholder="Enter your register no."
+                            {...register("reg", {
+                                required: true,
+                                pattern: /^[A-Za-z0-9 ]+$/,
+                            })}
+                        />
+
+                        <span className="error">
+                            {errors.reg?.type === "required" && "Reg no. is required"}
+                            {errors.reg?.type === "pattern" && "Given Reg no. is invalid"}
+                        </span>
+                    </div>
+                    
+                <div className="form-group text-box">
+                    <label>Gender :</label>
                     <div className="radio-group">
                         <div>
-                            <input
+                                <input
                                 type="radio"
                                 {...register("gender", { required: true })}
                                 value="male"
@@ -82,13 +101,14 @@ const Profile = () => {
                     </div>
                     <span className="error">{errors.gender && "Gender is required"}</span>
                 </div>
-                <div>
-                    <label>Email</label>
+                <div className="text-box">
+                    <label>Email :</label>
                     <input
-                        placeholder="Enter your email"
+                        className='input'
+                        placeholder="Enter your email id"
                         {...register("email", {
                             required: true,
-                            pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+                            pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.(?:com|in)$/i,
                         })}
                     />
                     <span className="error">
@@ -96,10 +116,27 @@ const Profile = () => {
                         {errors.email?.type === "pattern" &&
                             "Entered email is in the wrong format"}
                     </span>
-                </div>
-                <div>
-                    <label>Mobile Number</label>
+                    </div>
+                    <div className="text-box">
+                        <label>VIT Email :</label>
+                        <input
+                            className='input'
+                            placeholder="Enter your VIT email id"
+                            {...register("vit_email", {
+                                required: true,
+                                pattern: /^[a-zA-Z0-9_.+-]+@vitstudent\.ac\.in$/i, 
+                            })}
+                        />
+                        <span className="error">
+                            {errors.vit_email?.type === "required" && "VIT Email is required"}
+                            {errors.vit_email?.type === "pattern" &&
+                                "Entered VIT email is in the wrong format"}
+                        </span>
+                    </div>
+                <div className="text-box">
+                    <label>Mobile Number :</label>
                     <input
+                        className='input'
                         placeholder="Enter your mobile no."
                         type="text"
                         {...register("number", {
@@ -121,6 +158,7 @@ const Profile = () => {
                     <input className="button" type="submit" />
                 </div>
             </form>
+            </div>
         </div>
     );
 }
