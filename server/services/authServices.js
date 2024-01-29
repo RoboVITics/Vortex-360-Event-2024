@@ -2,7 +2,7 @@
 import 'firebase/app';
 import fireapp  from '../database.js';
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-const auth = getAuth();
+const auth = getAuth(fireapp);
 
 class AuthService {
     static createUser = async (user,password) => {
