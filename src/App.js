@@ -37,8 +37,9 @@ function App() {
       <div style={{ display: "flex" }}>
         {shouldShowSidebar() && <SideBar />}
         <div
-          style={{ marginLeft: shouldShowSidebar() ? "30px" : "0", flex: 1 }}
-        >
+          style={{ marginLeft: shouldShowSidebar() ? "-30px" : "0", flex: 1 }}
+        ></div>
+      </div>
           <Routes>
             <Route path="/" element={loading ? <Progressbar value={100 - a} /> : <Main />}/>
             <Route path="/domain/:domainId" element={<DomainInfo />} />
@@ -49,8 +50,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
-        </div>
-      </div>
+        
     </>
   );
 }
