@@ -1,0 +1,124 @@
+#Dashboard body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#Dashboard td {
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+#Dashboard p {
+    padding-top: 2rem;
+}
+
+.newhead h2 {
+    margin-top: 10px !important;
+}
+
+#Dashboard .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Adjust as needed */
+}
+
+#Dashboard .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid white;
+    width: 100%;
+    max-width: 600px;
+    /* Adjust as needed */
+}
+
+#Dashboard .image {
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 2rem;
+}
+
+#Dashboard .info {
+    flex: 1;
+    margin-left: 2rem;
+    line-height: 1.5;
+}
+
+#Dashboard h2 {
+    margin-top: 0;
+    text-align: left;
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    #Dashboard .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #Dashboard .image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    #Dashboard .info {
+        margin-left: 0;
+    }
+}
+
+#Dashboard .checkboxes {
+    margin-top: 1rem;
+}
+
+#Dashboard label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#Dashboard span {
+    margin-left: 0.5rem;
+    color: green;
+}
+
+#Dashboard .timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: -60px;
+    margin-right: 81px;
+}
+
+#Dashboard .timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+
+}
+
+#Dashboard .timeline-item.completed span {
+    color: #4CAF50;
+    /* Green color for completed items */
+}
+
+#Dashboard .timeline-item:not(:first-child)::before {
+    content: '-------------';
+    position: absolute;
+    top: -5%;
+    left: -47%;
+    color: #ddd;
+}
+
+#Dashboard .timeline-item:first-child::before {
+    display: none;
+}
+
+.dashboard-container {
+    /* border: 1px solid #ddd; */
+    padding: 52px;
+}
