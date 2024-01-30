@@ -47,7 +47,7 @@ const LandingPage = () => {
       if (window.innerWidth < 900) {
         model.scale.set(18, 18, 18);
       } else {
-        model.scale.set(33, 33, 33);
+        model.scale.set(31, 31, 31);
       }
       scene.add(model);
 
@@ -146,7 +146,7 @@ const LandingPage = () => {
           animate={textAnimationControls}
         >
           <div className="text-section-right">
-            <a href="https://www.instagram.com/robovitics/">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-xcsVzrt4Zel-XiyBtD3jBIDEHAHM7bfnMMl7YloOPjGyw/formrestricted" target="_blank">
               <button class="btn-53">
                 <div
                   class="original"
