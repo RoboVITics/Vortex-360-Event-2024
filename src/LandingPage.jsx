@@ -146,7 +146,7 @@ const LandingPage = () => {
           animate={textAnimationControls}
         >
           <div className="text-section-right">
-            <a href="https://www.instagram.com/robovitics/">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-xcsVzrt4Zel-XiyBtD3jBIDEHAHM7bfnMMl7YloOPjGyw/formrestricted" target="_blank">
               <button class="btn-53">
                 <div
                   class="original"
