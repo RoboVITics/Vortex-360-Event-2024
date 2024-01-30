@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import "./teams.css";
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Teams = () => {
+    const navigate=useNavigate()
     const [activeForm, setActiveForm] = useState('teamLeader');
     const [formData, setFormData] = useState({
         firstName: '',
@@ -12,10 +14,26 @@ const Teams = () => {
         phoneNumber: '',
         referralCode: '',
     });
-    const handleSubmit = (event) => {
+    const handleSubmit =async(event) => {
         event.preventDefault();
         // Add logic to handle form submission (e.g., send data to server)
-        console.log('Form Data:', formData);
+        if(activeForm === 'teamLeader'){
+            const response = await axios.post('http://localhost:5000/auth/team/create',
+            {
+                teamCode: formData.referralCode,
+            },{headers:{"Content-Type": "application/json"}})
+            if(response.status === 201){
+                navigate('/dashboard');
+            }
+        }else{
+            const response = await axios.post('http://localhost:5000/auth/team/join',
+            {
+                teamCode: formData.referralCode,
+            },{headers:{"Content-Type": "application/json"}})
+            if(response.status === 201){
+                navigate('/dashboard');
+            }
+        }
         // Reset form data after submission
         setFormData({
             firstName: '',
@@ -86,12 +104,7 @@ const Teams = () => {
                     </>
                         )}
                         
-
-                        
-
-                        
-
-                        <div className="input-box">
+             <div className="input-box">
                             <label htmlFor="email">Email:</label>
                             <input type="email" placeholder="Robovitics@gmail.com"   id="email" name="email"  value={formData.email}
                                 onChange={handleInputChange} required />

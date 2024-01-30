@@ -11,6 +11,7 @@ import Submissions from "./components/Submission-Page/Submission";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
+import TeamProfile from "./components/Teams/TeamProfile";
 
 function App() {
   const [a, setA] = useState(100);
@@ -48,6 +49,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/teamprofile" element={<TeamProfile/>}/>
           </Routes>
         </div>
       </div>
