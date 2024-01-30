@@ -5,6 +5,7 @@ import { Link, redirect } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios"
+
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [email,setEmail]=useState("");
@@ -24,6 +25,7 @@ const Register = () => {
       navigate('/dashboard');
   }
     }
+
   }
   return (
 
@@ -54,6 +56,7 @@ const Register = () => {
           onChange={(e)=>setPassword2(e.target.value)} 
           value={password2}
             id="password2"
+
             type="password"
             placeholder="Confirm Password"
             required
@@ -92,6 +95,5 @@ const Register = () => {
     </div>
   );
 };
-
 
 export default Register;

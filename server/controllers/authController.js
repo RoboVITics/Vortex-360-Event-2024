@@ -13,6 +13,7 @@ class AuthController {
   // controller actions
   static signup = async (req, res) => {
     const data = req.body;
+    console.log(data);
     try {
       const user = await AuthService.createUser(data.email, data.password);
       console.log(user);

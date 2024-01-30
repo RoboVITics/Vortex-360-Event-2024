@@ -6,12 +6,15 @@ import SideBar from "./components/Sidebar/SideBar";
 import DomainInfo from "./components/Landing-Page/DomainInfo";
 import Profile from "./components/Profile/Profile";
 import Progressbar from "./components/Landing-Page/Progressbar";
-import Teams from "../src/components/Teams/Teams";
+import TeamRegistration from "../src/components/Teams/TeamRegistration";
 import Submissions from "./components/Submission-Page/Submission";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Submitted from "./components/Submission-Page/Submittedform"
+import TeamProfile from "./components/Teams/TeamProfile";
+import Teams from "./components/Teams/Teams";
+
 
 function App() {
   const [a, setA] = useState(100);
@@ -47,12 +50,14 @@ function App() {
             />
             <Route path="/domain/:domainId" element={<DomainInfo />} />
             <Route path="/teams" element={<Teams />} />
+            <Route path="/teamreg" element={<TeamRegistration />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/submissions" element={<Submissions />} />
             <Route path="/submittedform" element={<Submitted />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/teamprofile" element={<TeamProfile/>}/>
           </Routes>
         </div>
       </div>
