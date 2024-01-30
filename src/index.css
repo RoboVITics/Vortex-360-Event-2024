@@ -473,7 +473,7 @@ h4 {
   }
 
   #domains {
-    margin-top: 260px;
+    margin-top: 360px;
   }
 }
 
@@ -615,7 +615,7 @@ h4 {
 .progressbar-container #three-container {
   background-color: #000;
   width: 100%;
-  margin-top: -390px;
+  margin-top: -550px;
 }
 
 @media (max-width: 900px) {
@@ -669,9 +669,7 @@ h4 {
   font-family: 'Rockwell';
 }
 
-.back{
-  
-}
+
 
  .back {
    font-size: 20px;

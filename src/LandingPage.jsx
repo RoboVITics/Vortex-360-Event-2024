@@ -47,7 +47,7 @@ const LandingPage = () => {
       if (window.innerWidth < 900) {
         model.scale.set(18, 18, 18);
       } else {
-        model.scale.set(33, 33, 33);
+        model.scale.set(31, 31, 31);
       }
       scene.add(model);
 
