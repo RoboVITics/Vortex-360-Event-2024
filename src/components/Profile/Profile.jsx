@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 import "./Profile.css"
+import axios from "axios"
 
 const Profile = () => {
     const {
@@ -11,9 +13,16 @@ const Profile = () => {
         handleSubmit,
     } = useForm();
 
-    const onSubmit = (data) => {
+    const navigate = useNavigate();
+
+    const onSubmit = async (data) => {
+        const response = await axios.post('http://localhost:5000/profile/create',
+            data,
+            { headers: { 'Content-Type': 'application/json' } },);
+        console.log(response.data);
+
         setTimeout(() => {
-            if (data.name && data.reg && data.gender && data.email && data.vit_email && data.number) {
+            if (data.name && data.reg_no && data.gender && data.email && data.vit_email && data.number) {
                 // Simulate sending data to a server
                 console.log("Submitted data:", data);
                 toast.success('Submitted successfully!', {
@@ -27,10 +36,12 @@ const Profile = () => {
 
             reset(); 
         }, 1000);
+
+        navigate("/dashboard");
     };
 
     return (
-        <div className="body">
+        <div id='profile' className="body gradient-background">
         <div className='profile'>
             <Toaster position="top-center" reverseOrder={false} />
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -59,15 +70,15 @@ const Profile = () => {
                         <input
                             className='input'
                             placeholder="Enter your register no."
-                            {...register("reg", {
+                            {...register("reg_no", {
                                 required: true,
                                 pattern: /^[A-Za-z0-9 ]+$/,
                             })}
                         />
 
                         <span className="error">
-                            {errors.reg?.type === "required" && "Reg no. is required"}
-                            {errors.reg?.type === "pattern" && "Given Reg no. is invalid"}
+                            {errors.reg_no?.type === "required" && "Reg no. is required"}
+                            {errors.reg_no?.type === "pattern" && "Given Reg no. is invalid"}
                         </span>
                     </div>
                     

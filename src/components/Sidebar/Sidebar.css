@@ -17,12 +17,12 @@
     font-size: 18px;
     line-height: 0;
     margin-left: -3px;
+    margin-top: 37px;
 }
 
 .bars {
     width: 26px;
-    margin-right: 5px;
-    margin-top: 43px;
+    
 }
 
 .hide {
@@ -47,13 +47,11 @@
 }
 
 .links:hover {
-    /* border-right: 4px solid white; */
     background: rgb(45, 51, 89);
     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .active {
-    /* border-right: 4px solid white; */
     background: rgb(45, 51, 89);
 }
 
@@ -86,7 +84,27 @@
     border-bottom: #fff 0.5px solid;
 }
 
-.main-container{
+.bars :hover {
+    cursor: pointer;
+    background: rgb(45, 51, 89);
+    transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.bars {
+    /* transition: 0.3s linear; */
     display: flex;
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* To prevent content overflow */
+}
+
+.Sidebar.open {
+    overflow: hidden;
+    /* To prevent content overflow when sidebar is open */
 }

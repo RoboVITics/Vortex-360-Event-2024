@@ -1,87 +1,147 @@
-#submission body {
-    font-family: Arial, sans-serif;
+#submissions * {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
-#submission header {
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+#submissions .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.main {
-    padding: 20px;
+#submissions .submission {
+    width: 420px;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    padding: 30px 40px;
+    margin: 40px 0;
+}
+
+#submissions .text-box label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 12px;
+    margin-top: -4px;
+}
+
+#submissions .submission h1 {
+    font-weight: 700;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 66px;
+}
+
+#submissions .text-box {
+    padding-bottom: 30px;
+}
+
+#submissions .text-box .input {
+    position: relative;
     width: 100%;
-    overflow: hidden;
-
+    height: 50px;
+    margin: 0;
 }
 
-.main.shifted {
-    margin-left: 200px;
+#submissions .register .text-box {
+    margin: 15px 0;
 }
 
-#submission h2 {
-    color: #fff;
-}
-
-/* #submission form {
-    margin-top: 20px;
-} */
-
-#submission label {
-    display: block;
-    margin-bottom: 7px;
-    margin-top: -3px;
-}
-
-#submission textarea{
-    padding: 5px !important;
-}
-
-#submission input,
-#submission textarea {
+#submissions .text-box .input {
     width: 100%;
-        padding: 10px;
-        margin-bottom: 25px;
-        box-sizing: border-box;
-        background-color: #333;
-        color: #fff;
-        border: 1px solid #fff;
-        box-shadow: 1px 3px 7px 0px rgb(207, 159, 255);
-}
-
-#submission button {
-    background-color: #333;
-    color: #fff;
-    padding: 14px 15px;
+    height: 100%;
+    background: transparent;
     border: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 19px 28px 17px 16px;
+    color: #fff;
+}
+
+#submissions .button .icon {
+    margin-right: 20px;
+    height: 20px;
+    width: 25px;
+}
+
+#submissions .submission .button {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
     cursor: pointer;
-    font-size: 21px;
+    font-weight: bolder;
+    margin-top: 20px;
 }
 
-#submission button:hover {
-    background-color: #555;
+#submissions .error {
+    color: red;
+    font-size: 0.8rem;
+    padding-top: 15px;
 }
 
-#submission button.newbtn {
-    display: block;
-    margin: 0 auto;
+#submissions .radio-group {
+    display: flex;
+    gap: 30px;
+    margin: 15px 0;
 }
 
-#submission .error {
-    color: #f44336;
-    font-size: 14px;
-    margin-top: -10px;
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    #submissions .submission {
+        border: none;
+    }
 }
 
-#submission .success {
-    color: #4caf50;
-    font-size: 18px;
-    margin-top: -10px;
-    margin-bottom: 10px;
+#submissions .text-box .file-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#submissions .text-box .file-input {
+    display: none;
+}
+
+#submissions .text-box .file-upload {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#submissions .text-box .file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#submissions .text-box .file-upload:after {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+#submissions .text-box .error {
+    color: red;
+    font-size: 0.8rem;
+    padding-top: 8px;
+}
+
+#submissions .text-box .file-selected {
+    margin-top: 8px;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#submissions .text-box .error {
+    color: red;
+    font-size: 0.8rem;
+    padding-top: 8px;
 }
