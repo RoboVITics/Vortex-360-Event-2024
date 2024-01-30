@@ -36,9 +36,9 @@ const Submissions = () => {
     }, 1000);
   };
 
-  return (
-    <div id="submissions" className="body">
-      <div className="submission">
+  return ( 
+    <div id="submissions" className="body gradient-background">
+      <div className="submission ">
         <Toaster position="top-center" reverseOrder={false} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
@@ -102,6 +102,7 @@ const Submissions = () => {
         </form>
       </div>
     </div>
+    
   );
 };
 

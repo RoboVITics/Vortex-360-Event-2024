@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 .gradient-background {
-  background: linear-gradient(300deg, #000, #302b63);
+  background: linear-gradient(90deg, #000, #302b63);
   background-size: 180% 180%;
-  animation: gradient-animation 10s ease infinite;
+  animation: gradient-animation 6s ease infinite;
 }
 
 @keyframes gradient-animation {

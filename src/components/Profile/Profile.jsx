@@ -41,7 +41,7 @@ const Profile = () => {
     };
 
     return (
-        <div className="body">
+        <div id='profile' className="body gradient-background">
         <div className='profile'>
             <Toaster position="top-center" reverseOrder={false} />
             <form onSubmit={handleSubmit(onSubmit)}>

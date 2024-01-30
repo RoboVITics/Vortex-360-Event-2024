@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
-import img from './Vortex_360_logo.png';
+import img from './Vortex_360_logos.png';
 const Dashboard = () => {
   const [registrationData, setRegistrationData] = useState({
     registrationDateTime: "",
@@ -36,8 +36,9 @@ const Dashboard = () => {
   } = registrationData;
 
   return (
-    <div className="dashboard-container">
-      <div id="Dashboard" className="container">
+    
+    <div className="dashboard-container newgradient">
+      <div id="Dashboard" className="container ">
         <img src={img} alt="VORTEX-360" className="image" />
         <div className="info">
           <h2 className='newhead'>VORTEX-360</h2>

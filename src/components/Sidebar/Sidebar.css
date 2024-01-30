@@ -22,8 +22,7 @@
 
 .bars {
     width: 26px;
-    margin-right: 5px;
-    margin-top: 7px;
+    
 }
 
 .hide {
@@ -96,4 +95,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* To prevent content overflow */
+}
+
+.Sidebar.open {
+    overflow: hidden;
+    /* To prevent content overflow when sidebar is open */
 }
