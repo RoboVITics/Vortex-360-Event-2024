@@ -13,7 +13,6 @@ const TeamProfile = () => {
      },[])
     return (
         <div>
-            <h1>This isoongk</h1>
         </div>
     )
 }
