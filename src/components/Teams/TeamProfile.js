@@ -13,7 +13,7 @@ const TeamProfile = () => {
      },[])
     return (
         <div>
-            <h1>I will fuck your pussy</h1>
+            <h1>This isoongk</h1>
         </div>
     )
 }
