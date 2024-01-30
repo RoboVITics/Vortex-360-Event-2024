@@ -5,8 +5,6 @@ import './Submission.css';
 
 const Submissions = () => {
   const [file, setFile] = useState(null);
-  const [teamName, setTeamName] = useState('');
-  const [idea, setIdea] = useState('');
 
   const {
     register,
@@ -17,7 +15,7 @@ const Submissions = () => {
 
   const onSubmit = (data) => {
     setTimeout(() => {
-      if (!teamName || !idea || !file) {
+      if (!data.teamName || !data.idea || !file) {
         toast.error('Please fill in all fields and upload a file.', {
           position: 'top-center',
           duration: 3000,
@@ -30,35 +28,17 @@ const Submissions = () => {
 
         reset();
         setFile(null);
-        setTeamName('');
-        setIdea('');
       }
     }, 1000);
   };
 
-  return ( 
+  return (
     <div id="submissions" className="body gradient-background">
-      <div className="submission ">
+      <div className="submission">
         <Toaster position="top-center" reverseOrder={false} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <h1>Submission Page</h1>
-          </div>
-          <div className="text-box">
-            <label>Team Name :</label>
-            <input
-              className="input"
-              placeholder="Enter your team name"
-              {...register('teamName', {
-                required: true,
-              })}
-              value={teamName}
-              onChange={(e) => setTeamName(e.target.value)}
-            />
-
-            <span className="error">
-              {errors.teamName?.type === 'required' && 'Team name is required'}
-            </span>
           </div>
 
           <div className="text-box">
@@ -69,12 +49,55 @@ const Submissions = () => {
               {...register('idea', {
                 required: true,
               })}
-              value={idea}
-              onChange={(e) => setIdea(e.target.value)}
             ></textarea>
 
             <span className="error">
               {errors.idea?.type === 'required' && 'Problem statement is required'}
+            </span>
+          </div>
+
+          <div className="text-box">
+            <label>Proposed solution:</label>
+            <input
+              className="input"
+              placeholder="Give your solution"
+              {...register('teamName', {
+                required: true,
+              })}
+            />
+
+            <span className="error">
+              {errors.teamName?.type === 'required' && 'Team name is required'}
+            </span>
+          </div>
+
+          <div className="text-box">
+            <label>Benefits of Your Innovation:</label>
+            <textarea
+              className="input"
+              placeholder="Briefly describe how your innovation benefits the industry or the world"
+              {...register('benefits', {
+                required: true,
+              })}
+            ></textarea>
+
+            <span className="error">
+              {errors.benefits?.type === 'required' && 'Benefits description is required'}
+            </span>
+          </div>
+
+          <div className="text-box">
+            <label>Uniqueness of Your Solution:</label>
+            <textarea
+              className="input"
+              placeholder="Highlight what makes your solution stand out from others in the market"
+              {...register('uniqueness', {
+                required: true,
+              })}
+            ></textarea>
+
+            <span className="error">
+              {errors.uniqueness?.type === 'required' && 'Uniqueness description is required'}
             </span>
           </div>
 
@@ -102,7 +125,6 @@ const Submissions = () => {
         </form>
       </div>
     </div>
-    
   );
 };
 
