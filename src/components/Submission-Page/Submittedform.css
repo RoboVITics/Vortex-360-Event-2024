@@ -1,17 +1,17 @@
-#submissions * {
+#submitted-form * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#submissions .body {
+#submitted-form .body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-#submissions .submission {
+#submitted-form .submission {
     width: 420px;
     border: 2px solid #fff;
     border-radius: 40px;
@@ -19,36 +19,32 @@
     margin: 40px 0;
 }
 
-#submissions .text-box label {
+#submitted-form .text-box label {
     font-weight: 700;
     font-size: 1.2rem;
     padding-bottom: 12px;
     margin-top: -4px;
 }
 
-#submissions .submission h1 {
+#submitted-form h1 {
     font-weight: 700;
-        text-align: center;
-        margin-top: 4px;
-        margin-bottom: 66px;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 66px;
 }
 
-#submissions .text-box {
+#submitted-form .text-box {
     padding-bottom: 30px;
 }
 
-#submissions .text-box .input {
+#submitted-form .text-box .input {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 0;
 }
 
-#submissions .register .text-box {
-    margin: 15px 0;
-}
-
-#submissions .text-box .input {
+#submitted-form .text-box .input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -56,17 +52,17 @@
     outline: none;
     border: 2px solid white;
     border-radius: 40px;
-    padding: 18px 31px 17px 25px;
+    padding: 19px 28px 17px 16px;
     color: #fff;
 }
 
-#submissions .button .icon {
+#submitted-form .button .icon {
     margin-right: 20px;
     height: 20px;
     width: 25px;
 }
 
-#submissions .submission .button {
+#submitted-form .submission .button {
     width: 100%;
     height: 45px;
     background-color: #fff;
@@ -78,34 +74,34 @@
     margin-top: 20px;
 }
 
-#submissions .error {
+#submitted-form .error {
     color: red;
     font-size: 0.8rem;
     padding-top: 15px;
 }
 
-#submissions .radio-group {
+#submitted-form .radio-group {
     display: flex;
     gap: 30px;
     margin: 15px 0;
 }
 
 @media (max-width: 768px) {
-    #submissions .submission {
+    #submitted-form .submission {
         border: none;
     }
 }
 
-#submissions .text-box .file-upload-container {
+#submitted-form .text-box .file-upload-container {
     display: flex;
     flex-direction: column;
 }
 
-#submissions .text-box .file-input {
+#submitted-form .text-box .file-input {
     display: none;
 }
 
-#submissions .text-box .file-upload {
+#submitted-form .text-box .file-upload {
     position: relative;
     display: inline-block;
     background-color: transparent;
@@ -117,30 +113,30 @@
     font-size: 1rem;
 }
 
-#submissions .text-box .file-upload:hover {
+#submitted-form .text-box .file-upload:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-#submissions .text-box .file-upload:after {
+#submitted-form .text-box .file-upload:after {
     margin-left: 10px;
     font-size: 0.8rem;
     color: #fff;
 }
 
-#submissions .text-box .error {
+#submitted-form .text-box .error {
     color: red;
     font-size: 0.8rem;
     padding-top: 8px;
 }
 
-#submissions .text-box .file-selected {
+#submitted-form .text-box .file-selected {
     margin-top: 8px;
     color: #fff;
     font-weight: 600;
     margin-left: 10px;
 }
 
-#submissions .text-box .error {
+#submitted-form .text-box .error {
     color: red;
     font-size: 0.8rem;
     padding-top: 8px;

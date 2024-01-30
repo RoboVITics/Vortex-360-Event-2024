@@ -7,11 +7,15 @@ import DomainInfo from "./components/Landing-Page/DomainInfo";
 import CreateProfile from "./components/Profile/CProfile";
 import Profile from "./components/Profile/Profile";
 import Progressbar from "./components/Landing-Page/Progressbar";
-import Teams from "../src/components/Teams/Teams";
+import TeamRegistration from "../src/components/Teams/TeamRegistration";
 import Submissions from "./components/Submission-Page/Submission";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Submitted from "./components/Submission-Page/Submittedform"
+import TeamProfile from "./components/Teams/TeamProfile";
+import Teams from "./components/Teams/Teams";
+
 
 function App() {
   const [a, setA] = useState(100);
@@ -41,15 +45,23 @@ function App() {
           style={{ marginLeft: shouldShowSidebar() ? "30px" : "0", flex: 1 }}
         >
           <Routes>
-            <Route path="/" element={loading ? <Progressbar value={100 - a} /> : <Main />}/>
+            <Route
+              path="/"
+              element={loading ? <Progressbar value={100 - a} /> : <Main />}
+            />
             <Route path="/domain/:domainId" element={<DomainInfo />} />
             <Route path="/teams" element={<Teams />} />
+
             <Route path="/profile" element={<CreateProfile />} />
             <Route path="/editprofile" element={<Profile />} />
+            <Route path="/teamreg" element={<TeamRegistration />} />
+
             <Route path="/submissions" element={<Submissions />} />
+            <Route path="/submittedform" element={<Submitted />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/teamprofile" element={<TeamProfile/>}/>
           </Routes>
         </div>
       </div>
