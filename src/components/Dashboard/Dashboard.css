@@ -118,12 +118,15 @@
     display: none;
 }
 
-.dashboard-container {
-    /* border: 1px solid #ddd; */
-    padding: 52px;
-}
-
 #Dashboard .completed input[type="checkbox"] {
     background-color: #4CAF50;
     border-color: #4CAF50;
+}
+
+.newgradient{
+        background: linear-gradient(90deg, #000, #302b63);
+        background-size: 180% 180%;
+        animation: gradient-animation 6s ease infinite;
+        height: 100vh;
+
 }
