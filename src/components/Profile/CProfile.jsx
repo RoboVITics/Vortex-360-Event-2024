@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./Profile.css"
+import axios from "axios"
 
-const EditProfile = () => {
+const CreateProfile = () => {
     const {
         register,
-        handleSubmit,
         reset,
         formState: { errors },
+        handleSubmit,
     } = useForm();
 
-    const Records = {
-        "name": "Sriram",
-        "reg_number": "21BDG0921",
-        "gender": "male",
-        "email": "sriram.r2021a@vitstudent.ac.in",
-        "phone_number": "9821314536",
-        "vit_email": "sriram.r2021a@vitstudent.ac.in"
-    };
+    const navigate = useNavigate();
 
     const submit = async (data) => {
-        try {
-            const response = await axios.post('http://localhost:5000/profile/create', data, {
-                headers: { 'Content-Type': 'application/json' }
-            });
-            console.log(response.data);
+        const response = await axios.post('http://localhost:5000/profile/create',
+            data,
+            { headers: { 'Content-Type': 'application/json' } },);
+        console.log(response.data);
 
+        setTimeout(() => {
             if (data.name && data.reg_no && data.gender && data.email && data.vit_email && data.number) {
                 // Simulate sending data to a server
                 console.log("Submitted data:", data);
@@ -40,12 +35,9 @@ const EditProfile = () => {
             }
 
             reset();
-        } catch (error) {
-            console.error('Error submitting data:', error);
-            toast.error('Failed to submit form. Please try again later.', {
-                position: 'top-center',
-            });
-        }
+        }, 1000);
+
+        navigate("/dashboard");
     };
 
     return (
@@ -61,12 +53,12 @@ const EditProfile = () => {
                         <input
                             className='input'
                             placeholder="Enter your name"
-                            value={Records.name}
                             {...register("name", {
                                 required: true,
                                 pattern: /^[A-Za-z ]+$/,
                             })}
                         />
+
                         <span className="error">
                             {errors.name?.type === "required" && "Name is required"}
                             {errors.name?.type === "pattern" && "Name should not contain numbers"}
@@ -78,12 +70,12 @@ const EditProfile = () => {
                         <input
                             className='input'
                             placeholder="Enter your register no."
-                            value={Records.reg_number}
                             {...register("reg_no", {
                                 required: true,
                                 pattern: /^[A-Za-z0-9 ]+$/,
                             })}
                         />
+
                         <span className="error">
                             {errors.reg_no?.type === "required" && "Reg no. is required"}
                             {errors.reg_no?.type === "pattern" && "Given Reg no. is invalid"}
@@ -96,7 +88,7 @@ const EditProfile = () => {
                             <div>
                                 <input
                                     type="radio"
-                                    {...register("gender", { required: true, disabled: true })}
+                                    {...register("gender", { required: true })}
                                     value="male"
                                 />
                                 <label htmlFor="male">Male</label>
@@ -104,7 +96,7 @@ const EditProfile = () => {
                             <div>
                                 <input
                                     type="radio"
-                                    {...register("gender", { required: true, disabled: true })}
+                                    {...register("gender", { required: true })}
                                     value="female"
                                 />
                                 <label htmlFor="female">Female</label>
@@ -112,7 +104,7 @@ const EditProfile = () => {
                             <div>
                                 <input
                                     type="radio"
-                                    {...register("gender", { required: true, disabled: true })}
+                                    {...register("gender", { required: true })}
                                     value="other"
                                 />
                                 <label htmlFor="other">Other</label>
@@ -120,13 +112,11 @@ const EditProfile = () => {
                         </div>
                         <span className="error">{errors.gender && "Gender is required"}</span>
                     </div>
-
                     <div className="text-box">
                         <label>Email :</label>
                         <input
                             className='input'
                             placeholder="Enter your email id"
-                            value={Records.email}
                             {...register("email", {
                                 required: true,
                                 pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.(?:com|in)$/i,
@@ -138,13 +128,11 @@ const EditProfile = () => {
                                 "Entered email is in the wrong format"}
                         </span>
                     </div>
-
                     <div className="text-box">
                         <label>VIT Email :</label>
                         <input
                             className='input'
                             placeholder="Enter your VIT email id"
-                            value={Records.vit_email}
                             {...register("vit_email", {
                                 required: true,
                                 pattern: /^[a-zA-Z0-9_.+-]+@vitstudent\.ac\.in$/i,
@@ -156,7 +144,6 @@ const EditProfile = () => {
                                 "Entered VIT email is in the wrong format"}
                         </span>
                     </div>
-
                     <div className="text-box">
                         <label>Mobile Number :</label>
                         <input
@@ -178,7 +165,6 @@ const EditProfile = () => {
                                 "Entered number is more than 10 digits"}
                         </span>
                     </div>
-
                     <div>
                         <input className="button" type="submit" />
                     </div>
@@ -188,32 +174,4 @@ const EditProfile = () => {
     );
 }
 
-const Profile = () => {
-    const [edit, setEdit] = useState(false);
-    const something = [
-        { id: 1, name: "Item 1" },
-        { id: 2, name: "Item 2" },
-        { id: 3, name: "Item 3" },
-        { id: 4, name: "Item 4" },
-        { id: 5, name: "Item 5" }
-    ];
-
-    return (
-        <div>
-            
-                
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-                        {something.map(item => (
-                            <div>
-                            <div key={item.id}>{item.name}</div>
-                            <div key={item.id}>{item.name}</div>
-                            </div>
-                        ))}
-                    </div>
-                
-            
-        </div>
-    )
-}
-
-export default Profile;
+export default CreateProfile;

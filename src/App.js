@@ -4,6 +4,7 @@ import Main from "./Main";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar";
 import DomainInfo from "./components/Landing-Page/DomainInfo";
+import CreateProfile from "./components/Profile/CProfile";
 import Profile from "./components/Profile/Profile";
 import Progressbar from "./components/Landing-Page/Progressbar";
 import TeamRegistration from "../src/components/Teams/TeamRegistration";
@@ -50,8 +51,11 @@ function App() {
             />
             <Route path="/domain/:domainId" element={<DomainInfo />} />
             <Route path="/teams" element={<Teams />} />
+
+            <Route path="/profile" element={<CreateProfile />} />
+            <Route path="/editprofile" element={<Profile />} />
             <Route path="/teamreg" element={<TeamRegistration />} />
-            <Route path="/profile" element={<Profile />} />
+
             <Route path="/submissions" element={<Submissions />} />
             <Route path="/submittedform" element={<Submitted />} />
             <Route path="/login" element={<Login />} />
