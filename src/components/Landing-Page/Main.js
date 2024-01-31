@@ -7,7 +7,6 @@ import FAQs from "./FAQs";
 import Contact from "./Contact";
 import React from "react";
 import Hero from "./Hero";
-import Timer from "./Timer";
 import Mouse from "./Mouse";
 import Overlay from "./Overlay";
 
@@ -21,7 +20,6 @@ const Main = () => {
       <Sponsors />
       <Prizes />
       <FAQs />
-      <Timer />
       <Contact />
       <Mouse />
       <Overlay />
