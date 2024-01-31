@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import img from './Vortex_360_logos.png';
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
+
 const Dashboard = () => {
   const [registrationData, setRegistrationData] = useState({
     registrationDateTime: "",
@@ -100,6 +103,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
       </div>
     </div>
   );

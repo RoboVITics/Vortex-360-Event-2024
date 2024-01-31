@@ -4,6 +4,9 @@ import { MdForum } from "react-icons/md";
 import { BiGroup, BiLogOut } from "react-icons/bi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
+
 import './Sidebar.css';
 const routes = [
   {
@@ -114,7 +117,11 @@ const SideBar = ({ children }) => {
             ))}
           </section>
         </motion.div>
-        <main className='main-container'>{children}</main>
+        <main className='main-container'>
+          {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
+          {children}
+        </main>
+
       </div>
     </>
   );

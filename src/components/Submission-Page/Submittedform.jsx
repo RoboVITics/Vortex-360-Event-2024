@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import './Submittedform.css';
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
+
 
 const SubmittedForm = () => {
   const [file, setFile] = useState(null);
@@ -83,6 +86,7 @@ const SubmittedForm = () => {
             Update Form
           </button>
         </div>
+        {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
       </div>
     </div>
   );

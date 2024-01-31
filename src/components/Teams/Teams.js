@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import isLoggedIn from "../../auth/isLoggedIn";
+import { Navigate, Outlet } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 function Teams() {
@@ -33,11 +35,9 @@ function Teams() {
      useEffect(()=>{
        retrieve()
    },[])
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>
+    {isLoggedIn() ? <Outlet /> : <Navigate to="/login" />}
+    </div>;
 }
 
 export default Teams
