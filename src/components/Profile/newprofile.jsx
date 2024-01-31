@@ -1,6 +1,8 @@
 // NewProfile.jsx
 import React, { useState } from 'react';
 import './newprofile.css';
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
 
 const NewProfile = () => {
   const initialUserData = {
@@ -68,6 +70,7 @@ const NewProfile = () => {
             </button>
           )}
         </div>
+        {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
       </div>
     </div>
   );

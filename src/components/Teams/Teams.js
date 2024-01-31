@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import isLoggedIn from "../../auth/isLoggedIn";
+import { Navigate, Outlet } from "react-router-dom";
 import axios from "axios";
 function Teams() {
     const navigate=useNavigate()
@@ -15,11 +17,9 @@ function Teams() {
      useEffect(()=>{
        fetchData()
    },[])
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>
+    {isLoggedIn() ? <Outlet /> : <Navigate to="/login" />}
+    </div>;
 }
 
 export default Teams

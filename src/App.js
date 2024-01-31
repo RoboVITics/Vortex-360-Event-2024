@@ -34,7 +34,7 @@ function App() {
     }
   }, [a]);
   const shouldShowSidebar = () => {
-    const hiddenPaths = ["/", "/login", "/register"];
+    const hiddenPaths = ["/", "/login", "/register", "/domain/:domainId"];
     return !hiddenPaths.includes(location.pathname);
   };
   return (
@@ -54,16 +54,19 @@ function App() {
               element={loading ? <Progressbar value={100 - a} /> : <Main />}
             />
             <Route path="/domain/:domainId" element={<DomainInfo />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/teamreg" element={<TeamRegistration />} />
-            <Route path="/newprofile" element={<NewProfile />} />
-            <Route path="/submissions" element={<Submissions />} />
-            <Route path="/submittedform" element={<Submitted />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/teamprofile" element={<TeamProfile />} />
+            <Route path="/login" element={<Login />}>
+
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="newprofile" element={<NewProfile />} />
+              <Route path="teams" element={<Teams />} />
+              <Route path="teamreg" element={<TeamRegistration />} />
+              <Route path="teamprofile" element={<TeamProfile />} />
+              <Route path="submissions" element={<Submissions />} />
+              <Route path="submittedform" element={<Submitted />} />
+
+            </Route>
           </Routes>
         </div>
       </div>
