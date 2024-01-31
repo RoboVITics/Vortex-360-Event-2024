@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
 import "./Profile.css"
 import axios from "axios"
 
@@ -168,6 +170,7 @@ const CreateProfile = () => {
                         <input className="button" type="submit" />
                     </div>
                 </form>
+                {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
             </div>
         </div>
     );

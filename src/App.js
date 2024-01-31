@@ -17,7 +17,6 @@ import SubmittedForm from "./components/Submission-Page/Submittedform";
 
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-;
 import LandingPage from "./components/Landing-Page/LandingPage";
 
 
@@ -26,7 +25,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const shouldShowSidebar = () => {
-    const hiddenPaths = ["/", "/login", "/register"];
+    const hiddenPaths = ["/", "/login", "/register", "/domain/:domainId"];
     return !hiddenPaths.includes(location.pathname);
   };
   return (
@@ -44,17 +43,19 @@ function App() {
             <Route path="/" element={<LandingPage/>}/>
 
             <Route path="/domain/:domainId" element={<DomainInfo />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/editprofile" element={<Profile />} />
-            <Route path="/teamreg" element={<TeamRegistration />} />
-            <Route path="/teamprofile" element={<TeamProfile />} />
-            <Route path="/newprofile" element={<NewProfile />} />
-            <Route path="/submissions" element={<Submissions />} />
-            <Route path="/submittedForm" element={<SubmittedForm />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/user">
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="newprofile" element={<NewProfile />} />
+              <Route path="teams" element={<Teams />} />
+              <Route path="teamreg" element={<TeamRegistration />} />
+              <Route path="teamprofile" element={<TeamProfile />} />
+              <Route path="submissions" element={<Submissions />} />
+              <Route path="submittedform" element={<SubmittedForm />} />
+            </Route>
+          </Routes>
         </div>
       </div>
     </>

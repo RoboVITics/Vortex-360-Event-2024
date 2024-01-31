@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import './Submission.css';
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
+
 
 const Submissions = () => {
   const [file, setFile] = useState(null);
@@ -123,6 +126,7 @@ const Submissions = () => {
             <input className="button" type="submit" />
           </div>
         </form>
+        {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
       </div>
     </div>
   );

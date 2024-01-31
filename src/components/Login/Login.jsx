@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 const Login = () => {
   const cookies=new Cookies();
-  const [user,setUser]=setUser(null)
+  const [user,setUser]=useState(null)
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const navigate = useNavigate();
@@ -22,11 +22,11 @@ const Login = () => {
       password: password,
     },{headers:{"Content-Type": "application/json"}})
     // Store the JWT Token as a cookie in the headers
-    setUser(response.data.token)
+    setUser(response.data.token);
     cookies.set("jwt_authorization",response.data.token)
 
     if(response.status == 201){
-        navigate('/profile');
+        navigate('/user/profile');
     }
   }
   return (
@@ -65,10 +65,10 @@ const Login = () => {
           <FaGoogle className="icon" />
           Log in with Google
         </button>
-        <button type="text" className="button">
+        {/* <button type="text" className="button">
           <FaGithub className="icon" />
           Log in with GitHub
-        </button>
+        </button> */}
         <button type="submit" className="button">
           Login
         </button>

@@ -1,36 +1,34 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaHome, FaUser } from "react-icons/fa";
 import { MdForum } from "react-icons/md";
 import { BiGroup, BiLogOut } from "react-icons/bi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import isLoggedIn from '../../auth/isLoggedIn';
+import { Navigate, Outlet } from 'react-router-dom';
+
 import './Sidebar.css';
 const routes = [
   {
-    path: "/Dashboard",
+    path: "/user/dashboard",
     name: "Dashboard",
     icon: <FaHome />,
   },
   {
-    path: "/Profile",
+    path: "/user/profile",
     name: "Profile",
     icon: <FaUser />,
   },
   {
-    path: "/Teams",
+    path: "/user/teams",
     name: "Teams",
     icon: <BiGroup />,
   },
   
   {
-    path: "/Submissions",
+    path: "/user/submissions",
     name: "Submission",
     icon: <MdForum/>,
-  },
-  {
-    path: "/logout",
-    name: "Logout",
-    icon: <BiLogOut />,
   },
 ];
 
@@ -112,9 +110,36 @@ const SideBar = ({ children }) => {
                 </AnimatePresence>
               </NavLink>
             ))}
+            <NavLink
+                className="links"
+                activeClassName="active"
+                to={'/login'}
+                onClick={() => {
+                  document.cookie.replace('jwt_authorization','');
+                }}
+              >
+                <div className="icon"><BiLogOut /></div>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      variants={showAnimation}
+                      initial="hidden"
+                      animate="show"
+                      exit="hidden"
+                      className="link_text"
+                    >
+                      Logout
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+            </NavLink>
           </section>
         </motion.div>
-        <main className='main-container'>{children}</main>
+        <main className='main-container'>
+          {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
+          {children}
+        </main>
+
       </div>
     </>
   );

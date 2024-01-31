@@ -75,10 +75,10 @@ const Register = () => {
           <FaGoogle className="icon" />
           Log in with Google
         </button>
-        <button type="text" className="button">
+        {/* <button type="text" className="button">
           <FaGithub className="icon" />
           Log in with GitHub
-        </button>
+        </button> */}
         <button type="submit" className="button">
           Register
         </button>
