@@ -17,7 +17,6 @@ import SubmittedForm from "./components/Submission-Page/Submittedform";
 
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-;
 import LandingPage from "./components/Landing-Page/LandingPage";
 
 
