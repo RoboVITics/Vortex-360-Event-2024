@@ -8,7 +8,8 @@ class TeamService {
         // Data required:
         const data = req.body;
         const teamName = data.teamName;
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
             // Check if part of team:
             const profileRef = doc(db, "profile", email);
@@ -51,7 +52,8 @@ class TeamService {
     static joinTeam = async (req, res, next) => {
         const data = req.body;
         const teamCode = data.teamCode;
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
 
         try {
             // Check if part of team:
@@ -85,7 +87,8 @@ class TeamService {
     };
     
     static quitTeam = async (req, res, next) => {
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
             const profileRef = doc(db, "profile", email);
             const profile = await getDoc(profileRef);
@@ -135,7 +138,8 @@ class TeamService {
     };
 
     static getTeam = async (req, res, next) => {
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
             const profileRef = doc(db, "profile", email);
             const profile = await getDoc(profileRef);

@@ -5,8 +5,10 @@ const db = getFirestore(fireapp);
 class ProfileService {
     static createProfile = async (req, res, next) => {
         const data = req.body;
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
+            console.log("profile/create: Create profile");
             const response = await setDoc(doc(db, "profile", email), data);
             res.status(200).json({ success: true, message: 'Created Profile Successfully', data: response});
         } catch (error) {
@@ -17,8 +19,10 @@ class ProfileService {
 
     static updateProfile = async (req, res, next) => {
         const data = req.body;
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
+            console.log("profile/update: Update profile");
             const docRef = doc(db, "profile", email);
             const response = await setDoc(docRef, data);
             res.status(200).json({ success: true, message: 'Updated Profile Successfully', data: response});
@@ -29,8 +33,10 @@ class ProfileService {
     }
 
     static getProfile = async (req, res, next) => {
-        const email = AuthMiddleware.extractToken(req.cookies.jwt).user;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
+            console.log("profile/read: Read profile");
             const docRef = doc(db, "profile", email);
             const docSnap = await getDoc(docRef);
             const profileData = docSnap.data();
