@@ -6,14 +6,19 @@ import DomainInfo from "./components/Landing-Page/DomainInfo";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Profile from "./components/Profile/Profile";
 import NewProfile from "./components/Profile/newprofile";
+
 import Teams from "../src/components/Teams/Teams";
+import TeamRegistration from "../src/components/Teams/TeamRegistration";
+import TeamProfile from "./components/Teams/TeamProfile";
+
 import Submissions from "./components/Submission-Page/Submission";
+import SubmittedForm from "./components/Submission-Page/Submittedform";
+
+
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-import TeamProfile from "./components/Teams/TeamProfile";
-import Teams from "./components/Teams/Teams";
+;
 import LandingPage from "./components/Landing-Page/LandingPage";
-import SubmittedForm from "./components/Submission-Page/Submittedform";
 
 
 
