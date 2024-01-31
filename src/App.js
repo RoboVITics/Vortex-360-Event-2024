@@ -17,7 +17,6 @@ import SubmittedForm from "./components/Submission-Page/Submittedform";
 
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-;
 import LandingPage from "./components/Landing-Page/LandingPage";
 
 
@@ -45,8 +44,8 @@ function App() {
 
             <Route path="/domain/:domainId" element={<DomainInfo />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />}>
-
+            <Route path="/login" element={<Login />}/>
+            <Route path="/user">
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="profile" element={<Profile />} />
               <Route path="newprofile" element={<NewProfile />} />
@@ -54,8 +53,7 @@ function App() {
               <Route path="teamreg" element={<TeamRegistration />} />
               <Route path="teamprofile" element={<TeamProfile />} />
               <Route path="submissions" element={<Submissions />} />
-              <Route path="submittedform" element={<Submitted />} />
-
+              <Route path="submittedform" element={<SubmittedForm />} />
             </Route>
           </Routes>
         </div>
