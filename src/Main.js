@@ -7,7 +7,6 @@ import FAQs from "./components/Landing-Page/FAQs";
 import Contact from "./components/Landing-Page/Contact";
 import React from "react";
 import LandingPage from "./components/Landing-Page/LandingPage";
-import Timer from "./components/Landing-Page/Timer";
 import Mouse from "./components/Landing-Page/Mouse";
 import Overlay from "./components/Landing-Page/Overlay";
 
@@ -21,7 +20,7 @@ const Main = () => {
       <Sponsors />
       <Prizes />
       <FAQs />
-      <Timer />
+      
       <Contact />
       <Mouse />
       <Overlay />

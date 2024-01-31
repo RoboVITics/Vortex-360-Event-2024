@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile {
+    width: 420px;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    padding: 30px 40px;
+    margin: 40px 0;
+}
+
+.text-box label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 12px;
+}
+
+.profile h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.text-box {
+    padding-bottom: 30px;
+}
+
+.text-box .input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+}
+
+.text-box .input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 20px 45px 20px 20px;
+    color: #fff;
+}
+
+.button {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        border: none;
+    }
+}
