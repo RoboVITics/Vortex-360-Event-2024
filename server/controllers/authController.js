@@ -20,7 +20,7 @@ class AuthController {
       const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
       console.log(token);
       res.cookie('jwt', token, { maxAge: maxAge * 1000 });
-      res.status(201).json({ user: user });
+      res.status(201).json({ user: user, token: token });
     }
     catch(err) {
       const errors = this.handleErrors(err);
@@ -33,24 +33,10 @@ class AuthController {
     const data = req.body;
     try {
       const user = await AuthService.loginUser(data.email, data.password);
-
       const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
-
-      // const payload = {
-      //   user: {
-      //       id: data.email 
-      //   }
-      // }
-      // jwt.sign(payload,
-      //   process.env.jwtSecret, // Add your personal JWT Secret key in default.json
-      //   { expiresIn: 3600 }, // Change this to 3600 during production!! 
-      //   (err, token)=>{
-      //       if (err) throw err;
-      //       return res.json({ token: token });
-      //   }); 
       console.log(token);
       res.cookie('jwt', token, { maxAge: maxAge * 1000 });
-      res.status(201).json({ user: user });
+      res.status(201).json({ user: user, token: token });
     } 
     catch (err) {
       const errors = this.handleErrors(err);

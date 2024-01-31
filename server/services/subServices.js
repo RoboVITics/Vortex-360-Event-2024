@@ -3,28 +3,41 @@ import fireapp from '../database.js';
 import AuthMiddleware from '../middleware/authMiddleware.js';
 const db = getFirestore(fireapp);
 import { getStorage, ref, uploadBytes,  getDownloadURL } from "firebase/storage";
-
-const storage = getStorage();
+const storage = getStorage(fireapp);
 
 class SubmitService {
-    static createSubmission = async (req, res, next) => {
-        // Fetch the file from request:
-        const file = req.file;
-        console.log(req.file);
+    static getUploadUrl = async (file) => {
         try {
-            // Upload the file to storage
-            const storageRef = ref(storage, file.originalname);
-            const snapshot = await uploadBytes(storageRef, file.buffer);
-
+            const storageRef = ref(storage, `files/${file.originalname}`);
+            const metadata = {
+                contentType: req.file.mimetype,
+            };
+            const snapshot = await uploadBytes(storageRef, file.buffer, metadata);
             // Get the download URL of the uploaded file
             const downloadURL = await getDownloadURL(snapshot.ref);
-
             // Return the file reference in the response
-            res.status(200).json({ fileReference: downloadURL, content: [{ msg: 'Created Submission' }] });
+            return downloadURL;
         } catch (error) {
+            console.error('Error creating reference url:', error);
+            return undefined;
+        }
+
+    }
+    static createSubmission = async (req, res, next) => {
+        // Fetch the file from request;
+        const body = req.body;
+        const file = req.file;
+        console.log("submissions/create: Create submission");
+        try{
+            const fireStoreRef = this.getUploadUrl(file);
+            res.status(200).send({fileReference: fireStoreRef});
+
+        }
+        catch (error) {
             console.error('Error creating submission:', error);
             res.status(500).json({ error: 'Failed to create submission' });
         }
+        
     }
 
     static updateSubmission = async (req, res, next) => {
