@@ -73,9 +73,6 @@ const TeamRegistration = () => {
     const handleToggleForm = (formType) => {
         setActiveForm(formType);
     };
-    useEffect(()=>{
-        retrieve();
-    },[])
     return (
       <>
         <div id="registration-container">
