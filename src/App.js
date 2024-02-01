@@ -25,7 +25,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const shouldShowSidebar = () => {
-    const hiddenPaths = ["/", "/login", "/register", "/domain/:domainId"];
+    const hiddenPaths = ["/", "/login", "/register", "/domain/:domainId","/user/createprofile"];
     return !hiddenPaths.includes(location.pathname);
   };
   return (
@@ -47,8 +47,8 @@ function App() {
             <Route path="/login" element={<Login />}/>
             <Route path="/user">
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="newprofile" element={<NewProfile />} />
+              <Route path="createprofile" element={<Profile />} />
+              <Route path="profile" element={<NewProfile />} />
               <Route path="teams" element={<Teams />} />
               <Route path="teamreg" element={<TeamRegistration />} />
               <Route path="teamprofile" element={<TeamProfile />} />

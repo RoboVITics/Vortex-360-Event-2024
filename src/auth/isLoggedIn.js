@@ -7,7 +7,6 @@ const isLoggedIn = () => {
   if (token) {
     return true;
   }
-  
   // Else, return false
   return false;
 }

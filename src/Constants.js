@@ -190,3 +190,8 @@ export const sponsors = [
   // { id: 2, icon: simg4 },
 ];
 export const serverURL="http://localhost:5000"
+
+export const googleClient = {
+  clientID: '991930535994-94of8gpdci00cvthtn79t8p1hsic1n6d.apps.googleusercontent.com',
+  clientSecret: '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'
+}

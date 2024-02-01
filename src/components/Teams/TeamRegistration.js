@@ -7,7 +7,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { serverURL } from '../../Constants';
 const TeamRegistration = () => {
-    const cookies=new Cookies();
+    const cookies = new Cookies().cookies;
     const [token,setToken]=useState("");
     const navigate=useNavigate();
     const [activeForm, setActiveForm] = useState('teamLeader');
@@ -21,7 +21,7 @@ const TeamRegistration = () => {
         referralCode: '',
     });
     async function retrieve(){
-        let getting=await cookies.get("jwt_authorization")
+        let getting=await cookies['jwt'];
         if(getting){
           setToken(getting)
         }
