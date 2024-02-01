@@ -371,9 +371,13 @@ body {
     font-size: 20px;
   }
 }
-
-@media (max-width: 430px) {
+@media (max-width:890px) {
+  #timer_text{
+    margin-top:180px;
+  }
+} 
+@media (max-width: 450px) {
   #timer_text {
-    margin-top: 65px;
+    margin-top: 60px;
   }
 }
