@@ -30,11 +30,11 @@ const routes = [
     icon: <BiGroup />,
   },
   
-  {
-    path: "/user/submissions",
-    name: "Submission",
-    icon: <MdForum/>,
-  },
+  // {
+  //   path: "/user/submissions",
+  //   name: "Submission",
+  //   icon: <MdForum/>,
+  // },
 ];
 
 const SideBar = ({ children }) => {

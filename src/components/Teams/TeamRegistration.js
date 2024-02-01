@@ -42,7 +42,7 @@ const TeamRegistration = () => {
             {
                 teamCode: formData.referralCode,
             },{headers:{"Content-Type": "application/json","token":`${token}`}})
-            if(response.status === 201){
+            if(response.status === 200){
                 navigate('/user/teamprofile');
             }
         }

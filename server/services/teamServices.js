@@ -33,6 +33,7 @@ class TeamService {
                         email: email,
                         name: profileData.name
                     }],
+
                 });
                 
                 const updatedProfile = { ...profile.data(), teamName: data.teamName, teamCode: teamCode, isTeamLeader: true };
@@ -119,9 +120,7 @@ class TeamService {
                     delete profileData.teamName;
                     delete profileData.isTeamLeader;
                     await setDoc(doc(db, "profile", email), profileData);
-
-                    console.log(profileData);
-                    await setDoc(doc(db, "profile", email), profileData);
+                    await deleteDoc(doc(db, "teams", teamCode));
                     console.log("teams/quit: Delete team!");
                     res.status(200).json({success: true, message: "Deleted team successfully"});
                 }
@@ -133,7 +132,13 @@ class TeamService {
                 await setDoc(doc(db, "profile", email), profileData);
 
                 //Delete from the team data:
-                const index = teamData.members.indexOf(email);
+                var index;
+                for (let i = 1; i < teamData.members.length; i++) {
+                    const value = teamData.members[i];
+                    if(value.email == email){
+                        index = i;
+                    }
+                }
                 if (index > -1) teamData.members.splice(index, 1); 
                 await setDoc(doc(db, "teams", teamCode), teamData);
                 console.log("teams/quit: Left team!");

@@ -3,11 +3,12 @@ import { toast, Toaster } from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import './Submission.css';
 import isLoggedIn from '../../auth/isLoggedIn';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 
 
 const Submissions = () => {
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -15,6 +16,7 @@ const Submissions = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const formData = new FormData();
 
   const onSubmit = (data) => {
     setTimeout(() => {
@@ -24,6 +26,10 @@ const Submissions = () => {
           duration: 3000,
         });
       } else {
+        console.log(data);
+        const file = data.target.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
         toast.success('Submitted successfully!', {
           position: 'top-center',
           duration: 3000,
@@ -33,6 +39,8 @@ const Submissions = () => {
         setFile(null);
       }
     }, 1000);
+    navigate('/user/dashboard')
+
   };
 
   return (
