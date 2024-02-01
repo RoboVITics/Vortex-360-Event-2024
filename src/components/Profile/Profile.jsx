@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
@@ -6,8 +6,11 @@ import isLoggedIn from '../../auth/isLoggedIn';
 import { Navigate, Outlet } from 'react-router-dom';
 import "./Profile.css"
 import axios from "axios"
+import Cookies from "universal-cookie";
 
 const CreateProfile = () => {
+    const cookies=new Cookies();
+    const [token,setToken]=useState("")
     const {
         register,
         reset,
@@ -20,7 +23,7 @@ const CreateProfile = () => {
     const submit = async (data) => {
         const response = await axios.post('http://localhost:5000/profile/create',
             data,
-            { headers: { 'Content-Type': 'application/json' } },);
+            { headers: { 'Content-Type': 'application/json',"Accept": "*/*","token": `${token}` } },);
         console.log(response.data);
 
         setTimeout(() => {
@@ -38,10 +41,25 @@ const CreateProfile = () => {
 
             reset();
         }, 1000);
-
-        navigate("/dashboard");
+        
+        navigate("/user/dashboard");
     };
-
+    async function retrieve(){
+        let getting = await cookies.get("jwt_authorization")
+        cookies.get({
+          name:"jwt_authorization",
+        })
+        if(getting){
+            setToken(getting)
+          console.log("Redirected");
+        }
+        else{
+          console.log("error");
+        }
+      }
+       useEffect(()=>{
+         retrieve()
+     },[])
     return (
         <div id='profile' className="body gradient-background">
             <div className='profile'>

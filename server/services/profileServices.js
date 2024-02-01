@@ -6,7 +6,8 @@ class ProfileService {
     static createProfile = async (req, res, next) => {
         const data = req.body;
         const token = req.headers['token'];
-        const email = AuthMiddleware.extractToken(token).user;
+        const decoded=AuthMiddleware.extractToken(token);
+        const email=decoded.user
         try {
             console.log("profile/create: Create profile");
             const response = await setDoc(doc(db, "profile", email), data);
