@@ -5,12 +5,12 @@ import { Link, redirect } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios"
-
+import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
-  
+  const cookies=new Cookies();
   const [password2,setPassword2]=useState("");
   const navigate = useNavigate();
   const handleSubmit=async(e)=>{
@@ -21,9 +21,11 @@ const Register = () => {
       email: email,
       password: password,
     },{headers:{"Content-Type": "application/json"}})
+    cookies.set("jwt_authorization",response.data.token)
+
     if(response.status == 201){
-      navigate('/dashboard');
-  }
+        navigate('/profile');
+    }
     }
 
   }

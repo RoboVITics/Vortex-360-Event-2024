@@ -146,7 +146,7 @@ class TeamService {
             const profileData = profile.data();
 
             if(!profileData.teamCode){
-                res.status(400).json({success: false, message: "Not in any team!"});
+                res.status(200).json({success: false, message: "Not in any team!"});
             }else{
                 const teamCode = profileData.teamCode;
                 const docRef = doc(db, "teams", teamCode);

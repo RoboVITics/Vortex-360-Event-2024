@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "./teams.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import isLoggedIn from "../../auth/isLoggedIn";
 import { Navigate, Outlet } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import { serverURL } from '../../Constants';
 const TeamRegistration = () => {
-    const navigate=useNavigate()
+    const cookies=new Cookies();
+    const [token,setToken]=useState("");
+    const navigate=useNavigate();
     const [activeForm, setActiveForm] = useState('teamLeader');
     const [formData, setFormData] = useState({
         firstName: '',
@@ -16,24 +20,33 @@ const TeamRegistration = () => {
         phoneNumber: '',
         referralCode: '',
     });
+    async function retrieve(){
+        let getting=await cookies.get("jwt_authorization")
+        if(getting){
+          setToken(getting)
+        }
+        else{
+          console.log(getting);
+        }
+      }
     const handleSubmit =async(event) => {
         event.preventDefault();
         // Add logic to handle form submission (e.g., send data to server)
         if(activeForm === 'teamLeader'){
-            const response = await axios.post('http://localhost:5000/auth/team/create',
+            const response = await axios.post(`${serverURL}/teams/create`,
             {
-                teamCode: formData.referralCode,
-            },{headers:{"Content-Type": "application/json"}})
+                teamName: formData.teamName,
+            },{headers:{"Content-Type": "application/json","token":`${token}`}})
             if(response.status === 201){
-                navigate('/dashboard');
+                navigate('/user/teamprofile');
             }
         }else{
-            const response = await axios.post('http://localhost:5000/auth/team/join',
+            const response = await axios.post(`${serverURL}/teams/join`,
             {
                 teamCode: formData.referralCode,
-            },{headers:{"Content-Type": "application/json"}})
+            },{headers:{"Content-Type": "application/json","token":`${token}`}})
             if(response.status === 201){
-                navigate('/dashboard');
+                navigate('/user/teamprofile');
             }
         }
         // Reset form data after submission
@@ -60,7 +73,9 @@ const TeamRegistration = () => {
     const handleToggleForm = (formType) => {
         setActiveForm(formType);
     };
-
+    useEffect(()=>{
+        retrieve();
+    },[])
     return (
       <>
         <div id="registration-container">
