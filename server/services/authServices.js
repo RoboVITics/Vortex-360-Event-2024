@@ -48,5 +48,4 @@ class AuthService {
         });
     }
 }
-// Export the AuthService class
 export default AuthService;

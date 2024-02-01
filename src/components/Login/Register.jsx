@@ -10,28 +10,36 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
-  const cookies=new Cookies();
+  const cookies = new Cookies();
   const [password2,setPassword2]=useState("");
   const navigate = useNavigate();
   const handleSubmit=async(e)=>{
     e.preventDefault();
     if(password===password2){
       const response = await axios.post('http://localhost:5000/auth/signup',
-    {
-      email: email,
-      password: password,
-    },{headers:{"Content-Type": "application/json"}})
-    cookies.set("jwt_authorization",response.data.token)
+      { email: email, password: password,},
+      { headers:{"Content-Type": "application/json"}});
 
-    if(response.status == 201){
-        navigate('/profile');
-    }
+      cookies.set("jwt",response.data.token);
+      if(response.status == 201){
+        var config = {
+          headers:{ "Accept": "*/*","token": `${response.data.token}`}
+        }
+        let profileRes = await axios.get('http://localhost:5000/profile/read',config);
+        if(profileRes.data.data){
+          localStorage.setItem('profile', JSON.stringify(profileRes.data.data))
+          navigate('/user/dashboard');
+        }
+        else{
+          navigate('/user/createprofile');
+        }
+      }
     }
 
   }
   return (
 
-    <div className="body">
+    <div className="body gradient-background">
     <div className="wrapper register">
       <form action="" onSubmit={handleSubmit}>
         <h1>Register</h1>

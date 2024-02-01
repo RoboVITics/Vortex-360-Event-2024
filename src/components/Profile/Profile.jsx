@@ -9,8 +9,13 @@ import axios from "axios"
 import Cookies from "universal-cookie";
 
 const CreateProfile = () => {
-    const cookies=new Cookies();
-    const [token,setToken]=useState("")
+    const cookies = new Cookies().cookies;
+    const [token, setToken] = useState('');
+    function setCookie(){setToken(cookies['jwt']);}
+    useEffect(() => {
+        setCookie();
+    },[]);
+
     const {
         register,
         reset,
@@ -25,6 +30,8 @@ const CreateProfile = () => {
             data,
             { headers: { 'Content-Type': 'application/json',"Accept": "*/*","token": `${token}` } },);
         console.log(response.data);
+        if(localStorage.getItem('profile')) {localStorage.removeItem('profile');}
+        localStorage.setItem('profile',JSON.stringify(response.data));
 
         setTimeout(() => {
             if (data.name && data.reg_no && data.gender && data.email && data.vit_email && data.number) {
@@ -38,28 +45,11 @@ const CreateProfile = () => {
                     position: 'top-center',
                 });
             }
-
             reset();
         }, 1000);
-        
         navigate("/user/dashboard");
     };
-    async function retrieve(){
-        let getting = await cookies.get("jwt_authorization")
-        cookies.get({
-          name:"jwt_authorization",
-        })
-        if(getting){
-            setToken(getting)
-          console.log("Redirected");
-        }
-        else{
-          console.log("error");
-        }
-      }
-       useEffect(()=>{
-         retrieve()
-     },[])
+
     return (
         <div id='profile' className="body gradient-background">
             <div className='profile'>
@@ -89,7 +79,7 @@ const CreateProfile = () => {
                         <input
                             className='input'
                             placeholder="Enter your register no."
-                            {...register("reg_no", {
+                            {...register("reg_number", {
                                 required: true,
                                 pattern: /^[A-Za-z0-9 ]+$/,
                             })}
@@ -169,7 +159,7 @@ const CreateProfile = () => {
                             className='input'
                             placeholder="Enter your mobile no."
                             type="text"
-                            {...register("number", {
+                            {...register("phone_number", {
                                 required: true,
                                 pattern: /^(0|[1-9][0-9]*)$/,
                                 minLength: 10,

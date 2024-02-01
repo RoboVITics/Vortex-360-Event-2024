@@ -2,7 +2,7 @@ import express from 'express';
 import SubService from '../services/subServices.js';
 import AuthMiddleware from '../middleware/authMiddleware.js';
 import multer from 'multer';
-const upload = multer({dest: '../files'});
+const upload = multer({dest: '/files'});
 const SubmissionRouter = express.Router();
 
 SubmissionRouter.post('/create', upload.single("file"),[AuthMiddleware.requireAuth], SubService.createSubmission);

@@ -18,7 +18,6 @@ class AuthController {
       const user = await AuthService.createUser(data.email, data.password);
       console.log(user);
       const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
-      console.log(token);
       res.cookie('jwt', token, { maxAge: maxAge * 1000 });
       res.status(201).json({ user: user, token: token });
     }
@@ -34,7 +33,6 @@ class AuthController {
     try {
       const user = await AuthService.loginUser(data.email, data.password);
       const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
-      console.log(token);
       res.cookie('jwt', token, { maxAge: maxAge * 1000 });
       res.status(201).json({ user: user, token: token });
     } 
@@ -54,7 +52,6 @@ class AuthController {
   static googleAuthLogin = async (req,res) => {
     const data = req.body;
     const user = await AuthService.googleAuth(data.email, data.user);
-
   }
 };
 

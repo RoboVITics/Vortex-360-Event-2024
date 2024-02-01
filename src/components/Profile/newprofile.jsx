@@ -1,18 +1,22 @@
 // NewProfile.jsx
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './newprofile.css';
+import { useForm } from 'react-hook-form';
+import { toast, Toaster } from 'react-hot-toast';
 import isLoggedIn from '../../auth/isLoggedIn';
 import { Navigate, Outlet } from 'react-router-dom';
+import axios from "axios"
+import Cookies from "universal-cookie";
 
 const NewProfile = () => {
-  const initialUserData = {
-    "name": "Sriram",
-    "reg_number": "21BDG0921",
-    "gender": "male",
-    "email": "sriram.r2021a@vitstudent.ac.in",
-    "phone_number": "9821314536",
-    "vit_email": "sriram.r2021a@vitstudent.ac.in"
-  };
+  const cookies = new Cookies().cookies;
+  const [token, setToken] = useState('');
+  function setCookie(){setToken(cookies['jwt']);}
+  useEffect(() => {
+      setCookie();
+  },[]);
+
+  const initialUserData = JSON.parse(localStorage.getItem('profile'));
 
   const [edit, setEdit] = useState(false);
   const [userData, setUserData] = useState(initialUserData);
@@ -31,10 +35,28 @@ const NewProfile = () => {
     { label: "Mobile Number", key: "phone_number" }
   ];
 
-  const handleSaveChanges = () => {
-    // You can add logic here to save changes to the backend if needed
+  const handleSaveChanges = async () => {
     setEdit(false);
-    // Display a success message or perform additional actions as needed
+    const response = await axios.post('http://localhost:5000/profile/update',
+        userData,
+        { headers: { 'Content-Type': 'application/json',"Accept": "*/*","token": `${token}` } },);
+    console.log(response.data);
+    localStorage.removeItem('profile')
+    localStorage.setItem('profile',JSON.stringify(response.data.data));
+
+    setTimeout(() => {
+        if (userData.name && userData.reg_no && userData.gender && userData.email && userData.vit_email && userData.number) {
+            // Simulate sending data to a server
+            console.log("Submitted data:", userData);
+            toast.success('Submitted successfully!', {
+                position: 'top-center',
+            });
+        } else {
+            toast.error('Failed to submit form. Please fill in all fields.', {
+                position: 'top-center',
+            });
+        }
+    }, 1000);
   };
 
   return (
@@ -43,6 +65,7 @@ const NewProfile = () => {
         <div>
           <h1>Profile</h1>
         </div>
+        {edit && <Toaster position="top-center" reverseOrder={false} />}
         {renderFields.map((field) => (
           <div className="text-box" key={field.key}>
             <label>{field.label} :</label>
