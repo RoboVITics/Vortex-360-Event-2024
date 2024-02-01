@@ -83,7 +83,6 @@
 
 #Dashboard span {
     margin-left: 0.5rem;
-    color: green;
 }
 
 #Dashboard .timeline {
@@ -129,4 +128,18 @@
         animation: gradient-animation 6s ease infinite;
         height: 100vh;
 
+}
+.timer{
+    position: absolute;
+    top: 200px;
+    left: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.timer div h3{
+    text-align: center;
+    font-family: 'Technology';
+    src: url('../../assets/technology/Technology.ttf');
 }
