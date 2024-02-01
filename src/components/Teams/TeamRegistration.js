@@ -8,7 +8,12 @@ import Cookies from 'universal-cookie';
 import { serverURL } from '../../Constants';
 const TeamRegistration = () => {
     const cookies = new Cookies().cookies;
-    const [token,setToken]=useState("");
+    const [token, setToken] = useState('');
+    function setCookie(){setToken(cookies['jwt']);}
+    useEffect(() => {
+        setCookie();
+    },[]);
+    
     const navigate=useNavigate();
     const [activeForm, setActiveForm] = useState('teamLeader');
     const [formData, setFormData] = useState({
@@ -20,15 +25,7 @@ const TeamRegistration = () => {
         phoneNumber: '',
         referralCode: '',
     });
-    async function retrieve(){
-        let getting=await cookies['jwt'];
-        if(getting){
-          setToken(getting)
-        }
-        else{
-          console.log(getting);
-        }
-      }
+
     const handleSubmit =async(event) => {
         event.preventDefault();
         // Add logic to handle form submission (e.g., send data to server)

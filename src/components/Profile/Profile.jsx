@@ -11,8 +11,9 @@ import Cookies from "universal-cookie";
 const CreateProfile = () => {
     const cookies = new Cookies().cookies;
     const [token, setToken] = useState('');
+    function setCookie(){setToken(cookies['jwt']);}
     useEffect(() => {
-        setToken(cookies['jwt']);
+        setCookie();
     },[]);
 
     const {

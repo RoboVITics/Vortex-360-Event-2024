@@ -10,10 +10,11 @@ import Cookies from "universal-cookie";
 
 const NewProfile = () => {
   const cookies = new Cookies().cookies;
-    const [token, setToken] = useState('');
-    useEffect(async () => {
-        setToken(cookies['jwt']);
-    },[]);
+  const [token, setToken] = useState('');
+  function setCookie(){setToken(cookies['jwt']);}
+  useEffect(() => {
+      setCookie();
+  },[]);
 
   const initialUserData = JSON.parse(localStorage.getItem('profile'));
 

@@ -7,31 +7,30 @@ import Cookies from "universal-cookie";
 function Teams() {
     const cookies = new Cookies().cookies;
     const navigate = useNavigate();
-    console.log(cookies);
     const token = cookies['jwt'];
-    console.log(token);
-
-    useEffect(async () => {
-        var config = {
-            headers:{ "Accept": "*/*","token": `${token}`}
+    async function getTeamInfo() {
+      var config = {
+          headers:{ "Accept": "*/*","token": `${token}`}
+      }
+      let response = await axios.get('http://localhost:5000/teams/read',config);
+      if(response.status===200){
+        if(response.data.success){
+          localStorage.setItem("team",JSON.stringify(response.data.data));
+          navigate("/user/teamprofile")
         }
-          console.log(config);
-          let response = await axios.get('http://localhost:5000/teams/read',config);
-          if(response.status===200){
-            if(response.data.success){
-              console.log(response.data)
-              localStorage.setItem("team",JSON.stringify(response.data.data));
-              navigate("/user/teamprofile")
-            }
-            else{
-              navigate("/user/teamreg")
-            }
-          }
-      },[]);
-    
-  return <div>
+        else{
+          navigate("/user/teamreg");
+        }
+      }
+     }
+    useEffect(()=>{getTeamInfo()},[]);
+
+  return (
+    <div>
+      <h1> Content </h1>
     {isLoggedIn() ? <Outlet /> : <Navigate to="/login" />}
-    </div>;
+    </div>
+  ) 
 }
 
 export default Teams;

@@ -25,19 +25,19 @@ const Login = () => {
     cookies.set("jwt",response.data.token);
 
     if(response.status == 201){
-          console.log("This is executing after login!");
-          var config = {
-            headers:{ "Accept": "*/*","token": `${response.data.token}`}
-          }
-          console.log(config);
-          let profileRes = await axios.get('http://localhost:5000/profile/read',config);
-          if(profileRes.data.success){
-            localStorage.setItem('profile', JSON.stringify(profileRes.data.data))
-            navigate('/user/dashboard');
-          }
-          else{
-            navigate('/user/createprofile');
-          }
+      console.log("This is executing after login!");
+      var config = {
+        headers:{ "Accept": "*/*","token": `${response.data.token}`}
+      }
+      console.log(config);
+      let profileRes = await axios.get('http://localhost:5000/profile/read',config);
+      if(profileRes.data.success){
+        localStorage.setItem('profile', JSON.stringify(profileRes.data.data))
+        navigate('/user/dashboard');
+      }
+      else{
+        navigate('/user/createprofile');
+      }
     }
   }
   return (

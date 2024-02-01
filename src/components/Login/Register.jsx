@@ -27,6 +27,7 @@ const Register = () => {
         }
         let profileRes = await axios.get('http://localhost:5000/profile/read',config);
         if(profileRes.data.data){
+          localStorage.setItem('profile', JSON.stringify(profileRes.data.data))
           navigate('/user/dashboard');
         }
         else{
