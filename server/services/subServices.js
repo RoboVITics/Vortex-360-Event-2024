@@ -29,7 +29,14 @@ class SubmitService {
         const file = req.file;
         console.log("submissions/create: Create submission");
         try{
-            const fireStoreRef = this.getUploadUrl(file);
+            const fireStoreRef = SubmitService.getUploadUrl(file);
+            // Update it in teams:
+            const teamRef = doc(db, "teams", teamCode);
+            const team = await getDoc(teamRef);
+            var teamData = team.data();
+            const updatedData = { ...teamData,...body };
+            console.log(updatedData);
+            await setDoc(doc(db, "teams", teamCode), updatedData);
             res.status(200).send({fileReference: fireStoreRef});
 
         }

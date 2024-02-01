@@ -1,7 +1,6 @@
 import { getFirestore, doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore'
 import fireapp from '../database.js';
 import AuthMiddleware from '../middleware/authMiddleware.js';
-import ProfileService from './profileServices.js';
 const db = getFirestore(fireapp);
 class TeamService {    
     static createTeam = async (req, res, next) => {
@@ -41,7 +40,7 @@ class TeamService {
             
             }
             else{
-                res.status(400).json({ success: false, message: 'User already exists in a team'});
+                res.status(200).json({ success: false, message: 'User already exists in a team'});
             }
         } catch (error) {
                 console.error(error.message);
@@ -66,7 +65,6 @@ class TeamService {
                 const teamRef = doc(db, "teams", teamCode);
                 const team = await getDoc(teamRef);
                 var teamData = team.data();
-                console.log("sfjkgd");
                 teamData.members.push(email);
                 const response = await setDoc(doc(db, "teams", teamCode), teamData);
                 
@@ -78,7 +76,7 @@ class TeamService {
             
             }
             else{
-                res.status(400).json({ success: false, message: 'User already exists in a team'});
+                res.status(200).json({ success: false, message: 'User already exists in a team'});
             }
         } catch (error) {
             console.error(error.message);
@@ -102,7 +100,7 @@ class TeamService {
             console.log(teamData);
             if(profileData.isTeamLeader == true){
                 if(teamData.members.length > 1){
-                    res.status(400).json({success: false, message: "Cannot leave the team!"});
+                    res.status(200).json({success: false, message: "Cannot leave the team!"});
                 }
                 else{
                     // Delete the team:

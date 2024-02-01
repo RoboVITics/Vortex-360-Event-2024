@@ -13,7 +13,7 @@ class ProfileService {
             res.status(200).json({ success: true, message: 'Created Profile Successfully', data: response});
         } catch (error) {
                 console.error(error.message);
-                res.status(400).json({ success: false, message: error.message });
+                res.status(500).json({ success: false, message: error.message });
         }
     }
 
@@ -28,7 +28,7 @@ class ProfileService {
             res.status(200).json({ success: true, message: 'Updated Profile Successfully', data: response});
         } catch (error) {
             console.error(error.message);
-            res.status(400).json({ success: false, message: error.message });
+            res.status(500).json({ success: false, message: error.message });
         }
     }
 
@@ -43,7 +43,7 @@ class ProfileService {
             res.status(200).json({ success: true, message: 'Received profile successfully', data: profileData});
         } catch (error) {
             console.error(error.message);
-            res.status(400).json({ success: false, message: error.message });
+            res.status(500).json({ success: false, message: error.message });
         }
     }
 }

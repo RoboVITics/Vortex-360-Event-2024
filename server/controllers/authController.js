@@ -50,6 +50,12 @@ class AuthController {
     res.cookie('jwt', '', { maxAge: 1 });
     res.status(200).json({ msg: "Logged Out" });
   }
+
+  static googleAuthLogin = async (req,res) => {
+    const data = req.body;
+    const user = await AuthService.googleAuth(data.email, data.user);
+
+  }
 };
 
 export default AuthController;
