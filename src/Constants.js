@@ -189,3 +189,4 @@ export const sponsors = [
   // { id: 2, icon: simg3 },
   // { id: 2, icon: simg4 },
 ];
+export const serverURL="http://localhost:5000"
