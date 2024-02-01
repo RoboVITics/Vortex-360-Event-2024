@@ -1,7 +1,6 @@
 import { getFirestore, doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore'
 import fireapp from '../database.js';
 import AuthMiddleware from '../middleware/authMiddleware.js';
-import ProfileService from './profileServices.js';
 const db = getFirestore(fireapp);
 class TeamService {    
     static createTeam = async (req, res, next) => {
@@ -30,18 +29,23 @@ class TeamService {
                 const response = await setDoc(doc(db, "teams", teamCode), {
                     teamCode: teamCode,
                     teamName: data.teamName,
-                    members: [email],
+                    members: [{
+                        email: email,
+                        name: profileData.name
+                    }],
+
                 });
                 
                 const updatedProfile = { ...profile.data(), teamName: data.teamName, teamCode: teamCode, isTeamLeader: true };
                 console.log(updatedProfile);
                 await setDoc(doc(db, "profile", email), updatedProfile);
-                
+                console.log("teams/create: Created team!");
                 res.status(200).json({ success: true, message: 'Created Team Successfully', data: response});
             
             }
             else{
-                res.status(400).json({ success: false, message: 'User already exists in a team'});
+                console.log("teams/create: User in team");
+                res.status(200).json({ success: false, message: 'User already exists in a team'});
             }
         } catch (error) {
                 console.error(error.message);
@@ -66,8 +70,10 @@ class TeamService {
                 const teamRef = doc(db, "teams", teamCode);
                 const team = await getDoc(teamRef);
                 var teamData = team.data();
-                console.log("sfjkgd");
-                teamData.members.push(email);
+                teamData.members.push({
+                    email: email,
+                    name: profileData.name
+                });
                 const response = await setDoc(doc(db, "teams", teamCode), teamData);
                 
                 const updatedProfile = { ...profile.data(), teamName: teamData.teamName, teamCode: teamCode, isTeamLeader: false };
@@ -78,7 +84,8 @@ class TeamService {
             
             }
             else{
-                res.status(400).json({ success: false, message: 'User already exists in a team'});
+                console.log("teams/join: User in team");
+                res.status(200).json({ success: false, message: 'User already exists in a team'});
             }
         } catch (error) {
             console.error(error.message);
@@ -102,7 +109,8 @@ class TeamService {
             console.log(teamData);
             if(profileData.isTeamLeader == true){
                 if(teamData.members.length > 1){
-                    res.status(400).json({success: false, message: "Cannot leave the team!"});
+                    console.log("teams/quit: Cannot leave the team!");
+                    res.status(200).json({success: false, message: "Cannot leave the team!"});
                 }
                 else{
                     // Delete the team:
@@ -112,9 +120,8 @@ class TeamService {
                     delete profileData.teamName;
                     delete profileData.isTeamLeader;
                     await setDoc(doc(db, "profile", email), profileData);
-
-                    console.log(profileData);
-                    await setDoc(doc(db, "profile", email), profileData);
+                    await deleteDoc(doc(db, "teams", teamCode));
+                    console.log("teams/quit: Delete team!");
                     res.status(200).json({success: true, message: "Deleted team successfully"});
                 }
             }else{
@@ -125,9 +132,16 @@ class TeamService {
                 await setDoc(doc(db, "profile", email), profileData);
 
                 //Delete from the team data:
-                const index = teamData.members.indexOf(email);
+                var index;
+                for (let i = 1; i < teamData.members.length; i++) {
+                    const value = teamData.members[i];
+                    if(value.email == email){
+                        index = i;
+                    }
+                }
                 if (index > -1) teamData.members.splice(index, 1); 
                 await setDoc(doc(db, "teams", teamCode), teamData);
+                console.log("teams/quit: Left team!");
                 res.status(200).json({success: true, message: "Left team successfully"});
             }
             
@@ -146,6 +160,7 @@ class TeamService {
             const profileData = profile.data();
 
             if(!profileData.teamCode){
+                console.log("teams/read: No team!");
                 res.status(200).json({success: false, message: "Not in any team!"});
             }else{
                 const teamCode = profileData.teamCode;

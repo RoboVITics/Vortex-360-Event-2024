@@ -29,35 +29,62 @@ class SubmitService {
         const file = req.file;
         console.log("submissions/create: Create submission");
         try{
-            const fireStoreRef = this.getUploadUrl(file);
-            res.status(200).send({fileReference: fireStoreRef});
+            const fireStoreRef = SubmitService.getUploadUrl(file);
+            // Update it in teams:
+            const teamRef = doc(db, "teams", teamCode);
+            const team = await getDoc(teamRef);
+            var teamData = team.data();
+            const updatedData = { ...teamData,...body };
+            console.log(updatedData);
+            await setDoc(doc(db, "teams", teamCode), updatedData);
+            res.status(200).json({success: true, message: 'Submitted Successfully', data: updatedData});
 
         }
         catch (error) {
             console.error('Error creating submission:', error);
-            res.status(500).json({ error: 'Failed to create submission' });
+            res.status(500).json({ success: false, message: error.message });
         }
         
     }
 
     static updateSubmission = async (req, res, next) => {
-        const data = req.body;
-        try {
-            res.status(200).json({content: [{ msg: 'Update Submission'}]});
-        } catch (error) {
-            console.error('Error creating submission:', error);
-            res.status(500).json({ error: 'Failed to create submission' });
+        // Fetch the file from request;
+        const body = req.body;
+        const file = req.file;
+        console.log("submissions/create: Create submission");
+        try{
+            const fireStoreRef = SubmitService.getUploadUrl(file);
+            // Update it in teams:
+            const teamRef = doc(db, "teams", teamCode);
+            const team = await getDoc(teamRef);
+            var teamData = team.data();
+            const updatedData = { ...teamData,...body };
+            console.log(updatedData);
+            await setDoc(doc(db, "teams", teamCode), updatedData);
+            res.status(200).json({success: true, message: 'Submitted Successfully', data: updatedData});
         }
+        catch (error) {
+            console.error('Error creating submission:', error);
+            res.status(500).json({ success: false, message: error.message });
+        }
+     
     }
 
     static getSubmission = async (req, res, next) => {
+        // Fetch the file from request;
+        const token = req.headers['token'];
+        const email = AuthMiddleware.extractToken(token).user;
         try {
-            // Get submission code
-            res.status(200).json({content: [{ msg: 'Fetch Submission'}]});
+            console.log("submissions/read: Read submissions");
+            const docRef = doc(db, "profile", email);
+            const docSnap = await getDoc(docRef);
+            const profileData = docSnap.data();
+            res.status(200).json({ success: true, message: 'Received submission successfully', data: profileData});
         } catch (error) {
-            console.error('Error getting submission:', error);
-            res.status(500).json({ error: 'Failed to get submission' });
+            console.error(error.message);
+            res.status(500).json({ success: false, message: error.message });
         }
+     
     }
 }
 

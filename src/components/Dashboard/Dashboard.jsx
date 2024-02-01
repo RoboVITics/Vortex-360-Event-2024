@@ -43,12 +43,12 @@ const Dashboard = () => {
     finalSubmissionCompleted: false
   });
 
-  useEffect(() => {
-    fetch('your-api-endpoint')
-      .then(response => response.json())
-      .then(data => setRegistrationData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []); 
+  // useEffect(() => {
+  //   fetch('your-api-endpoint')
+  //     .then(response => response.json())
+  //     .then(data => setRegistrationData(data))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []); 
 
   const {
     registrationDateTime,

@@ -7,8 +7,13 @@ import { Navigate, Outlet } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { serverURL } from '../../Constants';
 const TeamRegistration = () => {
-    const cookies=new Cookies();
-    const [token,setToken]=useState("");
+    const cookies = new Cookies().cookies;
+    const [token, setToken] = useState('');
+    function setCookie(){setToken(cookies['jwt']);}
+    useEffect(() => {
+        setCookie();
+    },[]);
+    
     const navigate=useNavigate();
     const [activeForm, setActiveForm] = useState('teamLeader');
     const [formData, setFormData] = useState({
@@ -20,15 +25,7 @@ const TeamRegistration = () => {
         phoneNumber: '',
         referralCode: '',
     });
-    async function retrieve(){
-        let getting=await cookies.get("jwt_authorization")
-        if(getting){
-          setToken(getting)
-        }
-        else{
-          console.log(getting);
-        }
-      }
+
     const handleSubmit =async(event) => {
         event.preventDefault();
         // Add logic to handle form submission (e.g., send data to server)
@@ -45,7 +42,7 @@ const TeamRegistration = () => {
             {
                 teamCode: formData.referralCode,
             },{headers:{"Content-Type": "application/json","token":`${token}`}})
-            if(response.status === 201){
+            if(response.status === 200){
                 navigate('/user/teamprofile');
             }
         }
@@ -73,9 +70,6 @@ const TeamRegistration = () => {
     const handleToggleForm = (formType) => {
         setActiveForm(formType);
     };
-    useEffect(()=>{
-        retrieve();
-    },[])
     return (
       <>
         <div id="registration-container">
