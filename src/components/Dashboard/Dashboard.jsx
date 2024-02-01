@@ -3,6 +3,7 @@ import './Dashboard.css';
 import img from './Vortex_360_logos.png';
 import isLoggedIn from '../../auth/isLoggedIn';
 import { Navigate, Outlet } from 'react-router-dom';
+import { domains, buttons } from "../../Constants";
 const CalculateTimeRemaining = (targetDate) => {
   
   const now = new Date();
@@ -24,8 +25,12 @@ const CalculateTimeRemaining = (targetDate) => {
 const targetDates = [
   new Date('2024-02-01T12:00:00'), // Replace with your specific dates
   new Date('2024-02-05T18:30:00'),
+  new Date('2024-02-09T22:45:00'),
+  new Date('2024-02-011T22:45:00'),
 ];
-
+const events=[
+  "Round 1","Round 2","Round 3","Submission"
+]
 let currentIndex = 0;
 
 
@@ -67,6 +72,7 @@ const Dashboard = () => {
   const [hours1,setHours1]=useState('');
   const [minutes1,setMinutes1]=useState('');
   const [seconds1,setSeconds1]=useState('');
+  const [event,setEvent]=useState('')
   const [remainingTime, setRemainingTime] = useState({
     days: 0,
     hours: 0,
@@ -93,10 +99,10 @@ const Dashboard = () => {
       setHours1(`${calculatedRemainingTime.hours}`);
       setMinutes1(`${calculatedRemainingTime.minutes}`);
       setSeconds1(`${calculatedRemainingTime.seconds}`);
+      setEvent(`${events[currentIndex]}`)
       setRemainingTime(calculatedRemainingTime);
 
-      console.log(`Remaining time for Date ${currentIndex + 1}: ${calculatedRemainingTimeStr} Day is ${calculatedRemainingTime.days}`);
-    }, 1000);
+      }, 1000);
 
     // Clear the interval on component unmount
     return () => clearInterval(intervalId);
@@ -109,7 +115,7 @@ const Dashboard = () => {
       <div id="Dashboard" className="container ">
         <img src={img} alt="VORTEX-360" className="image" />
         <div className="info">
-          <h2 className='newhead'>VORTEX-360</h2>
+          <h1 className='newhead'>VORTEX-360</h1>
           <table>
             <tr>
               <td>
@@ -140,6 +146,7 @@ const Dashboard = () => {
           </div>
 
           {teamName && <p>Team: {teamName}</p>}
+          <h3 className='header'>Time till {`${event}`}</h3>
           <div className='timer'>
             
             <div>
@@ -155,7 +162,83 @@ const Dashboard = () => {
               <h3>SECONDS</h3> <h3>{`${seconds1}`}</h3>
             </div>
           </div>
-          
+          <div id="domains">
+      <h2>Tracks</h2>
+      <div
+        id="carouselDemo"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-touch="true"
+        
+      >
+        <div class="carousel-indicators">
+          {buttons.map((btn) => (
+            <button
+              key={btn.id}
+              type="button"
+              data-bs-target="#carouselDemo"
+              data-bs-slide-to={btn.slide}
+              class={btn.class}
+            ></button>
+          ))}
+        </div>
+        <div class="carousel-inner">
+          {domains.map((domain) => (
+            <div
+              key={domain.id}
+              class={domain.upper}
+              style={{
+                background: `url(${domain.bg}) center/cover no-repeat,url(${domain.bg2}) center/cover no-repeat`,
+                backgroundSize: 'auto 75%,auto 75%', // 80% height and width auto
+                backgroundPosition: '90% 120%,10% 120%', // Adjust these values based on your preference
+              }}
+            >
+              <div
+                class="carousel-caption"
+                style={{
+                  color: "white",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                <h3
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  {domain.name}
+                </h3>
+                <p>{domain.desp}</p>
+                
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          id="prev-slide"
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselDemo"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          id="next-slide"
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselDemo"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
         </div>
         {isLoggedIn() ? <Outlet/> : <Navigate to="/login" />}
       </div>

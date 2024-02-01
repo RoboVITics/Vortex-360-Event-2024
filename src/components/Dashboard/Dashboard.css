@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Technology;
+    src: url(../../assets/Technology.ttf);
+}
 #Dashboard body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -21,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     /* Adjust as needed */
 }
 
@@ -42,20 +46,34 @@
     max-width: 250px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-bottom: 2rem;
+    margin-top: 100px;
 }
 
 #Dashboard .info {
     flex: 1;
     margin-left: 2rem;
     line-height: 1.5;
+    margin-top: 5rem;
 }
-
-#Dashboard h2 {
+#domains{
+    position: absolute;
+    top: 190px;
+    width: 100%;
+    left: -5px;
+    z-index: 0;
+}
+#domains h2{
+    margin-top: 180px;
+    margin-bottom: -80px;
+}
+#Dashboard h1 {
     margin-top: 0;
     text-align: left;
     font-size: 3rem;
 }
-
+#Dashboard h2{
+    text-align: center;
+}
 @media (max-width: 768px) {
     #Dashboard .container {
         flex-direction: column;
@@ -126,8 +144,15 @@
         background: linear-gradient(90deg, #000, #302b63);
         background-size: 180% 180%;
         animation: gradient-animation 6s ease infinite;
-        height: 100vh;
+        height: 120vh;
 
+}
+.header{
+    font-style: italic;
+    position: absolute;
+    top: 100px;
+    left: 900px;
+    font-size: 40px;
 }
 .timer{
     position: absolute;
@@ -138,8 +163,9 @@
     align-items: center;
     gap: 3rem;
 }
+
 .timer div h3{
+    font-size: 40px;
     text-align: center;
     font-family: 'Technology';
-    src: url('../../assets/technology/Technology.ttf');
 }
