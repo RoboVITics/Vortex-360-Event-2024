@@ -14,17 +14,10 @@ const Domains = () => {
     controls.start("visible");
   }
   return (
-    <div id="domains">
-      <hr
-        id="domains"
-        style={{ marginBottom: "1.5rem", visibility: "hidden" }}
-      />
-      <h1 style={{ marginBottom: "-120px" }}>Tracks</h1>
-
-    <h2>Tracks to be released soon!</h2>
-      {/* <motion.div
+    <div id="domains" ref={ref}>
+      <h2>Domains</h2>
+      <motion.div
         id="carouselDemo"
-        ref={ref}
         class="carousel slide"
         data-bs-ride="carousel"
         data-bs-touch="true"
@@ -53,8 +46,9 @@ const Domains = () => {
               key={domain.id}
               class={domain.upper}
               style={{
-                backgroundSize: "auto 75%,auto 75%", 
-                backgroundPosition: "90% 120%,10% 120%", 
+                background: `url(${domain.bg}) center/cover no-repeat,url(${domain.bg2}) center/cover no-repeat`,
+                backgroundSize: 'auto 75%,auto 75%', // 80% height and width auto
+                backgroundPosition: '90% 120%,10% 120%', // Adjust these values based on your preference
               }}
             >
               <div
@@ -115,7 +109,7 @@ const Domains = () => {
         >
           <span class="carousel-control-next-icon"></span>
         </button>
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 };
