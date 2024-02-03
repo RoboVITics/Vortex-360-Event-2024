@@ -25,7 +25,7 @@ class ProfileService {
         try {
             console.log("profile/update: Update profile");
             const docRef = doc(db, "profile", email);
-            const response = await setDoc(docRef, data);
+            const response = await setDoc(doc(db, "profile", email), data);
             res.status(200).json({ success: true, message: 'Updated Profile Successfully', data: response});
         } catch (error) {
             console.error(error.message);

@@ -7,6 +7,7 @@ import { useState,useEffect } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import signInWithGoogle from "./handleGoogleLogin";
 const Login = () => {
   const cookies = new Cookies();
   const [user,setUser]=useState('');
@@ -32,7 +33,34 @@ const Login = () => {
       console.log(config);
       let profileRes = await axios.get('http://localhost:5000/profile/read',config);
       if(profileRes.data.success){
-        localStorage.setItem('profile', JSON.stringify(profileRes.data.data))
+        localStorage.setItem('profile', JSON.stringify(profileRes.data.data));
+        navigate('/user/dashboard');
+      }
+      else{
+        navigate('/user/createprofile');
+      }
+    }
+  }
+  const handleGoogleSubmit = async(e) => {
+    e.preventDefault();
+    const data = await signInWithGoogle();
+    console.log(data);
+    const response = await axios.post('http://localhost:5000/auth/google',
+    {
+      email: email,
+      user: data
+    },{headers:{"Content-Type": "application/json"}});
+    // Store the JWT Token as a cookie in the headers
+    cookies.set("jwt",response.data.token);
+
+    if(response.status == 201){
+      console.log("This is executing after login!");
+      var config = {
+        headers:{ "Accept": "*/*","token": `${response.data.token}`}
+      }
+      let profileRes = await axios.get('http://localhost:5000/profile/read',config);
+      if(profileRes.data.success){
+        localStorage.setItem('profile', JSON.stringify(profileRes.data.data));
         navigate('/user/dashboard');
       }
       else{
@@ -72,10 +100,7 @@ const Login = () => {
           </label>
           <a href="#">Forgot password?</a>
         </div>
-        <button type="text" className="button">
-          <FaGoogle className="icon" />
-          Log in with Google
-        </button>
+
         {/* <button type="text" className="button">
           <FaGithub className="icon" />
           Log in with GitHub
@@ -91,6 +116,10 @@ const Login = () => {
             </Link>
           </p>
         </div>
+        <button type="text" className="button" onClick={signInWithGoogle}>
+          <FaGoogle className="icon" />
+          Log in with Google
+        </button>
       </form>
     </div>
     </div>

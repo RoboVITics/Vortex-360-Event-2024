@@ -23,16 +23,15 @@ const CalculateTimeRemaining = (targetDate) => {
 
 // Example usage with two different dates
 const targetDates = [
-  new Date('2024-02-01T12:00:00'), // Replace with your specific dates
-  new Date('2024-02-05T18:30:00'),
-  new Date('2024-02-09T22:45:00'),
-  new Date('2024-02-011T22:45:00'),
+  new Date('2024-02-02T18:00:00'), // Replace with your specific dates
+  new Date('2024-02-02T18:30:00'),
+  new Date('2024-02-02T22:45:00'),
+  new Date('2024-02-02T22:45:00'),
 ];
 const events=[
   "Round 1","Round 2","Round 3","Submission"
 ]
 let currentIndex = 0;
-
 
 const Dashboard = () => {
   const [registrationData, setRegistrationData] = useState({
@@ -47,13 +46,6 @@ const Dashboard = () => {
     round3Completed: false,
     finalSubmissionCompleted: false
   });
-
-  // useEffect(() => {
-  //   fetch('your-api-endpoint')
-  //     .then(response => response.json())
-  //     .then(data => setRegistrationData(data))
-  //     .catch(error => console.error('Error fetching data:', error));
-  // }, []); 
 
   const {
     registrationDateTime,
@@ -139,22 +131,15 @@ const Dashboard = () => {
               </td>
             </tr>
           </table>
-
-          <div className="deadline-registration">
-            <p></p>
-            
-          </div>
-
           {teamName && <p>Team: {teamName}</p>}
           <h3 className='header'>Time till {`${event}`}</h3>
           <div className='timer'>
-            
-            <div>
-              <h3>DAYS</h3> <h3>{`${days1}`}</h3>
-            </div>
-            <div>
-              <h3>HOURS</h3> <h3>{`${hours1}`}</h3>
-            </div>
+              <div>
+                <h3>DAYS</h3> <h3>{`${days1}`}</h3>
+              </div>
+              <div>
+                <h3>HOURS</h3> <h3>{`${hours1}`}</h3>
+              </div>
             <div>
               <h3>MINUTES</h3> <h3>{`${minutes1}`}</h3>
             </div>
@@ -162,7 +147,7 @@ const Dashboard = () => {
               <h3>SECONDS</h3> <h3>{`${seconds1}`}</h3>
             </div>
           </div>
-          <div id="domains">
+    <div id="domains">
       <h2>Tracks</h2>
       <div
         id="carouselDemo"
@@ -213,7 +198,7 @@ const Dashboard = () => {
                 >
                   {domain.name}
                 </h3>
-                <p>{domain.desp}</p>
+                <p style={{width: "60%"}}>{domain.desp}</p>
                 
               </div>
             </div>

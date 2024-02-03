@@ -21,7 +21,7 @@ const Main = () => {
       <Prizes />
       <FAQs />
       <Contact />
-      <Mouse />
+      {/* <Mouse /> */}
       <Overlay />
     </div>
   );

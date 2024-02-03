@@ -10,7 +10,7 @@ class SubmitService {
         try {
             const storageRef = ref(storage, `files/${file.originalname}`);
             const metadata = {
-                contentType: req.file.mimetype,
+                contentType: file.mimetype,
             };
             const snapshot = await uploadBytes(storageRef, file.buffer, metadata);
             // Get the download URL of the uploaded file
@@ -27,9 +27,10 @@ class SubmitService {
         // Fetch the file from request;
         const body = req.body;
         const file = req.file;
+        const teamCode = body.teamCode
         console.log("submissions/create: Create submission");
         try{
-            const fireStoreRef = SubmitService.getUploadUrl(file);
+            const fireStoreRef = await SubmitService.getUploadUrl(file);
             // Update it in teams:
             const teamRef = doc(db, "teams", teamCode);
             const team = await getDoc(teamRef);
@@ -38,7 +39,6 @@ class SubmitService {
             console.log(updatedData);
             await setDoc(doc(db, "teams", teamCode), updatedData);
             res.status(200).json({success: true, message: 'Submitted Successfully', data: updatedData});
-
         }
         catch (error) {
             console.error('Error creating submission:', error);

@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import './Submission.css';
 import isLoggedIn from '../../auth/isLoggedIn';
 import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Cookies from 'universal-cookie';
+import { serverURL } from '../../Constants';
 
 
 const Submissions = () => {
+  const cookies = new Cookies().cookies;
+  const [token, setToken] = useState('');
+  function setCookie(){setToken(cookies['jwt']);}
+  useEffect(() => {
+      setCookie();
+  },[]);
+
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
@@ -16,31 +26,39 @@ const Submissions = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const formData = new FormData();
 
-  const onSubmit = (data) => {
-    setTimeout(() => {
+  const onSubmit = async (data) => {
+        const teamCode = JSON.parse(localStorage.getItem('team')).teamCode;
+        console.log(teamCode);
+        console.log(file);
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("idea", data.benefits);
+        formData.append("benefits", data.benefits);
+        formData.append("uniqueness", data.uniqueness);
+        formData.append("teamCode", teamCode);
+        console.log(formData);
+        const config = {headers: {'Content-Type': 'multipart/form-data', 'token': `${token}`}}
+        const response = await axios.post(`${serverURL}/submissions/create`,formData,config)
+        console.log(response);
+    setTimeout(async () => {  
       if (!data.teamName || !data.idea || !file) {
         toast.error('Please fill in all fields and upload a file.', {
           position: 'top-center',
           duration: 3000,
         });
-      } else {
-        console.log(data);
-        const file = data.target.files[0];
-        const formData = new FormData();
-        formData.append("file", file);
+      } else {  
         toast.success('Submitted successfully!', {
           position: 'top-center',
           duration: 3000,
         });
-
+        
         reset();
         setFile(null);
       }
     }, 1000);
-    navigate('/user/dashboard')
-
+    alert("Runs")
+    // navigate('/user/dashboard');
   };
 
   return (
@@ -120,7 +138,7 @@ const Submissions = () => {
               name="file"
               id="file"
               className="file-input"
-              accept=".pdf, .doc, .docx"
+              accept=".pdf, .f3d"
               onChange={(e) => setFile(e.target.files[0])}
             />
             <label htmlFor="file" className="file-upload">Choose File</label>

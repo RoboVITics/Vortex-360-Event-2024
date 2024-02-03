@@ -39,10 +39,11 @@ const NewProfile = () => {
     setEdit(false);
     const response = await axios.post('http://localhost:5000/profile/update',
         userData,
-        { headers: { 'Content-Type': 'application/json',"Accept": "*/*","token": `${token}` } },);
-    console.log(response.data);
-    localStorage.removeItem('profile')
-    localStorage.setItem('profile',JSON.stringify(response.data.data));
+        { headers: { 'Content-Type': 'application/json',"Accept": "*/*","token": `${token}` } });
+    let profileRes = await axios.get('http://localhost:5000/profile/read',
+    { headers: { "Accept": "*/*","token": `${token}` }});
+    localStorage.removeItem('profile');
+    localStorage.setItem('profile',JSON.stringify(profileRes.data.data));
 
     setTimeout(() => {
         if (userData.name && userData.reg_no && userData.gender && userData.email && userData.vit_email && userData.number) {

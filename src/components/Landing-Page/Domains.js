@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { domains, buttons } from "../../Constants";
 import { Link } from "react-router-dom";
 import { motion, useInView, useAnimation } from "framer-motion";
+import './Domains.css'
 
 const Domains = () => {
   const ref = useRef(null);
@@ -14,7 +15,7 @@ const Domains = () => {
     controls.start("visible");
   }
   return (
-    <div id="domains" ref={ref}>
+    <div className="domains" ref={ref}>
       <h2>Domains</h2>
       <motion.div
         id="carouselDemo"
@@ -71,7 +72,7 @@ const Domains = () => {
                 >
                   {domain.name}
                 </h2>
-                <p>{domain.desp}</p>
+                <p className="domain-text">{domain.desp}</p>
                 <Link
                   to={`/domain/${domain.id}`}
                   style={{

@@ -51,7 +51,17 @@ class AuthController {
 
   static googleAuthLogin = async (req,res) => {
     const data = req.body;
-    const user = await AuthService.googleAuth(data.email, data.user);
+    try {
+      const user = await AuthService.googleAuth(data.email, data.user);
+      const token = jwt.sign({user: data.email}, jwtSecret, { expiresIn: 3600});
+      res.status(201).json({ user: user, token: token });
+  
+    } 
+    catch (err) {
+      const errors = this.handleErrors(err);
+      res.status(400).json({ errors });
+    }
+    
   }
 };
 

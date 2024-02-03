@@ -12,7 +12,7 @@ import Cookies from "universal-cookie";
 import { CookiesProvider, useCookies } from "react-cookie";
 
 
-
+const cookies = new Cookies();
 const routes = [
   {
     path: "/user/dashboard",
@@ -30,16 +30,15 @@ const routes = [
     icon: <BiGroup />,
   },
   
-  // {
-  //   path: "/user/submissions",
-  //   name: "Submission",
-  //   icon: <MdForum/>,
-  // },
+  {
+    path: "/user/submissions",
+    name: "Submission",
+    icon: <MdForum/>,
+  },
 ];
 
 const SideBar = ({ children }) => {
-  const cookies = new Cookies();
-  const [cookie, setCookie, removeCookie] = useCookies(['jwt']);
+const [cookie, setCookie, removeCookie] = useCookies(['jwt']);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
